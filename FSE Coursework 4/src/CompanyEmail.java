@@ -1,4 +1,4 @@
-
+// Quick test from Joshua
 public class CompanyEmail {
     private String fromAddress;
     private String toAddress;
