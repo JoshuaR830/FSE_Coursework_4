@@ -2,6 +2,7 @@
 // Quick test from Inigo
 // Another quick test from Joshua
 // Test from Henry
+//The best test from the one and only Julian. Haha jk. lmao rofl xd
 public class CompanyEmail {
     private String fromAddress;
     private String toAddress;
