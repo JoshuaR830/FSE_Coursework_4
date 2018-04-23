@@ -1,6 +1,7 @@
 // Quick test from Joshua
 // Quick test from Inigo
 // Another quick test from Joshua
+// Another test
 public class CompanyEmail {
     private String fromAddress;
     private String toAddress;
