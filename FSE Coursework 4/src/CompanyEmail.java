@@ -1,4 +1,5 @@
 // Quick test from Joshua
+// Quick test from Inigo
 public class CompanyEmail {
     private String fromAddress;
     private String toAddress;
