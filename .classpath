@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="FSE Coursework 4/src"/>
+	<classpathentry kind="src" path="G51FSE-CW04-Code"/>
+	<classpathentry kind="output" path="FSE Coursework 4/bin"/>
+</classpath>
