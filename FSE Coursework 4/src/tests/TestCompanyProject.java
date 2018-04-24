@@ -15,64 +15,182 @@ public class TestCompanyProject {
 
 	
 //	Test default constructor
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
 
-//	Test main constructor
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
+//	Test main constructor
+
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test get project id
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
 
-//	Test get project title
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
+//	Test get project title
+
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test set project title
+
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test check contact
+
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test add contact
+
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test add email
+
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test get email for current phase
+
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test get email for specific phase
+
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test next phase 
+
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test get phase name
+
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test get phase id
+
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test get project contacts
+
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 
 //	Test to string override
+
+//	Test ID: L.N.N
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+//	Test ID: L.N.N
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 	
 	
 }
