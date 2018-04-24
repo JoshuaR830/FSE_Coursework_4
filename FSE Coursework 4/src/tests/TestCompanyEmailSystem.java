@@ -14,3 +14,10 @@ public class TestCompanyEmailSystem {
 	}
 
 }
+
+//  Main Method
+//  List Projects function
+//  Add Project function
+//  Change Project Phase function
+//  List Phases function
+//  Add Email function

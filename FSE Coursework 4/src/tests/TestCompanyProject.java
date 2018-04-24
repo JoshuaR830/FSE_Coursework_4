@@ -14,3 +14,20 @@ public class TestCompanyProject {
 	}
 
 }
+
+
+//  Default Constructor
+//  Main Constructor
+//  Get Project ID
+//  Get Project Title
+//  Set Project Title
+//  Check Contact
+//  Add Contact
+//  Add Email
+//  Get Email for Current Phase
+//  Get Email for Specific Phase
+//  Next Phase 
+//  Get Phase Name
+//  Get Phase ID
+//  Get Project Contacts
+//  To String Override
