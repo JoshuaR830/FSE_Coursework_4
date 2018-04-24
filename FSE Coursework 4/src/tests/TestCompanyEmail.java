@@ -13,16 +13,48 @@ public class TestCompanyEmail {
 		fail("Not yet implemented");
 	}
 	
-//  Default constructor test
-//  Main constructor test
-//	Get method for Sender’s address
-//	Get method for Receiver’s address 
-//	Get method for Subject line
-//	Get method Email body
-//	Set method for Sender’s address
-//	Set method for Receiver’s address
-//	Set method for Subject Line
-//	Set method for Email Body
-//	Function to Check Validity 
+//	Test default constructor
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test main constructor
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test get method for sender’s address
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test get method for receiver’s address 
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test get method for subject line
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test get method email body
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test set method for sender’s address
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test set method for receiver’s address
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test set method for subject line
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test set method for email body
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test function to check validity
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
 
 }

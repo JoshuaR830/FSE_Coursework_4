@@ -13,21 +13,68 @@ public class TestCompanyProject {
 		fail("Not yet implemented");
 	}
 
+	
+//	Test default constructor
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test main constructor
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test get project id
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test get project title
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test set project title
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test check contact
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test add contact
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test add email
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test get email for current phase
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test get email for specific phase
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test next phase 
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test get phase name
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test get phase id
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test get project contacts
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+
+//	Test to string override
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+	
 }
 
 
-//  Default Constructor
-//  Main Constructor
-//  Get Project ID
-//  Get Project Title
-//  Set Project Title
-//  Check Contact
-//  Add Contact
-//  Add Email
-//  Get Email for Current Phase
-//  Get Email for Specific Phase
-//  Next Phase 
-//  Get Phase Name
-//  Get Phase ID
-//  Get Project Contacts
-//  To String Override

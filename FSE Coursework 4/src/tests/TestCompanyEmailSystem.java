@@ -13,11 +13,34 @@ public class TestCompanyEmailSystem {
 		fail("Not yet implemented");
 	}
 
+//	Test  main method
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test  list projects function
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+// 	Test list contacts function
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test add project function
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test change project phase function
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test list phases function
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test add email function
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
 }
 
-//  Main Method
-//  List Projects function
-//  Add Project function
-//  Change Project Phase function
-//  List Phases function
-//  Add Email function
+
