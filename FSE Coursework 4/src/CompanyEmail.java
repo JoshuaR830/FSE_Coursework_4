@@ -1,8 +1,5 @@
-// Quick test from Joshua
-// Quick test from Inigo
-// Another quick test from Joshua
-// Test from Henry
-//The best test from the one and only Julian. Haha jk. lmao rofl xd
+// https://docs.google.com/document/d/1migYYyWoCX3aydqz9rkFh2q5YYehMueO_p8LHfVqLb4/edit
+
 public class CompanyEmail {
     private String fromAddress;
     private String toAddress;
