@@ -1,4 +1,4 @@
-// https://docs.google.com/document/d/1migYYyWoCX3aydqz9rkFh2q5YYehMueO_p8LHfVqLb4/edit
+// https://docs.google.com/document/d/1qsWBDOe8hT66w_FfopkHZAPvqh2x0HJzZIN1ZwjD-HE/edit#
 
 package tests;
 
@@ -13,7 +13,7 @@ public class TestCompanyEmailSystem {
 		fail("Not yet implemented");
 	}
 
-//	Test  main method
+//	Test main method
 
 //	Test ID: L.N.N
 // 	Test created by: f_name s_name
