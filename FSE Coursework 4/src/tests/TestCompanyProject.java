@@ -16,22 +16,54 @@ public class TestCompanyProject {
 	
 //	Test default constructor
 
-//	Test ID: L.N.N
+//	Test ID: B.1.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: B.1.2
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: B.1.3
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: B.1.4
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: B.1.5
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: B.1.6
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
 	
 //	Test main constructor
 
-//	Test ID: L.N.N
+//	Test ID: B.1.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: B.2.2
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: B.2.3
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: B.2.4
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: B.2.5
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: B.2.6
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -39,22 +71,14 @@ public class TestCompanyProject {
 
 //	Test get project id
 
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
+//	Test ID: B.3.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
 	
 //	Test get project title
 
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
+//	Test ID: B.4.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -62,11 +86,11 @@ public class TestCompanyProject {
 
 //	Test set project title
 
-//	Test ID: L.N.N
+//	Test ID: B.5.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: B.5.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -74,11 +98,11 @@ public class TestCompanyProject {
 
 //	Test is contact
 
-//	Test ID: L.N.N
+//	Test ID: B.6.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: B.6.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -86,11 +110,11 @@ public class TestCompanyProject {
 
 //	Test add contact
 
-//	Test ID: L.N.N
+//	Test ID: B.7.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: B.7.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -98,11 +122,11 @@ public class TestCompanyProject {
 
 //	Test add email
 
-//	Test ID: L.N.N
+//	Test ID: B.8.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: B.8.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -110,11 +134,7 @@ public class TestCompanyProject {
 
 //	Test get email for current phase
 
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
+//	Test ID: B.9.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -122,11 +142,11 @@ public class TestCompanyProject {
 
 //	Test get email for specific phase
 
-//	Test ID: L.N.N
+//	Test ID: B.10.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: B.10.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -134,11 +154,11 @@ public class TestCompanyProject {
 
 //	Test next phase 
 
-//	Test ID: L.N.N
+//	Test ID: B.11.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: B.11.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -146,11 +166,7 @@ public class TestCompanyProject {
 
 //	Test get phase by name
 
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
+//	Test ID: B.12.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -158,11 +174,7 @@ public class TestCompanyProject {
 
 //	Test get phase by id
 
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
+//	Test ID: B.13.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -170,11 +182,7 @@ public class TestCompanyProject {
 
 //	Test get project contacts
 
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
+//	Test ID: B.14.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -182,11 +190,7 @@ public class TestCompanyProject {
 
 //	Test to string override
 
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
+//	Test ID: B.15.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
