@@ -72,7 +72,7 @@ public class TestCompanyProject {
 	
 	
 
-//	Test check contact
+//	Test is contact
 
 //	Test ID: L.N.N
 // 	Test created by: f_name s_name
@@ -144,7 +144,7 @@ public class TestCompanyProject {
 	
 	
 
-//	Test get phase name
+//	Test get phase by name
 
 //	Test ID: L.N.N
 // 	Test created by: f_name s_name
@@ -156,7 +156,7 @@ public class TestCompanyProject {
 	
 	
 
-//	Test get phase id
+//	Test get phase by id
 
 //	Test ID: L.N.N
 // 	Test created by: f_name s_name
