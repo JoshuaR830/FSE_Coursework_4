@@ -7,9 +7,12 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import emailScripts.CompanyEmailSystem;
 import emailScripts.CompanyProject;
 
 public class TestCompanyProject {
+	
+	
 
 	@Test
 	public void test() {
@@ -80,7 +83,7 @@ public class TestCompanyProject {
 //	Test get project id
 
 //	Test ID: B.3.1
-// 	Test created by: Joshua Richardson
+// 	Test created by: Joshua Richardson, Inigo Taylor
 //	Date created: 27/04/18
 	
 	@Before
@@ -90,6 +93,9 @@ public class TestCompanyProject {
 	
 	@Test
 	public void b31() {
+		CompanyProject cp = new CompanyProject();
+		assertEquals(cp.getPID(), CompanyEmailSystem.GlobalProjectCounter);
+
 		
 	}
 	
