@@ -21,7 +21,7 @@ public class TestCompanyProject {
 // 	Test created by: Inigo Taylor, Joshua Richardson
 //	Date created: 27/04/18
 	@Before
-	public void beforeDefaultConstructor_B11() {
+	public void beforeDefaultConstructor_B11_B12() {
 		CompanyProject testProject1 = new CompanyProject();
 		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
 	}	
@@ -34,12 +34,7 @@ public class TestCompanyProject {
 	
 //	Test ID: B.1.2
 // 	Test created by: Inigo Taylor
-//	Date created: 27/04/18
-	@Before
-	public void beforeDefaultConstructor_B12() {
-		CompanyProject testProject1 = new CompanyProject();
-		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
-	}	
+//	Date created: 27/04/18	
 	@Test
 	public void testDefaultConstructor_B12() {
 		CompanyProject testProject2 = new CompanyProject();
