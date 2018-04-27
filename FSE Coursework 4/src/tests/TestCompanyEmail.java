@@ -15,14 +15,14 @@ public class TestCompanyEmail {
 		//fail("Not yet implemented");
 	}
 	
-//	Test default constructor
-	
-//	Test ID: A.1.1
-// 	Test created by: f_name s_name
-	
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+	//	Test default constructor
+		
+	//	Test ID: A.1.1
+	// 	Test created by: f_name s_name
+		
+	//	Test ID: L.N.N
+	// 	Test created by: f_name s_name
+	//	Date created: dd/mm/yy
 	
 	
 	
