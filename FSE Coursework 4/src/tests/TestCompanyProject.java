@@ -77,7 +77,9 @@ public class TestCompanyProject {
 //	Date created: 27/04/18
 	
 	@Before
-	
+	public void beforeb31() {
+		
+	}
 	
 	@Test
 	public void b31() {
