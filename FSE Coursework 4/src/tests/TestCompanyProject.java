@@ -240,6 +240,13 @@ public class TestCompanyProject {
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
+
+	
+//	@Test
+//	public void B151(){
+//		CompanyProject cp = new CompanyProject();
+//		assertEquals( cp.getPTitle() + "[" + cp.getPhaseByName() + "]", cp.toString());
+//	}
 	
 	
 	
