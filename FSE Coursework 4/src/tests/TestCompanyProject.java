@@ -154,8 +154,8 @@ public class TestCompanyProject {
 //	Test add email
 
 //	Test ID: B.8.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 27/04/18
 	
 	@Test
 	public void testAddEmail_B81(){
@@ -167,6 +167,7 @@ public class TestCompanyProject {
 			assertEquals(e.getClass(), Exception.class);
 		}
 	}
+	
 //	Test ID: B.8.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
