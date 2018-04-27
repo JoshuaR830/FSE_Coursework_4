@@ -4,6 +4,7 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestCompanyProject {
@@ -43,7 +44,7 @@ public class TestCompanyProject {
 	
 //	Test main constructor
 
-//	Test ID: B.1.1
+//	Test ID: B.2.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -72,8 +73,16 @@ public class TestCompanyProject {
 //	Test get project id
 
 //	Test ID: B.3.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 27/04/18
+	
+	@Before
+	
+	
+	@Test
+	public void b31() {
+		
+	}
 	
 	
 //	Test get project title
