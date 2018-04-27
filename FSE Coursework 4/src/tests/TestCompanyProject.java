@@ -25,6 +25,7 @@ public class TestCompanyProject {
 		CompanyProject testProject1 = new CompanyProject();
 		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
 	}	
+	
 	@Test
 	public void testDefaultConstructor_B11(){
 		CompanyProject testProject2 = new CompanyProject();
@@ -32,8 +33,18 @@ public class TestCompanyProject {
 	}	
 	
 //	Test ID: B.1.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 27/04/18
+	@Before
+	public void beforeDefaultConstructor_B12() {
+		CompanyProject testProject1 = new CompanyProject();
+		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
+	}	
+	@Test
+	public void testDefaultConstructor_B12() {
+		CompanyProject testProject2 = new CompanyProject();
+		assertEquals(++testProjectCounter, testProject2.getPID());
+	}
 	
 //	Test ID: B.1.3
 // 	Test created by: Inigo Taylor
