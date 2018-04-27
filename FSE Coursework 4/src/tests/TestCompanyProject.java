@@ -11,7 +11,7 @@ import emailScripts.CompanyEmailSystem;
 import emailScripts.CompanyProject;
 
 public class TestCompanyProject {
-	
+	int testProjectCounter;
 	
 
 	@Test
@@ -23,14 +23,18 @@ public class TestCompanyProject {
 //	Test default constructor
 
 //	Test ID: B.1.1
-// 	Test created by: f_name s_name
+// 	Test created by: Inigo Taylor, Joshua Richardson
 //	Date created: dd/mm/yy
 	@Before
+	public void beforeB11() {
+		CompanyProject testProject1 = new CompanyProject();
+		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
+	}
 	
 	@Test
 	public void b11(){
-		CompanyProject testProject = new CompanyProject();
-		assertEquals();
+		CompanyProject testProject2 = new CompanyProject();
+		assertEquals(++testProjectCounter,  CompanyEmailSystem.GlobalProjectCounter);
 	}
 	
 //	Test ID: B.1.2
