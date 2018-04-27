@@ -33,13 +33,28 @@ public class CompanyEmailSystem {
         	
         	switch(x%3) {
         	case 0:
-        		cp1.addEmail(ce);
+        		try {
+					cp1.addEmail(ce);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
         		break;
         	case 1:
-        		cp2.addEmail(ce);
+        		try {
+					cp2.addEmail(ce);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
         		break;
         	case 2:
-        		cp3.addEmail(ce);
+        		try {
+					cp3.addEmail(ce);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
         		break;
         	}
         }
@@ -168,7 +183,12 @@ public class CompanyEmailSystem {
         String emailBody = in.nextLine();
         CompanyProject cp = AllProjects.get(currentProjShowing);
         CompanyEmail ce = new CompanyEmail(fromAddress,toAddress,subjectLine,emailBody);
-        cp.addEmail(ce);
+        try {
+			cp.addEmail(ce);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         System.out.println("[Email added to " + cp.toString() + "]");
     }
     
