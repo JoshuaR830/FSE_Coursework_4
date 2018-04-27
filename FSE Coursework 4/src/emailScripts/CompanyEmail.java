@@ -40,7 +40,8 @@ public class CompanyEmail {
     }
     
     public void setFrom(String fromAddr) {
-        if (fromAddr.contains("@")) {
+    	// Bug fix: added extra condition to validate the address.
+        if (fromAddr.contains("@") && fromAddr.contains(".")) {
             fromAddress = fromAddr;
         }
     }
