@@ -75,9 +75,14 @@ public class TestCompanyEmail {
 		assertEquals(data.toAddress(), "receiver@nottingham.ac.uk");
 	}
 //	Test ID: A.4.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
+// 	Test created by: Julian Kubelec
+//	Date created: 26/04/18
+	@Test
+	public void testToAddress_2() {
+		CompanyEmail data = new CompanyEmail(
+				null, null, null, null);
+		assertNull(data.toAddress());
+	}
 	
 	
 //	Test get method for subject line
