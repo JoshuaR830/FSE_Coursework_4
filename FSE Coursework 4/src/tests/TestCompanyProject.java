@@ -241,14 +241,10 @@ public class TestCompanyProject {
 // 	Test created by: Joshua Richardson
 //	Date created: 27/04/18
 	
-	@Before
-	public void beforeStringOverrideB151() {
-		cp = new CompanyProject();
-		cp.setPTitle("Hello Project");
-	}
-	
 	@Test
 	public void testStringOverrideB151(){
+		CompanyProject cp = new CompanyProject();
+		cp.setPTitle("Hello Project");
 		assertEquals( "Hello Project" + " [" + cp.getPhaseByName() + "]", cp.toString());
 	}
 		
