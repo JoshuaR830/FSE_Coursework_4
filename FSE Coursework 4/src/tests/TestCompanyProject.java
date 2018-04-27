@@ -14,12 +14,6 @@ import emailScripts.CompanyProject;
 public class TestCompanyProject {
 	int testProjectCounter;
 	
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-
 	
 //	Test default constructor
 
@@ -27,12 +21,12 @@ public class TestCompanyProject {
 // 	Test created by: Inigo Taylor, Joshua Richardson
 //	Date created: 27/04/2018
 	@Before
-	public void beforeB11() {
+	public void beforeDefaultConstructor_B11() {
 		CompanyProject testProject1 = new CompanyProject();
 		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
 	}	
 	@Test
-	public void b11(){
+	public void testDefaultConstructor_b11(){
 		CompanyProject testProject2 = new CompanyProject();
 		assertEquals(++testProjectCounter,  CompanyEmailSystem.GlobalProjectCounter);
 	}	
@@ -94,10 +88,9 @@ public class TestCompanyProject {
 //	Date created: 27/04/18
 	
 	@Test
-	public void b31() {
+	public void testGetProjectId_b31() {
 		CompanyProject cp = new CompanyProject();
-		assertEquals(cp.getPID(), CompanyEmailSystem.GlobalProjectCounter);
-
+		assertEquals(CompanyEmailSystem.GlobalProjectCounter, cp.getPID());
 	}
 	
 	
