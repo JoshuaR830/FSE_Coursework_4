@@ -130,13 +130,15 @@ public class TestCompanyEmail {
 		assertNull(data.emailMessage());
 	}
 	
-	
-	
 //	Test set method for sender’s address
 
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+//	Test ID: A.7.1
+// 	Test created by: Julian Kubelec
+//	Date created: 26/04/18
+	@Test
+	public void testSetFrom() {
+		
+	}
 	
 //	Test ID: L.N.N
 // 	Test created by: f_name s_name
