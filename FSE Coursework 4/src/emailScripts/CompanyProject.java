@@ -51,7 +51,7 @@ public class CompanyProject {
         ProjectContacts.add(emailAddress);
     }
     
-    public void addEmail(CompanyEmail newEmail) {
+    public void addEmail(CompanyEmail newEmail) throws Exception {
         if (newEmail.isValid()) {
             ProjectEmails[ProjectPhase].add(newEmail);
             if (ProjectContacts.contains(newEmail.fromAddress())) {
@@ -59,6 +59,8 @@ public class CompanyProject {
             } else {
                 ProjectContacts.add(newEmail.fromAddress());
             }
+        } else {
+        	throw new Exception();
         }
     }
     

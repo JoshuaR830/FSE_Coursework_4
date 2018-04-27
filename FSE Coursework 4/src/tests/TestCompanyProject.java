@@ -8,6 +8,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import emailScripts.CompanyEmail;
 import emailScripts.CompanyEmailSystem;
 import emailScripts.CompanyProject;
 
@@ -156,6 +157,16 @@ public class TestCompanyProject {
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
+	@Test
+	public void testAddEmail_B81(){
+		try {
+			CompanyProject testProject1 = new CompanyProject();
+			testProject1.addEmail(new CompanyEmail());
+			fail("Exception wasn't produced");
+		} catch (Exception e) {
+			assertEquals(e.getClass(), Exception.class);
+		}
+	}
 //	Test ID: B.8.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
