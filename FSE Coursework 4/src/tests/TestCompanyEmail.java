@@ -66,11 +66,13 @@ public class TestCompanyEmail {
 //	Test get method for receiver’s address 
 
 //	Test ID: A.4.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Julian Kubelec
+//	Date created: 26/04/18
 	@Test
 	public void testToAddress_1() {
-		
+		CompanyEmail data = new CompanyEmail(
+				null, "receiver@nottingham.ac.uk", null, null);
+		assertEquals(data.toAddress(), "receiver@nottingham.ac.uk");
 	}
 //	Test ID: A.4.2
 // 	Test created by: f_name s_name
