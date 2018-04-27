@@ -19,26 +19,30 @@ public class TestCompanyProject {
 
 //	Test ID: B.1.1
 // 	Test created by: Inigo Taylor, Joshua Richardson
-//	Date created: 27/04/2018
+//	Date created: 27/04/18
 	@Before
 	public void beforeDefaultConstructor_B11() {
 		CompanyProject testProject1 = new CompanyProject();
 		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
 	}	
 	@Test
-	public void testDefaultConstructor_b11(){
+	public void testDefaultConstructor_B11(){
 		CompanyProject testProject2 = new CompanyProject();
 		assertEquals(++testProjectCounter,  CompanyEmailSystem.GlobalProjectCounter);
 	}	
-	@After
 	
 //	Test ID: B.1.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
 //	Test ID: B.1.3
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 27/04/18
+	@Test
+	public void testDefaultConstructor_B13() {
+		CompanyProject testProject1 = new CompanyProject();
+		assertEquals("New Project", testProject1.getPTitle());
+	}
 	
 //	Test ID: B.1.4
 // 	Test created by: f_name s_name
