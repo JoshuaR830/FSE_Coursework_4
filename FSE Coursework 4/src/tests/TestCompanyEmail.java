@@ -39,15 +39,27 @@ public class TestCompanyEmail {
 		String eMessage = "no u";
 		assertNotNull(new CompanyEmail(fAddress, tAddress, subLine, eMessage));
 }
-//	Test get method for sender’s address
+
+	//Test get method for sender’s address
+	//	Test ID: A.3.1
+	// 	Test created by: Henry Hunt
+	//	Date created: 27/04/2018
+	@Test
+	public void testFromAddress_1() {
+		CompanyEmail data = new CompanyEmail(
+				"sender@nottingham.ac.uk", null, null, null);
+		assertEquals(data.fromAddress(), "sender@nottingham.ac.uk");
+	}
 	
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+	//	Test ID: A.3.1
+	// 	Test created by: Henry Hunt
+	//	Date created: 27/04/2018
+	@Test
+	public void testFromAddress_2() {
+		CompanyEmail data = new CompanyEmail(
+				null, null, null, null);
+		assertNull(data.fromAddress());
+	}
 	
 	
 	
