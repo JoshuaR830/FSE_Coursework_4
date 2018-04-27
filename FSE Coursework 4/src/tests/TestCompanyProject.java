@@ -7,6 +7,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import emailScripts.CompanyProject;
+
 public class TestCompanyProject {
 
 	@Test
@@ -20,6 +22,11 @@ public class TestCompanyProject {
 //	Test ID: B.1.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	@Test
+	public void b11(){
+		CompanyProject testProject = new CompanyProject();
+		assertEquals(1,1);
+	}
 	
 //	Test ID: B.1.2
 // 	Test created by: f_name s_name
