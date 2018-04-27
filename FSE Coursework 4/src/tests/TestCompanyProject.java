@@ -83,20 +83,14 @@ public class TestCompanyProject {
 //	Test get project id
 
 //	Test ID: B.3.1
-// 	Test created by: Joshua Richardson, Inigo Taylor
+// 	Test created by: Joshua Richardson
 //	Date created: 27/04/18
-	
-	@Before
-	public void beforeb31() {
-		
-	}
 	
 	@Test
 	public void b31() {
 		CompanyProject cp = new CompanyProject();
 		assertEquals(cp.getPID(), CompanyEmailSystem.GlobalProjectCounter);
 
-		
 	}
 	
 	
