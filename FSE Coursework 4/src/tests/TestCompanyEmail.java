@@ -33,10 +33,10 @@ public class TestCompanyEmail {
 //	Date created: 26/04/18 
 @Test
 	public void testMainConstructor_1() {
-		String fAddress ="julian@hi.com";
-		String tAddress ="julian@hi.com";
-		String subLine = "ur mum gaye";
-		String eMessage = "no u";
+		String fAddress ="sender@nottingham.ac.uk";
+		String tAddress ="receiver@nottingham.ac.uk";
+		String subLine = "subject";
+		String eMessage = "msg";
 		assertNotNull(new CompanyEmail(fAddress, tAddress, subLine, eMessage));
 }
 
@@ -65,11 +65,14 @@ public class TestCompanyEmail {
 	
 //	Test get method for receiver’s address 
 
-//	Test ID: L.N.N
+//	Test ID: A.4.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
+	@Test
+	public void testToAddress_1() {
+		
+	}
+//	Test ID: A.4.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
