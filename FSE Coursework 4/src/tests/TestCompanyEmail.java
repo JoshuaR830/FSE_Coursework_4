@@ -51,7 +51,7 @@ public class TestCompanyEmail {
 		assertEquals(data.fromAddress(), "sender@nottingham.ac.uk");
 	}
 	
-	//	Test ID: A.3.1
+	//	Test ID: A.3.2
 	// 	Test created by: Henry Hunt
 	//	Date created: 27/04/2018
 	@Test
@@ -78,27 +78,50 @@ public class TestCompanyEmail {
 	
 	
 	
-//	Test get method for subject line
-
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+	//	Test get method for subject line
 	
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+	//	Test ID: A.5.1
+	// 	Test created by: Henry Hunt
+	//	Date created: 27/04/2018
+	@Test
+	public void testSubjectLine_1() {
+		CompanyEmail data = new CompanyEmail(
+				null, null, "subject", null);
+		assertEquals(data.subjectLine(), "subject");
+	}
+		
+	//	Test ID: A.5.2
+	// 	Test created by: Henry Hunt
+	//	Date created: 27/04/201
+	@Test
+	public void testSubjectLine_2() {
+		CompanyEmail data = new CompanyEmail(
+				null, null, null, null);
+		assertNull(data.subjectLine());
+	}
 	
 	
+	//	Test get method email body
 	
-//	Test get method email body
-
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+	//	Test ID: A.6.1
+	// 	Test created by: Henry Hunt
+	//	Date created: 27/04/2018
+	@Test
+	public void testEmailMessage_1() {
+		CompanyEmail data = new CompanyEmail(
+				null, null, null, "body");
+		assertEquals(data.emailMessage(), "body");
+	}
+		
+	//	Test ID: A.6.2
+	// 	Test created by: Henry Hunt
+	//	Date created: 27/04/2018
+	@Test
+	public void testEmailMessage_2() {
+		CompanyEmail data = new CompanyEmail(
+				null, null, null, null);
+		assertNull(data.emailMessage());
+	}
 	
 	
 	
