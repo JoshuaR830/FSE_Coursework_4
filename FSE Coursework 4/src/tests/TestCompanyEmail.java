@@ -10,10 +10,13 @@ import emailScripts.CompanyEmail;
 
 public class TestCompanyEmail {
 
-	@Test
-	public void test() {
-		//fail("Not yet implemented");
-	}
+	//-------Data----------
+	String fAddress ="sender@nottingham.ac.uk";
+	String tAddress ="receiver@nottingham.ac.uk";
+	String subLine = "subject";
+	String eMessage = "msg";
+	CompanyEmail data = new CompanyEmail();
+	//---------------------
 	
 //	Test default constructor
 	
@@ -33,12 +36,10 @@ public class TestCompanyEmail {
 //	Date created: 26/04/18 
 @Test
 	public void testMainConstructor_1() {
-		String fAddress ="sender@nottingham.ac.uk";
-		String tAddress ="receiver@nottingham.ac.uk";
-		String subLine = "subject";
-		String eMessage = "msg";
 		assertNotNull(new CompanyEmail(fAddress, tAddress, subLine, eMessage));
 }
+
+
 
 	//Test get method for sender’s address
 	//	Test ID: A.3.1
@@ -47,8 +48,8 @@ public class TestCompanyEmail {
 	@Test
 	public void testFromAddress_1() {
 		CompanyEmail data = new CompanyEmail(
-				"sender@nottingham.ac.uk", null, null, null);
-		assertEquals(data.fromAddress(), "sender@nottingham.ac.uk");
+				fAddress, null, null, null);
+		assertEquals(data.fromAddress(), fAddress);
 	}
 	
 	//	Test ID: A.3.2
