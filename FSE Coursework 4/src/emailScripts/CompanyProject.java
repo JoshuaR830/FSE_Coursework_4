@@ -14,6 +14,7 @@ public class CompanyProject {
     public CompanyProject() {
         CompanyEmailSystem.GlobalProjectCounter++;
         PID = CompanyEmailSystem.GlobalProjectCounter;
+        CompanyEmailSystem.GlobalProjectCounter++;
         PTitle = "New Project";
         ProjectContacts = new ArrayList<String>();
         ProjectPhase = 1;
@@ -23,6 +24,7 @@ public class CompanyProject {
     public CompanyProject(String pTitle) {
     	CompanyEmailSystem.GlobalProjectCounter++;
         PID = CompanyEmailSystem.GlobalProjectCounter;
+        CompanyEmailSystem.GlobalProjectCounter++;
         PTitle = pTitle;
         ProjectContacts = new ArrayList<String>();
         ProjectPhase = 1;
