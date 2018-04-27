@@ -32,7 +32,7 @@ public class TestCompanyEmail {
 // 	Test created by: Julian Kubelec
 //	Date created: 26/04/18 
 @Test
-	public void testA21() {
+	public void testMainConstructor_1() {
 		String fAddress ="julian@hi.com";
 		String tAddress ="julian@hi.com";
 		String subLine = "ur mum gaye";
