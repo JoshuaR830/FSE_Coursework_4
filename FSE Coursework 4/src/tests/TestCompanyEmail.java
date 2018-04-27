@@ -15,9 +15,8 @@ public class TestCompanyEmail {
 	
 //	Test default constructor
 	
-//	Test ID: L.N.N
+//	Test ID: A.1.1
 // 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
 	
 //	Test ID: L.N.N
 // 	Test created by: f_name s_name
@@ -27,16 +26,17 @@ public class TestCompanyEmail {
 	
 //	Test main constructor
 	
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-	
-	
+//	Test ID: A.2.1
+// 	Test created by: Julian Kubelec
+//	Date created: 26/04/18 
+@Test
+	public void testA21() {
+		String fAddress ="julian@hi.com";
+		String tAddress ="julian@hi.com";
+		String subLine = "ur mum gaye";
+		String eMessage = "no u";
+		assertNotNull(new CompanyEmail(fAddress, tAddress, subLine, eMessage));
+}
 //	Test get method for sender’s address
 	
 //	Test ID: L.N.N
