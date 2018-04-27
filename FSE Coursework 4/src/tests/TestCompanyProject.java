@@ -22,15 +22,12 @@ public class TestCompanyProject {
 //	Test ID: B.1.1
 // 	Test created by: Inigo Taylor, Joshua Richardson
 //	Date created: 27/04/18
-	@Before
-	public void beforeDefaultConstructor_B11_B12() {
-		CompanyProject testProject1 = new CompanyProject();
-		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
-	}
+
 	
 	@Test
 	public void testDefaultConstructor_B11(){
-		CompanyProject testProject2 = new CompanyProject();
+		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
+		CompanyProject testProject = new CompanyProject();
 		assertEquals(++testProjectCounter,  CompanyEmailSystem.GlobalProjectCounter);
 	}	
 	
@@ -39,8 +36,9 @@ public class TestCompanyProject {
 //	Date created: 27/04/18	
 	@Test
 	public void testDefaultConstructor_B12() {
-		CompanyProject testProject2 = new CompanyProject();
-		assertEquals(++testProjectCounter, testProject2.getPID());
+		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
+		CompanyProject testProject = new CompanyProject();
+		assertEquals(++testProjectCounter, testProject.getPID());
 	}
 	
 //	Test ID: B.1.3
