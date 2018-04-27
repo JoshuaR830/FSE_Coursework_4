@@ -22,6 +22,7 @@ public class TestCompanyProject {
 //	Test ID: B.1.1
 // 	Test created by: Inigo Taylor, Joshua Richardson
 //	Date created: 27/04/18
+
 	
 	@Test
 	public void testDefaultConstructor_B11(){
@@ -98,7 +99,7 @@ public class TestCompanyProject {
 	
 	@Test
 	public void testGetProjectId_b31() {
-		CompanyProject cp = new CompanyProject();
+		cp = new CompanyProject();
 		assertEquals(CompanyEmailSystem.GlobalProjectCounter, cp.getPID());
 	}
 	
@@ -239,17 +240,16 @@ public class TestCompanyProject {
 //	Date created: 27/04/18
 	
 	@Before
-	public void beforeB151() {
+	public void beforeStringOverrideB151() {
 		cp = new CompanyProject();
 		cp.setPTitle("Hello Project");
 	}
 	
 	@Test
-	public void B151(){
+	public void testStringOverrideB151(){
 		assertEquals( "Hello Project" + " [" + cp.getPhaseByName() + "]", cp.toString());
 	}
 		
-	
 }
 
 
