@@ -4,40 +4,49 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import emailScripts.CompanyEmail;
 
 public class TestCompanyEmail {
-
-	//-------Data----------
+	
+	// -------Data----------
 	String fAddress ="sender@nottingham.ac.uk";
 	String tAddress ="receiver@nottingham.ac.uk";
 	String subLine = "subject";
 	String eMessage = "msg";
+	
 	CompanyEmail data = new CompanyEmail();
-	//---------------------
+	// ---------------------
+	
 	
 	//	Test default constructor
-		
+	
 	//	Test ID: A.1.1
-	// 	Test created by: f_name s_name
+	// 	Test created by: Henry Hunt
+	@Before
+	public void beforeDefaultConstructor() {
+		data = new CompanyEmail();
+	}
+	
+	@Test
+	public void testDefaultConstructor() {
+		assertNull(data.fromAddress());
+		assertNull(data.toAddress());
+		assertNull(data.subjectLine());
+		assertNull(data.emailMessage());
+	}
 		
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
-	
-	
-	
-//	Test main constructor
-	
-//	Test ID: A.2.1
-// 	Test created by: Julian Kubelec
-//	Date created: 26/04/18 
-@Test
-	public void testMainConstructor_1() {
-		assertNotNull(new CompanyEmail(fAddress, tAddress, subLine, eMessage));
-}
+	//	Test main constructor
+		
+	//	Test ID: A.2.1
+	// 	Test created by: Julian Kubelec
+	//	Date created: 26/04/18 
+	@Test
+		public void testMainConstructor_1() {
+			assertNotNull(new CompanyEmail(fAddress, tAddress, subLine, eMessage));
+	}
 
 
 
