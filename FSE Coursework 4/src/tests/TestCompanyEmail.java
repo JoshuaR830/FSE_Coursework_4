@@ -6,9 +6,12 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import emailScripts.CompanyEmail;
-
 public class TestCompanyEmail {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
 	
 //	Test default constructor
 	
