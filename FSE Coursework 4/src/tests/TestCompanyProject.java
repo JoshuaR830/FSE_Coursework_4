@@ -253,7 +253,7 @@ public class TestCompanyProject {
 	public void testStringOverrideB151(){
 		CompanyProject cp = new CompanyProject();
 		cp.setPTitle("Hello Project");
-		assertEquals( "Hello Project" + " [" + cp.getPhaseByName() + "]", cp.toString());
+		assertEquals( "Hello Project" + " [" + CompanyEmailSystem.ProjectPhases[cp.getPhaseByID()] + "]", cp.toString());
 	}
 		
 }
