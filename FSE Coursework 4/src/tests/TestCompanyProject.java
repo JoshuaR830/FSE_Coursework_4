@@ -26,7 +26,7 @@ public class TestCompanyProject {
 	public void beforeDefaultConstructor_B11_B12() {
 		CompanyProject testProject1 = new CompanyProject();
 		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
-	}	
+	}
 	
 	@Test
 	public void testDefaultConstructor_B11(){
@@ -101,7 +101,7 @@ public class TestCompanyProject {
 	
 	@Test
 	public void testGetProjectId_b31() {
-		CompanyProject cp = new CompanyProject();
+		cp = new CompanyProject();
 		assertEquals(CompanyEmailSystem.GlobalProjectCounter, cp.getPID());
 	}
 	
