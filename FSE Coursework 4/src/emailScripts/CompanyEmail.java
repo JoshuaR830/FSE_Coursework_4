@@ -35,7 +35,8 @@ public class CompanyEmail {
     }
     
     public String emailMessage() {
-        return emailMessage();
+    	// Bug fix: removed brackets at end
+        return emailMessage;
     }
     
     public void setFrom(String fromAddr) {

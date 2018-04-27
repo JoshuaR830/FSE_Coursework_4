@@ -4,40 +4,49 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import emailScripts.CompanyEmail;
 
 public class TestCompanyEmail {
-
-	//-------Data----------
+	
+	// -------Data----------
 	String fAddress ="sender@nottingham.ac.uk";
 	String tAddress ="receiver@nottingham.ac.uk";
 	String subLine = "subject";
 	String eMessage = "msg";
+	
 	CompanyEmail data = new CompanyEmail();
-	//---------------------
+	// ---------------------
+	
 	
 	//	Test default constructor
-		
+	
 	//	Test ID: A.1.1
-	// 	Test created by: f_name s_name
+	// 	Test created by: Henry Hunt
+	@Before
+	public void beforeDefaultConstructor() {
+		data = new CompanyEmail();
+	}
+	
+	@Test
+	public void testDefaultConstructor() {
+		assertNull(data.fromAddress());
+		assertNull(data.toAddress());
+		assertNull(data.subjectLine());
+		assertNull(data.emailMessage());
+	}
 		
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
-	
-	
-	
-//	Test main constructor
-	
-//	Test ID: A.2.1
-// 	Test created by: Julian Kubelec
-//	Date created: 26/04/18 
-@Test
-	public void testMainConstructor_1() {
-		assertNotNull(new CompanyEmail(fAddress, tAddress, subLine, eMessage));
-}
+	//	Test main constructor
+		
+	//	Test ID: A.2.1
+	// 	Test created by: Julian Kubelec
+	//	Date created: 26/04/18 
+	@Test
+		public void testMainConstructor_1() {
+			assertNotNull(new CompanyEmail(fAddress, tAddress, subLine, eMessage));
+	}
 
 
 
@@ -47,7 +56,7 @@ public class TestCompanyEmail {
 	//	Date created: 27/04/2018
 	@Test
 	public void testFromAddress_1() {
-		CompanyEmail data = new CompanyEmail(
+		data = new CompanyEmail(
 				fAddress, null, null, null);
 		assertEquals(data.fromAddress(), fAddress);
 	}
@@ -57,7 +66,7 @@ public class TestCompanyEmail {
 	//	Date created: 27/04/2018
 	@Test
 	public void testFromAddress_2() {
-		CompanyEmail data = new CompanyEmail(
+		data = new CompanyEmail(
 				null, null, null, null);
 		assertNull(data.fromAddress());
 	}
@@ -71,7 +80,7 @@ public class TestCompanyEmail {
 //	Date created: 26/04/18
 	@Test
 	public void testToAddress_1() {
-		CompanyEmail data = new CompanyEmail(
+		data = new CompanyEmail(
 				null, "receiver@nottingham.ac.uk", null, null);
 		assertEquals(data.toAddress(), "receiver@nottingham.ac.uk");
 	}
@@ -80,7 +89,7 @@ public class TestCompanyEmail {
 //	Date created: 26/04/18
 	@Test
 	public void testToAddress_2() {
-		CompanyEmail data = new CompanyEmail(
+		data = new CompanyEmail(
 				null, null, null, null);
 		assertNull(data.toAddress());
 	}
@@ -93,7 +102,7 @@ public class TestCompanyEmail {
 	//	Date created: 27/04/2018
 	@Test
 	public void testSubjectLine_1() {
-		CompanyEmail data = new CompanyEmail(
+		data = new CompanyEmail(
 				null, null, "subject", null);
 		assertEquals(data.subjectLine(), "subject");
 	}
@@ -103,7 +112,7 @@ public class TestCompanyEmail {
 	//	Date created: 27/04/201
 	@Test
 	public void testSubjectLine_2() {
-		CompanyEmail data = new CompanyEmail(
+		data = new CompanyEmail(
 				null, null, null, null);
 		assertNull(data.subjectLine());
 	}
@@ -116,9 +125,9 @@ public class TestCompanyEmail {
 	//	Date created: 27/04/2018
 	@Test
 	public void testEmailMessage_1() {
-		CompanyEmail data = new CompanyEmail(
-				null, null, null, "body");
-		assertEquals(data.emailMessage(), "body");
+		data = new CompanyEmail(
+				null, null, null, eMessage);
+		assertEquals(data.emailMessage(), eMessage);
 	}
 		
 	//	Test ID: A.6.2
@@ -126,7 +135,7 @@ public class TestCompanyEmail {
 	//	Date created: 27/04/2018
 	@Test
 	public void testEmailMessage_2() {
-		CompanyEmail data = new CompanyEmail(
+		data = new CompanyEmail(
 				null, null, null, null);
 		assertNull(data.emailMessage());
 	}
