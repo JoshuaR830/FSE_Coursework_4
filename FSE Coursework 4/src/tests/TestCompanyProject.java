@@ -4,6 +4,7 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,18 +25,18 @@ public class TestCompanyProject {
 
 //	Test ID: B.1.1
 // 	Test created by: Inigo Taylor, Joshua Richardson
-//	Date created: dd/mm/yy
+//	Date created: 27/04/2018
 	@Before
 	public void beforeB11() {
 		CompanyProject testProject1 = new CompanyProject();
 		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
-	}
-	
+	}	
 	@Test
 	public void b11(){
 		CompanyProject testProject2 = new CompanyProject();
 		assertEquals(++testProjectCounter,  CompanyEmailSystem.GlobalProjectCounter);
-	}
+	}	
+	@After
 	
 //	Test ID: B.1.2
 // 	Test created by: f_name s_name
