@@ -17,6 +17,7 @@ public class TestCompanyEmail {
 	String subLine = "subject";
 	String eMessage = "msg";
 	String newAddrValid = "psyjk4@nottingham.ac.uk";
+	String newAddrInvalid = "psyjk4@nott";
 	
 	CompanyEmail data = new CompanyEmail();
 	// ---------------------
@@ -154,11 +155,13 @@ public class TestCompanyEmail {
 	}
 	
 //	Test ID: A.7.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Julian Kubelec
+//	Date created: 26/04/18
 	@Test
 	public void testSetFrom_2() {
-		
+		data = new CompanyEmail();
+		data.setFrom(newAddrInvalid);
+		assertNotEquals(data.fromAddress(), newAddrInvalid);
 	}
 
 //	Test ID: A.7.3
