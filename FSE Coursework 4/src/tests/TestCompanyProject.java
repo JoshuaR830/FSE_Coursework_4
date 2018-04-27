@@ -22,10 +22,12 @@ public class TestCompanyProject {
 //	Test ID: B.1.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	@Before
+	
 	@Test
 	public void b11(){
 		CompanyProject testProject = new CompanyProject();
-		assertEquals(1,1);
+		assertEquals();
 	}
 	
 //	Test ID: B.1.2
