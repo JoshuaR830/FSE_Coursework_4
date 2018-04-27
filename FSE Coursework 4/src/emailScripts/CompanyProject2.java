@@ -4,6 +4,11 @@ package emailScripts;
 
 import java.util.ArrayList;
 
+/**
+ * Refactored Version of CompanyProject
+ * @author Tim
+ *
+ */
 public class CompanyProject2 {
 	private static final int MAX_TITLE_LENGTH = 10;
 	
