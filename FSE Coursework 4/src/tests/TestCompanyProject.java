@@ -65,15 +65,23 @@ public class TestCompanyProject {
 //	Date created: dd/mm/yy
 	
 	
-//	Test main constructor
-
+//	Test main constructor 
+	
 //	Test ID: B.2.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Tim
+//	Date created: 27/04/18
+	@Test
+	public void testMainConstructor_B21() {
+		CompanyProject testProject = new CompanyProject("Cool Test");
+		assertEquals("Cool Test", testProject.getPTitle());
+	}
 	
 //	Test ID: B.2.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+	
+	
 	
 //	Test ID: B.2.3
 // 	Test created by: f_name s_name
