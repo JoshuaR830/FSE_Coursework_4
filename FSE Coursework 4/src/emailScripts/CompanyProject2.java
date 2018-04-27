@@ -5,6 +5,8 @@ package emailScripts;
 import java.util.ArrayList;
 
 public class CompanyProject2 {
+	private static final int MAX_TITLE_LENGTH = 10;
+	
     private int PID;
     private String PTitle;
     private ArrayList<String> ProjectContacts;
@@ -22,7 +24,7 @@ public class CompanyProject2 {
     private void setupProject(String title) {
     	CompanyEmailSystem.GlobalProjectCounter++;
     	PID = CompanyEmailSystem.GlobalProjectCounter;
-        PTitle = title;
+        this.setPTitle(title);
         ProjectContacts = new ArrayList<String>();
         ProjectPhase = 1;
         ProjectEmails[ProjectPhase] = new ArrayList<CompanyEmail>();
@@ -37,7 +39,7 @@ public class CompanyProject2 {
     }
     
 	public void setPTitle(String pTitle) {
-    	if (pTitle.length() > 10 ) {
+    	if (pTitle.length() > MAX_TITLE_LENGTH ) {
     		PTitle = pTitle;
     	}
     }
@@ -53,13 +55,12 @@ public class CompanyProject2 {
     public void addEmail(CompanyEmail newEmail) throws Exception {
         if (newEmail.isValid()) {
             ProjectEmails[ProjectPhase].add(newEmail);
-            if (ProjectContacts.contains(newEmail.fromAddress())) {
-                //do nothing
-            } else {
-                ProjectContacts.add(newEmail.fromAddress());
+            if (!ProjectContacts.contains(newEmail.fromAddress())) {
+            	ProjectContacts.add(newEmail.fromAddress());
             }
+            
         } else {
-        	throw new Exception();
+        	throw new Exception("Invalid email");
         }
     }
     
