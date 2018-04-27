@@ -15,6 +15,7 @@ import emailScripts.CompanyProject;
 public class TestCompanyProject {
 	int testProjectCounter;
 	
+	CompanyProject cp;
 	
 //	Test default constructor
 
@@ -237,18 +238,20 @@ public class TestCompanyProject {
 //	Test to string override
 
 //	Test ID: B.15.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 27/04/18
 	
-
+	@Before
+	public void beforeB151() {
+		cp = new CompanyProject();
+		cp.setPTitle("Hello Project");
+	}
 	
-//	@Test
-//	public void B151(){
-//		CompanyProject cp = new CompanyProject();
-//		assertEquals( cp.getPTitle() + "[" + cp.getPhaseByName() + "]", cp.toString());
-//	}
-	
-	
+	@Test
+	public void B151(){
+		assertEquals( "Hello Project" + " [" + cp.getPhaseByName() + "]", cp.toString());
+	}
+		
 	
 }
 
