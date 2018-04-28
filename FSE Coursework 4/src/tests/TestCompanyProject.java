@@ -268,6 +268,28 @@ public class TestCompanyProject {
 	public void testGetProjectContacts_B143(){
 		CompanyProject cp = new CompanyProject();
 		ArrayList<String> expected = new ArrayList<String>();
+		String email1 = "psyjk4@nottingham.ac.uk";
+		String email2 = "psytb5@nottingham.ac.uk";
+		String email3 = "psyit@nottingham.ac.uk";
+		
+		expected.add(email1);
+		cp.addContact(email1);
+		expected.add(email2);
+		cp.addContact(email2);
+		expected.add(email3);
+		cp.addContact(email3);
+		
+		assertEquals(cp.getProjectContacts(), expected);
+	}
+	
+//	Test ID: B.14.4
+// 	Test created by: Joshua Richardson
+//	Date created: 28/04/18
+	
+	@Test
+	public void testGetProjectContacts_B144(){
+		CompanyProject cp = new CompanyProject();
+		ArrayList<String> expected = new ArrayList<String>();
 		for(int num = 0; num < 100000; num++) {
 			expected.add("psyjk"+num+"@nottingham.ac.uk");
 			cp.addContact("psyjk"+num+"@nottingham.ac.uk");
