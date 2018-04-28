@@ -4,6 +4,8 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -234,8 +236,15 @@ public class TestCompanyProject {
 //	Test get project contacts
 
 //	Test ID: B.14.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 28/04/18
+	
+	@Test
+	public void testGetProjectContacts_B141(){
+		CompanyProject cp = new CompanyProject();
+		ArrayList<String> expected = new ArrayList<String>();
+		assertEquals(cp.getProjectContacts(), expected);
+	}
 	
 	
 	
