@@ -254,7 +254,7 @@ public class TestCompanyProject {
 	public void testGetProjectContacts_B142(){
 		CompanyProject cp = new CompanyProject();
 		ArrayList<String> expected = new ArrayList<String>();
-		String input = "newCustomer";
+		String input = "psyjk@nottingham.ac.uk";
 		expected.add(input);
 		cp.addContact(input);
 		assertEquals(cp.getProjectContacts(), expected);
@@ -268,10 +268,9 @@ public class TestCompanyProject {
 	public void testGetProjectContacts_B143(){
 		CompanyProject cp = new CompanyProject();
 		ArrayList<String> expected = new ArrayList<String>();
-		String input = "newCustomer";
-		for(int num = 0; num < 1000000; num++) {
-			expected.add(input+num);
-			cp.addContact(input+num);
+		for(int num = 0; num < 100000; num++) {
+			expected.add("psyjk"+num+"@nottingham.ac.uk");
+			cp.addContact("psyjk"+num+"@nottingham.ac.uk");
 		}
 		assertEquals(cp.getProjectContacts(), expected);
 	}
