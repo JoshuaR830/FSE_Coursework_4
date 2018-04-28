@@ -246,7 +246,19 @@ public class TestCompanyProject {
 		assertEquals(cp.getProjectContacts(), expected);
 	}
 	
-
+//	Test ID: B.14.2
+// 	Test created by: Joshua Richardson
+//	Date created: 28/04/18
+	
+	@Test
+	public void testGetProjectContacts_B142(){
+		CompanyProject cp = new CompanyProject();
+		ArrayList<String> expected = new ArrayList<String>();
+		String input = "newCustomer";
+		expected.add(input);
+		cp.addContact(input);
+		assertEquals(cp.getProjectContacts(), expected);
+	}
 	
 	
 	
