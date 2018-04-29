@@ -187,8 +187,18 @@ public class TestCompanyProject {
 //	Test add contact
 
 //	Test ID: B.7.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 29/04/18
+	
+	@Test
+	public void testAddContact_B71() {
+		String testInput = "psyit@nottingham.ac.uk";
+		CompanyProject testProject = new CompanyProject();		
+		testProject.addContact(testInput);
+		int lastItem = testProject.getProjectContacts().size();
+		
+		assertEquals("psyit@nottingham.ac.uk",testProject.getProjectContacts().get(--lastItem));
+	}
 	
 //	Test ID: B.7.2
 // 	Test created by: f_name s_name
