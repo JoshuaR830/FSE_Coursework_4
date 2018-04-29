@@ -52,8 +52,14 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.1.4
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 29/04/18
+	
+	@Test
+	public void testDefaultConstructor_B14() {
+		CompanyProject testProject1 = new CompanyProject();
+		assertNotNull(testProject1.getProjectContacts());
+	}
 	
 //	Test ID: B.1.5
 // 	Test created by: f_name s_name
