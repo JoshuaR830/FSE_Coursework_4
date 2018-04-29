@@ -85,6 +85,8 @@ public class CompanyProject {
         return CompanyEmailSystem.ProjectPhases[ProjectPhase];
     }
     
+    
+    
     public int getPhaseByID() {
         return ProjectPhase;
     }
