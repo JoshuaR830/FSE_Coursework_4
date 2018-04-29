@@ -181,8 +181,8 @@ public class TestCompanyProject {
 	@Test
 	public void testAddEmail_B81(){
 		try {
-			CompanyProject testProject1 = new CompanyProject();
-			testProject1.addEmail(new CompanyEmail());
+			CompanyProject testProject = new CompanyProject();
+			testProject.addEmail(new CompanyEmail());
 			fail("Exception wasn't produced");
 		} catch (Exception e) {
 			assertEquals(e.getClass(), Exception.class);
@@ -240,9 +240,14 @@ public class TestCompanyProject {
 //	Test get phase by id
 
 //	Test ID: B.13.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 29/04/18
 	
+	@Test
+	public void testGetPhaseByID_B13(){
+		CompanyProject testProject = new CompanyProject();
+		assertEquals(1, testProject.getPhaseByID());
+	}
 	
 
 //	Test get project contacts
