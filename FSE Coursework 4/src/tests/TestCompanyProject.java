@@ -47,8 +47,8 @@ public class TestCompanyProject {
 //	Date created: 27/04/18
 	@Test
 	public void testDefaultConstructor_B13() {
-		CompanyProject testProject1 = new CompanyProject();
-		assertEquals("New Project", testProject1.getPTitle());
+		CompanyProject testProject = new CompanyProject();
+		assertEquals("New Project", testProject.getPTitle());
 	}
 	
 //	Test ID: B.1.4
@@ -57,8 +57,9 @@ public class TestCompanyProject {
 	
 	@Test
 	public void testDefaultConstructor_B14() {
-		CompanyProject testProject1 = new CompanyProject();
-		assertNotNull(testProject1.getProjectContacts());
+		CompanyProject testProject = new CompanyProject();
+		assertNotNull(testProject.getProjectContacts());
+		assertTrue(testProject.getProjectContacts().isEmpty());
 	}
 	
 //	Test ID: B.1.5
@@ -67,8 +68,8 @@ public class TestCompanyProject {
 	
 	@Test
 	public void testDefaultConstructor_B15() {
-		CompanyProject testProject1 = new CompanyProject();
-		assertEquals(1, testProject1.getPhaseByID());
+		CompanyProject testProject = new CompanyProject();
+		assertEquals(1, testProject.getPhaseByID());
 	}
 	
 //	Test ID: B.1.6
