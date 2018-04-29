@@ -139,8 +139,8 @@ public class TestCompanyProject {
 //	Test set project title
 
 //	Test ID: B.5.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 29/04/18
 	
 	@Test
 	public void testSetPTitle_B51() {
@@ -150,8 +150,8 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.5.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 29/04/18
 	
 	@Test
 	public void testSetPTitle_B52() {
@@ -161,8 +161,15 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.5.3
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 29/04/18
+	
+	@Test
+	public void testSetPTitle_B53() {
+		CompanyProject testProject = new CompanyProject();
+		testProject.setPTitle("Test");
+		assertNotEquals("Test", testProject.getPTitle());
+	}
 	
 
 //	Test is contact
