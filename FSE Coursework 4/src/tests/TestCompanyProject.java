@@ -22,7 +22,6 @@ public class TestCompanyProject {
 //	Test ID: B.1.1
 // 	Test created by: Inigo Taylor, Joshua Richardson
 //	Date created: 27/04/18
-
 	
 	@Test
 	public void testDefaultConstructor_B11(){
