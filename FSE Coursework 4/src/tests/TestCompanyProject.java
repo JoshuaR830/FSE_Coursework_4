@@ -142,10 +142,27 @@ public class TestCompanyProject {
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
+	@Test
+	public void testSetPTitle_B51() {
+		CompanyProject testProject = new CompanyProject();
+		testProject.setPTitle("Test Project");
+		assertEquals("Test Project", testProject.getPTitle());
+	}
+	
 //	Test ID: B.5.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
+	@Test
+	public void testSetPTitle_B52() {
+		CompanyProject testProject = new CompanyProject();
+		testProject.setPTitle("Test Title");
+		assertEquals("Test Title", testProject.getPTitle());
+	}
+	
+//	Test ID: B.5.3
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
 	
 
 //	Test is contact
