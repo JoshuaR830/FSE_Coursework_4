@@ -3,7 +3,6 @@
 package emailScripts;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class CompanyProject {
 	private static final int MIN_TITLE_LENGTH = 10;
@@ -22,12 +21,14 @@ public class CompanyProject {
     	setupProject(pTitle);
     }
     
+    // Changes made by Inigo Taylor, Tim Bartrum - 30/04/18
+    // Changed the first ProjectPhase to be 0 rather than 1 as array indexing begins at 0
     private void setupProject(String title) {
     	CompanyEmailSystem.GlobalProjectCounter++;
     	PID = CompanyEmailSystem.GlobalProjectCounter;
         this.setPTitle(title);
         ProjectContacts = new ArrayList<String>();
-        ProjectPhase = 1;
+        ProjectPhase = 0;
         ProjectEmails[ProjectPhase] = new ArrayList<CompanyEmail>();
     }
     
@@ -39,7 +40,7 @@ public class CompanyProject {
         return PTitle;
     }
     
-    // Changes made by Inigo Taylor - 29/04/2018
+    // Changes made by Inigo Taylor - 29/04/18
     // Changed condition from > to >= when comparing pTitle.length() with MIN_TITLE_LENGTH
     public void setPTitle(String pTitle) {
     	if (pTitle.length() >= MIN_TITLE_LENGTH ) {

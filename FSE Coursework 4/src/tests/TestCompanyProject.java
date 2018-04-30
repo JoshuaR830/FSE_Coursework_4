@@ -9,9 +9,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import emailScripts.CompanyEmail;
@@ -67,13 +65,13 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.1.5
-// 	Test created by: Inigo Taylor
+// 	Test created by: Inigo Taylor, Tim Bartrum
 //	Date created: 29/04/18
 	
 	@Test
 	public void testDefaultConstructor_B15() {
 		CompanyProject testProject = new CompanyProject();
-		assertEquals(1, testProject.getPhaseByID());
+		assertEquals(0, testProject.getPhaseByID());
 	}
 	
 //	Test ID: B.1.6
@@ -355,13 +353,13 @@ public class TestCompanyProject {
 //	Test get phase by id
 
 //	Test ID: B.13.1
-// 	Test created by: Inigo Taylor
+// 	Test created by: Inigo Taylor, Tim Bartrum
 //	Date created: 29/04/18
 	
 	@Test
-	public void testGetPhaseByID_B13(){
+	public void testGetPhaseByID_B131(){
 		CompanyProject testProject = new CompanyProject();
-		assertEquals(1, testProject.getPhaseByID());
+		assertEquals(0, testProject.getPhaseByID());
 	}
 	
 
