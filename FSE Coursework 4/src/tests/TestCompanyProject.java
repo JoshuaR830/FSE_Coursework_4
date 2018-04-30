@@ -2,12 +2,15 @@
 
 package tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import emailScripts.CompanyEmail;
@@ -84,8 +87,8 @@ public class TestCompanyProject {
 //	Date created: 27/04/18
 	@Test
 	public void testMainConstructor_B21() {
-		CompanyProject testProject = new CompanyProject("Cool Test");
-		assertEquals("Cool Test", testProject.getPTitle());
+		CompanyProject testProject = new CompanyProject("0123456789");
+		assertEquals("0123456789", testProject.getPTitle());
 	}
 	
 //	Test ID: B.2.2
@@ -286,12 +289,14 @@ public class TestCompanyProject {
 	public void testGetEmailForSpecificPhase_B101(){
 		CompanyProject cp = new CompanyProject();
 		try {
-			cp.addEmail(new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Subject","Body"));
-			System.out.println(cp.getEmailsForPhase(1).size());
-		} catch(Exception e) {
-			System.out.println("Oops");
+			// I'm confused - lol doesn't take much
+			cp.addEmail(new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body"));
+			ArrayList[] ProjectEmails = cp.getProjectEmails();
+			System.out.println(cp.getEmailsForPhase(1)); 
+			assertEquals(cp.getEmailsForPhase(1), ProjectEmails[1]);
+		}catch(Exception e) {
+			fail("No exception should be raised for this test");
 		}
-		
 	}
 	
 	
