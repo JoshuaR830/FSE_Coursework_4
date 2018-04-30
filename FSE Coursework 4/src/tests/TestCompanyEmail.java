@@ -23,7 +23,7 @@ public class TestCompanyEmail {
 	// ----------------------
 	
 	
-	//	Test default constructor
+	//	Test: defaultConstructor()
 	
 	//	Test ID: A.1.1
 	// 	Test created by: Henry Hunt
@@ -39,7 +39,7 @@ public class TestCompanyEmail {
 	}
 		
 	
-	//	Test main constructor
+	//	Test: mainConstructor()
 		
 	//	Test ID: A.2.1
 	// 	Test created by: Julian Kubelec
@@ -50,7 +50,7 @@ public class TestCompanyEmail {
 	}
 
 
-	//  Test get method for sender’s address
+	//  Test: fromAddress()
 	
 	//	Test ID: A.3.1
 	// 	Test created by: Henry Hunt
@@ -71,7 +71,7 @@ public class TestCompanyEmail {
 	}
 	
 	
-	//	Test get method for receiver’s address 
+	//	Test: toAddress()
 	
 	//	Test ID: A.4.1
 	// 	Test created by: Julian Kubelec
@@ -92,7 +92,7 @@ public class TestCompanyEmail {
 	}
 	
 	
-	//	Test get method for subject line
+	//	Test: subjectLine()
 	
 	//	Test ID: A.5.1
 	// 	Test created by: Henry Hunt
@@ -113,7 +113,7 @@ public class TestCompanyEmail {
 	}
 	
 	
-	//	Test get method email body
+	//	Test: emailMessage()
 	
 	//	Test ID: A.6.1
 	// 	Test created by: Henry Hunt
@@ -134,7 +134,7 @@ public class TestCompanyEmail {
 	}
 	
 	
-	//	Test set method for sender’s address
+	//	Test: setFrom()
 	
 	//	Test ID: A.7.1
 	// 	Test created by: Julian Kubelec
@@ -173,7 +173,7 @@ public class TestCompanyEmail {
 	}
 	
 	
-	//	Test set method for receiver’s address
+	//	Test: setTo()
 	
 	//	Test ID: L.N.N
 	// 	Test created by: f_name s_name
@@ -184,7 +184,7 @@ public class TestCompanyEmail {
 	//	Date created: dd/mm/yy
 		
 		
-	//	Test set method for subject line
+	//	Test: setSubject()
 	
 	//	Test ID: L.N.N
 	// 	Test created by: f_name s_name
@@ -195,7 +195,7 @@ public class TestCompanyEmail {
 	//	Date created: dd/mm/yy
 		
 		
-	//	Test set method for email body
+	//	Test: setMessage()
 	
 	//	Test ID: L.N.N
 	// 	Test created by: f_name s_name
@@ -206,7 +206,7 @@ public class TestCompanyEmail {
 	//	Date created: dd/mm/yy
 		
 		
-	//	Test function to check validity
+	//	Test: isValid()
 	
 	//	Test ID: L.N.N
 	// 	Test created by: f_name s_name
