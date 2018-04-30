@@ -286,11 +286,9 @@ public class TestCompanyProject {
 	public void testGetEmailForSpecificPhase_B101(){
 		CompanyProject cp = new CompanyProject();
 		try {
-			// I'm confused - lol doesn't take much
 			cp.addEmail(new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Subject","Body"));
-			ArrayList[] ProjectEmails = cp.getProjectEmails();
-			System.out.println(cp.getEmailsForPhase(1)); 
-		}catch(Exception e) {
+			System.out.println(cp.getEmailsForPhase(1).size());
+		} catch(Exception e) {
 			System.out.println("Oops");
 		}
 		
