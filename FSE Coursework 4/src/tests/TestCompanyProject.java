@@ -9,6 +9,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -292,7 +293,6 @@ public class TestCompanyProject {
 			// I'm confused - lol doesn't take much
 			cp.addEmail(new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body"));
 			ArrayList[] ProjectEmails = cp.getProjectEmails();
-			System.out.println(cp.getEmailsForPhase(1)); 
 			assertEquals(cp.getEmailsForPhase(1), ProjectEmails[1]);
 		}catch(Exception e) {
 			System.out.println("Oops");
