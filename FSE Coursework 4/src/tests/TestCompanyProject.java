@@ -2,12 +2,15 @@
 
 package tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import emailScripts.CompanyEmail;
@@ -84,8 +87,8 @@ public class TestCompanyProject {
 //	Date created: 27/04/18
 	@Test
 	public void testMainConstructor_B21() {
-		CompanyProject testProject = new CompanyProject("Cool Test");
-		assertEquals("Cool Test", testProject.getPTitle());
+		CompanyProject testProject = new CompanyProject("0123456789");
+		assertEquals("0123456789", testProject.getPTitle());
 	}
 	
 //	Test ID: B.2.2

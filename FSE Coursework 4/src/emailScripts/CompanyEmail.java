@@ -40,12 +40,17 @@ public class CompanyEmail {
     }
     
     public void setFrom(String fromAddr) {
-    	// Bug fix: added extra condition to validate the address.
-        if (fromAddr.contains("@") && fromAddr.contains(".")) {
-            fromAddress = fromAddr;
-        }
-    }
-    
+    			String [] splitUp = fromAddr.split("@");
+    			
+    			if (splitUp.length == 2) {
+    				if(splitUp[0].split("\\.").length == 1) {
+    					if(splitUp[1].split("\\.").length > 2 && splitUp[0].split("\\.").length < 4) {
+    						fromAddress = fromAddr;
+    					}
+    				}
+    			}	
+    	}	
+    	
     public void setTo(String toAddr) {
         if (toAddr.contains("@")) {
             toAddress = toAddr;
