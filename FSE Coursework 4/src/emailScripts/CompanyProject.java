@@ -5,6 +5,8 @@ package emailScripts;
 import java.util.ArrayList;
 
 public class CompanyProject {
+	private static final int MIN_TITLE_LENGTH = 10;
+	
     private int PID;
     private String PTitle;
     private ArrayList<String> ProjectContacts;
@@ -12,18 +14,17 @@ public class CompanyProject {
     private ArrayList[] ProjectEmails = new ArrayList[6];
     
     public CompanyProject() {
-        CompanyEmailSystem.GlobalProjectCounter++;
-        PID = CompanyEmailSystem.GlobalProjectCounter;
-        PTitle = "New Project";
-        ProjectContacts = new ArrayList<String>();
-        ProjectPhase = 1;
-        ProjectEmails[ProjectPhase] = new ArrayList<CompanyEmail>();
+        setupProject("New Project");
     }
     
     public CompanyProject(String pTitle) {
+    	setupProject(pTitle);
+    }
+    
+    private void setupProject(String title) {
     	CompanyEmailSystem.GlobalProjectCounter++;
-        PID = CompanyEmailSystem.GlobalProjectCounter;
-        PTitle = pTitle;
+    	PID = CompanyEmailSystem.GlobalProjectCounter;
+        this.setPTitle(title);
         ProjectContacts = new ArrayList<String>();
         ProjectPhase = 1;
         ProjectEmails[ProjectPhase] = new ArrayList<CompanyEmail>();
@@ -38,7 +39,7 @@ public class CompanyProject {
     }
     
     public void setPTitle(String pTitle) {
-    	if (pTitle.length() >= 10 ) {
+    	if (pTitle.length() >= MIN_TITLE_LENGTH ) {
     		PTitle = pTitle;
     	}
     }
