@@ -295,7 +295,7 @@ public class TestCompanyProject {
 			ArrayList[] ProjectEmails = cp.getProjectEmails();
 			assertEquals(cp.getEmailsForPhase(1), ProjectEmails[1]);
 		}catch(Exception e) {
-			System.out.println("Oops");
+			fail("No exception should be raised for this test");
 		}
 	}
 	
