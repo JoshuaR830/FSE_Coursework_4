@@ -149,8 +149,13 @@ public class TestCompanyProject {
 //	Test get project title
 
 //	Test ID: B.4.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 30/04/18
+	
+	@Test
+	public void testProjectTitle_b41() {
+		
+	}
 	
 	
 
