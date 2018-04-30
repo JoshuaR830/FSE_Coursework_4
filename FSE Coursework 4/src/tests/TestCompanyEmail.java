@@ -168,11 +168,12 @@ public class TestCompanyEmail {
 	}
 	
 	//	Test ID: A.7.4
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
+	// 	Test created by: Julian Kubelec
+	//	Date created: 30/04/18
 	@Test
 	public void testSetFrom_4() {
-		
+		data = new CompanyEmail();
+		assertNull(data.fromAddress());
 	}
 	
 	
