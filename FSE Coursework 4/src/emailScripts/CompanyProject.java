@@ -112,7 +112,7 @@ public class CompanyProject {
         return ProjectContacts;
     }
     
-    public String toString() {
+    public String toString( {
         return PTitle + " [" + getPhaseByName() + "]";
     }
 }
