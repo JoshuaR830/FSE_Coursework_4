@@ -19,7 +19,7 @@ public class CompanyEmailSystem {
         //////
         GlobalProjectCounter = 0;
         AllProjects = new ArrayList<CompanyProject>();
-        
+         
         //////////////
         //example test data
         //////////////
