@@ -77,7 +77,7 @@ public class CompanyProject {
     // Changes made by Joshua Richardson - 30/04/18
     // Added throws exception
     public ArrayList<CompanyEmail> getEmailsForPhase(int thePhase) throws Exception {
-    	if(thePhase > PID || thePhase < 1) {
+    	if(thePhase > CompanyEmailSystem.ProjectPhases.length || thePhase < 0) {
     		throw new Exception();
     	}
     	

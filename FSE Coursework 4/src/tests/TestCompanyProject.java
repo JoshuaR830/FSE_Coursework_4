@@ -333,14 +333,29 @@ public class TestCompanyProject {
 //	Test next phase 
 
 //	Test ID: B.11.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 30/04/18
+	
+	@Test
+	public void testNextPhase_B111(){
+		CompanyProject testProject = new CompanyProject();
+		for(int i=0; i<6; i++) {
+			assertEquals(true, testProject.nextPhase());
+		}
+	}
 	
 //	Test ID: B.11.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-	
+	@Test
+	public void testNextPhase_B112(){
+		CompanyProject testProject = new CompanyProject();
+		for(int i=0; i<6; i++) {
+			testProject.nextPhase();
+		}
+		assertEquals(false, testProject.nextPhase());
+	}
 
 //	Test get phase by name
 
