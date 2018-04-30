@@ -279,13 +279,54 @@ public class TestCompanyProject {
 //	Test get email for specific phase
 
 //	Test ID: B.10.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 30/04/18
+	
+	@Test
+	public void testGetEmailForSpecificPhase_B101(){
+		CompanyProject cp = new CompanyProject();
+		try {
+			// I'm confused - lol doesn't take much
+			cp.addEmail(new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Subject","Body"));
+			ArrayList[] ProjectEmails = cp.getProjectEmails();
+			System.out.println(cp.getEmailsForPhase(1)); 
+		}catch(Exception e) {
+			System.out.println("Oops");
+		}
+		
+	}
+	
 	
 //	Test ID: B.10.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 30/04/18
 	
+	@Test
+	public void testGetEmailForSpecificPhase_B102() {
+		CompanyProject cp = new CompanyProject();
+		try {
+			cp.getEmailsForPhase(-1);
+		}catch(Exception e) {
+			assertEquals(e.getClass(), Exception.class); // From Inigo
+		}
+	}
+
+	
+	
+//	Test ID: B.10.3
+// 	Test created by: Joshua Richardson
+//	Date created: 30/04/18
+	
+	@Test
+	public void testGetEmailForSpecificPhase_B103() {
+		CompanyProject cp = new CompanyProject();
+		try {
+			cp.getEmailsForPhase(cp.getPID()+1);
+		}catch(Exception e) {
+			assertEquals(e.getClass(), Exception.class); // From Inigo
+		}
+		
+	}
 	
 
 //	Test next phase 

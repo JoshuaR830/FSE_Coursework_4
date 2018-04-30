@@ -68,8 +68,23 @@ public class CompanyProject {
         return ProjectEmails[ProjectPhase];
     }
     
-    public ArrayList<CompanyEmail> getEmailsForPhase(int thePhase) {
-        return ProjectEmails[thePhase];
+    
+    // Changes made by Joshua Richardson - 30/04/18
+    // Added throws exception
+    public ArrayList<CompanyEmail> getEmailsForPhase(int thePhase) throws Exception {
+    	if(thePhase > PID || thePhase < 1) {
+    		throw new Exception();
+    	}
+    	
+    	return ProjectEmails[thePhase];
+    	
+        
+    }
+    
+    // Added by Joshua Richardson - 30/04/18
+    // This function will return the project email array
+    public ArrayList[] getProjectEmails(){
+    	return ProjectEmails;
     }
     
     public boolean nextPhase() {

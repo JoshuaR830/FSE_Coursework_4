@@ -137,7 +137,13 @@ public class CompanyEmailSystem {
         if (phaseToShow==0) {
             projectPhaseEmails = cp.getEmailsForPhase();
         } else if (phaseToShow < cp.getPhaseByID()) {
-            projectPhaseEmails = cp.getEmailsForPhase(phaseToShow);
+        	// This catches an exception if an invalid PID is entered
+        	// Added by Joshua Richardson 30/04/18
+        	try {
+        		projectPhaseEmails = cp.getEmailsForPhase(phaseToShow);
+        	}catch(Exception e) {
+        		System.out.println("Invalid email");
+        	}
         } else {
             System.out.println("Error: Unknown Phase");
         }
@@ -159,7 +165,14 @@ public class CompanyEmailSystem {
     private static void ListPhases() {
         CompanyProject cp = AllProjects.get(currentProjShowing);
         for (int x=0; x < cp.getPhaseByID(); x++ ) {
-            System.out.println((x+1)+") "+cp.getPhaseByName()+" - "+cp.getEmailsForPhase(x).size()+" Emails");
+        	// This catches an exception if an invalid PID is entered
+        	// Added by Joshua 30/04/18
+        	try {
+        		System.out.println((x+1)+") "+cp.getPhaseByName()+" - "+cp.getEmailsForPhase(x).size()+" Emails");
+        	}catch(Exception e) {
+        		System.out.println("Invalid email");
+        	}
+            
         }
     }
     
