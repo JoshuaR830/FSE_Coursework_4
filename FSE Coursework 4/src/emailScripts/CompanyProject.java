@@ -39,6 +39,8 @@ public class CompanyProject {
         return PTitle;
     }
     
+    // Changes made by Inigo Taylor - 29/04/2018
+    // Changed condition from > to >= when comparing pTitle.length() with MIN_TITLE_LENGTH
     public void setPTitle(String pTitle) {
     	if (pTitle.length() >= MIN_TITLE_LENGTH ) {
     		PTitle = pTitle;
@@ -112,7 +114,7 @@ public class CompanyProject {
         return ProjectContacts;
     }
     
-    public String toString( {
+    public String toString() {
         return PTitle + " [" + getPhaseByName() + "]";
     }
 }
