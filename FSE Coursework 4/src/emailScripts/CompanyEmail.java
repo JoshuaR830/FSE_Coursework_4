@@ -39,6 +39,7 @@ public class CompanyEmail {
         return emailMessage;
     }
     
+    //setFrom() and setTo() employ a simple verification method written by Joshua and partially editied by Julian.
     public void setFrom(String fromAddr) {
     			String [] splitUp = fromAddr.split("@");
     			
@@ -52,10 +53,16 @@ public class CompanyEmail {
     	}	
     	
     public void setTo(String toAddr) {
-        if (toAddr.contains("@")) {
-            toAddress = toAddr;
-        }
-    }
+		String [] splitUp = toAddr.split("@");
+		
+		if (splitUp.length == 2) {
+			if(splitUp[0].split("\\.").length == 1) {
+				if(splitUp[1].split("\\.").length > 2 && splitUp[0].split("\\.").length < 4) {
+					toAddress = toAddr;
+				}
+			}
+		}	
+}
     
     public void setSubject(String subLine) {
         subjectLine = subLine;
