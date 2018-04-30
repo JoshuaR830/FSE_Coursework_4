@@ -154,7 +154,21 @@ public class TestCompanyProject {
 	
 	@Test
 	public void testProjectTitle_b41() {
-		
+		CompanyProject cp = new CompanyProject();
+		cp.setPTitle("0123456789");
+		assertEquals("0123456789", cp.getPTitle());
+	}
+	
+//	Test ID: B.4.2
+// 	Test created by: Joshua Richardson
+//	Date created: 30/04/18
+	
+	@Test
+	public void testProjectTitle_b42() {
+		CompanyProject cp = new CompanyProject();
+		cp.setPTitle("0123456789");
+		cp.setPTitle("012345678");
+		assertNotEquals("012345678", cp.getPTitle());
 	}
 	
 	
