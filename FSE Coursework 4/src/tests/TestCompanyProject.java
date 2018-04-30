@@ -295,7 +295,7 @@ public class TestCompanyProject {
 			System.out.println(cp.getEmailsForPhase(1)); 
 			assertEquals(cp.getEmailsForPhase(1), ProjectEmails[1]);
 		}catch(Exception e) {
-			System.out.println("Oops");
+			fail("No exception should be raised for this test");
 		}
 	}
 	
