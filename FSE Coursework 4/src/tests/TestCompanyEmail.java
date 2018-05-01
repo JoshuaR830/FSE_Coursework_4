@@ -44,10 +44,14 @@ public class TestCompanyEmail {
 		
 	//	Test ID: A.2.1
 	// 	Test created by: Julian Kubelec
-	//	Date created: 26/04/18 
+	//	Date created: 1/05/18 
 	@Test
 	public void testMainConstructor_1() {
 		assertNotNull(new CompanyEmail(fAddress, tAddress, subLine, eMessage));
+		assertEquals(data.fromAddress(), fAddress);
+		assertEquals(data.toAddress(), tAddress);
+		assertEquals(data.subjectLine(), subLine);
+		assertEquals(data.emailMessage(), eMessage);
 	}
 
 
@@ -79,8 +83,8 @@ public class TestCompanyEmail {
 	//	Date created: 26/04/18
 	@Test
 	public void testToAddress_1() {
-		data = new CompanyEmail(null, "receiver@nottingham.ac.uk", null, null);
-		assertEquals(data.toAddress(), "receiver@nottingham.ac.uk");
+		data = new CompanyEmail(null, tAddress, null, null);
+		assertEquals(data.toAddress(), tAddress);
 	}
 	
 	//	Test ID: A.4.2
@@ -100,8 +104,8 @@ public class TestCompanyEmail {
 	//	Date created: 27/04/18
 	@Test
 	public void testSubjectLine_1() {
-		data = new CompanyEmail(null, null, "subject", null);
-		assertEquals(data.subjectLine(), "subject");
+		data = new CompanyEmail(null, null, subLine, null);
+		assertEquals(data.subjectLine(), subLine);
 	}
 		
 	//	Test ID: A.5.2
