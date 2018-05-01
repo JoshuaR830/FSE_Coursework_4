@@ -14,6 +14,7 @@ public class CompanyProject {
     private int ProjectPhase;
     private ArrayList[] ProjectEmails = new ArrayList[6];
     
+    // Changes to constructors made by Tim Bartrum - 30/04/18
     public CompanyProject() {
         setupProject("New Project");
     }
