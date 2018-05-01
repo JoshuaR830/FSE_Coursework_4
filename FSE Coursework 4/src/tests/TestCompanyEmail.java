@@ -260,6 +260,9 @@ public class TestCompanyEmail {
 	
 	@Test
 	public void testCheckValidEmail_A121() {
-		
+		CompanyEmail ce = new CompanyEmail();
+		String address = null;
+		ce.checkValidEmail(address);
+		assertFalse(ce.checkValidEmail(address));
 	}
 }
