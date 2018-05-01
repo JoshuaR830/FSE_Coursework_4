@@ -362,6 +362,7 @@ public class TestCompanyProject {
 		CompanyProject cp = new CompanyProject();
 		try {
 			cp.getEmailsForPhase(-1);
+			fail("Exception wasn't produced");
 		}catch(Exception e) {
 			assertEquals(e.getClass(), Exception.class); // From Inigo
 		}
@@ -378,6 +379,7 @@ public class TestCompanyProject {
 		CompanyProject cp = new CompanyProject();
 		try {
 			cp.getEmailsForPhase(cp.getPID()+1);
+			fail("Exception wasn't produced");
 		}catch(Exception e) {
 			assertEquals(e.getClass(), Exception.class); // From Inigo
 		}
