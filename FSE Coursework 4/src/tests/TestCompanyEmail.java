@@ -308,13 +308,36 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	@Test
 	public void isValidTest_2() {
-		
+		data = new CompanyEmail(null, emptyStr, null, null);
+		assertEquals(data.isValid(), false);
 	}
 		
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
+	//	Test ID: A.11.3
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void isValidTest_3() {
+		data = new CompanyEmail(null, null, emptyStr, null);
+		assertEquals(data.isValid(), false);
+	}
 	
+//	Test ID: A.11.4
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void isValidTest_4() {
+		data = new CompanyEmail(null, null, null, emptyStr);
+		assertEquals(data.isValid(), false);
+	}
+
+//	Test ID: A.11.5
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void isValidTest_5() {
+		data = new CompanyEmail(emptyStr, emptyStr, emptyStr, emptyStr);
+		assertEquals(data.isValid(), true);
+	}
 	
 	//	Test: checkValidEmail()
 	
