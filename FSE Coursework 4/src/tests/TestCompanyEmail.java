@@ -15,9 +15,9 @@ public class TestCompanyEmail {
 	String fAddress ="sender@nottingham.ac.uk";
 	String tAddress ="receiver@nottingham.ac.uk";
 	String subLine = "subject";
-	String eMessage = "msg";
-	String newAddrValid = "psyjk4@nottingham.ac.uk";
-	String newAddrInvalid = "psyjk4@nott";
+	String eMessage = "body";
+	String newAddrValid = "sender@nottingham.ac.uk";
+	String newAddrInvalid = "abcdefg";
 	String newAddrLongBoye = "JulianKubelecIsAGoodBoiButLittleDidYouKnowThatIAmActuallyTheDestroyerOfWorldsXxammthorhahajklolThisIsJustATestToSeeIfThisEmailAddressWillWorkOrNotHahahaFunnixdddd@gmail.com";
 	String emptyStr = "";
 	
