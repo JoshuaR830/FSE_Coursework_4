@@ -256,11 +256,59 @@ public class TestCompanyProject {
 // 	Test created by: Joshua Richardson
 //	Date created: 01/05/18
 	@Test
-	public void testGetEmailCurrentPhase_B082() {
-		
+	public void testGetEmailCurrentPhase_B091() {
+		cp = new CompanyProject();
+		System.out.println(cp.getEmailsForPhase());
+		ArrayList array = new ArrayList();
+		assertEquals(array,cp.getEmailsForPhase());
 	}
 	
+//	Test ID: B.9.2
+// 	Test created by: Joshua Richardson
+//	Date created: 01/05/18
+	@Test
+	public void testGetEmailCurrentPhase_B092() {
+		cp = new CompanyProject();
+		
+		CompanyEmail email = new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body");
+		
+		try {
+			cp.addEmail(email);
+		}catch(Exception e) {
+			System.out.println("Invalid email");
+		}
+		
+		System.out.println(cp.getEmailsForPhase());
+		
+		ArrayList array = new ArrayList();
+		array.add(email);
+		
+		assertEquals(array,cp.getEmailsForPhase());
+	}
 	
+//	Test ID: B.9.3
+// 	Test created by: Joshua Richardson
+//	Date created: 01/05/18
+	@Test
+	public void testGetEmailCurrentPhase_B093() {
+		cp = new CompanyProject();
+		
+		ArrayList array = new ArrayList();
+		
+		for(int num = 0; num < 1000; num++) {
+			CompanyEmail email = new CompanyEmail("psyjr"+num+"@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi"+num,"Body");
+			
+			try {
+				cp.addEmail(email);
+			}catch(Exception e) {
+				System.out.println("Invalid email");
+			}
+			
+			array.add(email);
+		}
+		
+		assertEquals(array, cp.getEmailsForPhase());
+	}
 	
 	
 	
