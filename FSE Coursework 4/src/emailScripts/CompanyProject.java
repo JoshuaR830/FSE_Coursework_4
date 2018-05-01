@@ -21,12 +21,14 @@ public class CompanyProject {
     	setupProject(pTitle);
     }
     
+    // Changes made by Inigo Taylor, Tim Bartrum - 30/04/18
+    // Changed the first ProjectPhase to be 0 rather than 1 as array indexing begins at 0
     private void setupProject(String title) {
     	CompanyEmailSystem.GlobalProjectCounter++;
     	PID = CompanyEmailSystem.GlobalProjectCounter;
         this.setPTitle(title);
         ProjectContacts = new ArrayList<String>();
-        ProjectPhase = 1;
+        ProjectPhase = 0;
         ProjectEmails[ProjectPhase] = new ArrayList<CompanyEmail>();
     }
     
@@ -38,6 +40,8 @@ public class CompanyProject {
         return PTitle;
     }
     
+    // Changes made by Inigo Taylor - 29/04/18
+    // Changed condition from > to >= when comparing pTitle.length() with MIN_TITLE_LENGTH
     public void setPTitle(String pTitle) {
     	if (pTitle.length() >= MIN_TITLE_LENGTH ) {
     		PTitle = pTitle;
@@ -55,13 +59,15 @@ public class CompanyProject {
     public void addEmail(CompanyEmail newEmail) throws Exception {
         if (newEmail.isValid()) {
             ProjectEmails[ProjectPhase].add(newEmail);
+//            System.out.println(Arrays.toString(ProjectEmails));
+//            System.out.println(Arrays.toString(ProjectEmails[ProjectPhase].toArray()));
             if (ProjectContacts.contains(newEmail.fromAddress())) {
                 //do nothing
             } else {
                 ProjectContacts.add(newEmail.fromAddress());
             }
         } else {
-        	throw new Exception();
+        	throw new Exception("Invalid email");
         }
     }
     
@@ -73,7 +79,7 @@ public class CompanyProject {
     // Changes made by Joshua Richardson - 30/04/18
     // Added throws exception
     public ArrayList<CompanyEmail> getEmailsForPhase(int thePhase) throws Exception {
-    	if(thePhase > PID || thePhase < 1) {
+    	if(thePhase > CompanyEmailSystem.ProjectPhases.length || thePhase < 0) {
     		throw new Exception();
     	}
     	

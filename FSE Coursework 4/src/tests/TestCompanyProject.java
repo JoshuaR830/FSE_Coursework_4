@@ -2,6 +2,7 @@
 
 package tests;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
@@ -10,7 +11,6 @@ import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import emailScripts.CompanyEmail;
@@ -66,13 +66,13 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.1.5
-// 	Test created by: Inigo Taylor
+// 	Test created by: Inigo Taylor, Tim Bartrum
 //	Date created: 29/04/18
 	
 	@Test
 	public void testDefaultConstructor_B15() {
 		CompanyProject testProject = new CompanyProject();
-		assertEquals(1, testProject.getPhaseByID());
+		assertEquals(0, testProject.getPhaseByID());
 	}
 	
 //	Test ID: B.1.6
@@ -90,47 +90,6 @@ public class TestCompanyProject {
 		CompanyProject testProject = new CompanyProject("0123456789");
 		assertEquals("0123456789", testProject.getPTitle());
 	}
-	
-//	Test ID: B.2.2
-// 	Test created by: Tim Bartrum
-//	Date created: 29/04/18
-	@Test
-	public void testMainConstructor_B22() {
-		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
-		CompanyProject testProject = new CompanyProject("Cool Test2");
-		assertEquals(++testProjectCounter,  CompanyEmailSystem.GlobalProjectCounter);
-	}
-	
-	
-//	Test ID: B.2.3
-// 	Test created by: Tim Bartrum
-//	Date created: 03/04/18
-	@Test
-	public void testMainConstructor_B23() {
-		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
-		CompanyProject testProject = new CompanyProject("Cool Test3");
-		assertEquals(++testProjectCounter, testProject.getPID());
-	}
-	
-	
-//	Test ID: B.2.4
-// 	Test created by: Tim Bartrum
-//	Date created: 29/04/18
-	@Test
-	public void testDefaultConstructor_B24() {
-		CompanyProject testProject = new CompanyProject("Cool Test4");
-		assertNotNull(testProject.getProjectContacts());
-		assertTrue(testProject.getProjectContacts().isEmpty());
-	}
-	
-	
-//	Test ID: B.2.5
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: B.2.6
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
 	
 	
 
@@ -282,21 +241,19 @@ public class TestCompanyProject {
 //	Test get email for specific phase
 
 //	Test ID: B.10.1
-// 	Test created by: Joshua Richardson
-//	Date created: 30/04/18
+// 	Test created by: Joshua Richardson and Inigo taylor
+//	Date created: 31/04/18
 	
 	@Test
 	public void testGetEmailForSpecificPhase_B101(){
 		CompanyProject cp = new CompanyProject();
 		try {
-			// I'm confused - lol doesn't take much
-			cp.addEmail(new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body"));
-			cp.addEmail(new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hello","Body"));
-			ArrayList[] projectEmails = cp.getProjectEmails();
-			System.out.println(projectEmails[1].get(0));
-			System.out.println(projectEmails[1].get(1));
-			System.out.println(cp.getEmailsForPhase(1)); 
+
+			CompanyEmail ce = new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body");
+			cp.addEmail(ce);
+			ArrayList[] projectEmails = cp.getProjectEmails();	
 			assertEquals(cp.getEmailsForPhase(1), projectEmails[1]);
+
 		}catch(Exception e) {
 			fail("No exception should be raised for this test");
 		}
@@ -338,14 +295,29 @@ public class TestCompanyProject {
 //	Test next phase 
 
 //	Test ID: B.11.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 30/04/18
+	
+	@Test
+	public void testNextPhase_B111(){
+		CompanyProject testProject = new CompanyProject();
+		for(int i=0; i<6; i++) {
+			assertEquals(true, testProject.nextPhase());
+		}
+	}
 	
 //	Test ID: B.11.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-	
+	@Test
+	public void testNextPhase_B112(){
+		CompanyProject testProject = new CompanyProject();
+		for(int i=0; i<6; i++) {
+			testProject.nextPhase();
+		}
+		assertEquals(false, testProject.nextPhase());
+	}
 
 //	Test get phase by name
 
@@ -358,13 +330,13 @@ public class TestCompanyProject {
 //	Test get phase by id
 
 //	Test ID: B.13.1
-// 	Test created by: Inigo Taylor
+// 	Test created by: Inigo Taylor, Tim Bartrum
 //	Date created: 29/04/18
 	
 	@Test
-	public void testGetPhaseByID_B13(){
+	public void testGetPhaseByID_B131(){
 		CompanyProject testProject = new CompanyProject();
-		assertEquals(1, testProject.getPhaseByID());
+		assertEquals(0, testProject.getPhaseByID());
 	}
 	
 
