@@ -243,20 +243,9 @@ public class TestCompanyProject {
 //	Test get email for current phase
 
 //	Test ID: B.9.1
-// 	Test created by: Tim Bartrum
-//	Date created: 01/05/18
-	@Test
-	public void testGetEmailForCurrentPhase_B91() {
-		CompanyProject cp = new CompanyProject();
-		try {
-			CompanyEmail ce = new CompanyEmail("test1@gmail.com", "test2@gmail.com", "Hi", "Body");
-			cp.addEmail(ce);
-			ArrayList[] projectEmails = cp.getProjectEmails();
-			assertEquals(cp.getEmailsForPhase(), projectEmails[0]); // relies on starting at phase 0
-		} catch(Exception e) {
-			fail("No exception should be raised for this test");
-		}
-	}
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
 	
 	
 	
@@ -351,28 +340,10 @@ public class TestCompanyProject {
 	@Test
 	public void testGetPhaseByName_B121() {
 		CompanyProject cp = new CompanyProject();
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 6; i++) {
 			cp.setProjectPhase(i);
 			assertEquals(CompanyEmailSystem.ProjectPhases[i], cp.getPhaseByName());
 		}
-	}
-	
-//	Test ID: B.12.2
-// 	Test created by: Joshua Richardson
-//	Date created: 01/05/18
-	
-	@Test
-	public void testGetPhaseByName_B122() {
-		
-	}
-	
-//	Test ID: B.12.3
-// 	Test created by: Joshua Richardson
-//	Date created: 01/05/18
-	
-	@Test
-	public void testGetPhaseByName_B123() {
-		
 	}
 	
 	
