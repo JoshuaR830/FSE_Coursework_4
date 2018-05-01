@@ -326,6 +326,28 @@ public class TestCompanyEmail {
 	public void testCheckValidEmail_A121() {
 		CompanyEmail ce = new CompanyEmail();
 		String address = null;
+		assertFalse(ce.checkValidEmail(address));
+	}
+	
+	//	Test ID: A.12.2
+	// 	Test created by: Joshua Richardson
+	//	Date created: 01/05/18
+	
+	@Test
+	public void testCheckValidEmail_A122() {
+		CompanyEmail ce = new CompanyEmail();
+		String address = "bob@gmail.com";
+		assertTrue(ce.checkValidEmail(address));
+	}
+	
+	//	Test ID: A.12.3
+	// 	Test created by: Joshua Richardson
+	//	Date created: 01/05/18
+	
+	@Test
+	public void testCheckValidEmail_A123() {
+		CompanyEmail ce = new CompanyEmail();
+		String address = "bob@gmail_com";
 		ce.checkValidEmail(address);
 		assertFalse(ce.checkValidEmail(address));
 	}
