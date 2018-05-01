@@ -2,10 +2,7 @@
 
 package tests;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -42,7 +39,10 @@ public class TestCompanyEmailSystem {
 		System.setOut(new PrintStream(outContent));
 	}
 	
-	@Test
+	// I have added timeout as this is the easiest way I can see to test to see if the program is still running
+	// Once X is entered by the user, the program should close and so main should exit its infinite waiting loop
+	// If the test reaches the timeout, this means we are still on the line "CompanyEmailSystem.main(null)"
+	@Test(timeout=2000)
 	public void testMainMethod_C13(){
 		String closeInput = "X";
 		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
@@ -129,6 +129,13 @@ public class TestCompanyEmailSystem {
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
+//	Test ID: C.7.2
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: C.7.3
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
 	
 	
 //	Test change project phase function
@@ -137,7 +144,13 @@ public class TestCompanyEmailSystem {
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 
-
+//	Test ID: C.8.2
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: C.8.3
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
 	
 }
 
