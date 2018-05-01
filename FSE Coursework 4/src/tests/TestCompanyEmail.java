@@ -19,6 +19,7 @@ public class TestCompanyEmail {
 	String newAddrValid = "psyjk4@nottingham.ac.uk";
 	String newAddrInvalid = "psyjk4@nott";
 	String newAddrLongBoye = "JulianKubelecIsAGoodBoiButLittleDidYouKnowThatIAmActuallyTheDestroyerOfWorldsXxammthorhahajklolThisIsJustATestToSeeIfThisEmailAddressWillWorkOrNotHahahaFunnixdddd@gmail.com";
+	String emptyStr = "";
 	
 	CompanyEmail data = new CompanyEmail();
 	// ----------------------
@@ -243,11 +244,20 @@ public class TestCompanyEmail {
 		
 	//	Test: isValid()
 	
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
+	//	Test ID: A.11.1
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void isValidTest_1() {
+		data = new CompanyEmail();
+		assertEquals(data.isValid(), false);
+	}
+	
+	//	Test ID: A.11.2
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void isValidTest_2() {
 		
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
+	}
 }
