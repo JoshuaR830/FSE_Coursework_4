@@ -48,11 +48,11 @@ public class CompanyEmail {
 	      	String [] splitUp = address.split("@");
 	    		
 	    	if (splitUp.length == 2) {
-				if(splitUp[0].split("\\.").length == 1) {
-					if(splitUp[1].split("\\.").length > 2 && splitUp[0].split("\\.").length < 4) {
+
+					if(splitUp[1].split("\\.").length > 1 && splitUp[1].split("\\.").length < 4) {
 						return true;
 					}
-				}
+				
 			}	
 	    	return false;
     	}

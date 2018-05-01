@@ -15,9 +15,9 @@ public class TestCompanyEmail {
 	String fAddress ="sender@nottingham.ac.uk";
 	String tAddress ="receiver@nottingham.ac.uk";
 	String subLine = "subject";
-	String eMessage = "msg";
-	String newAddrValid = "psyjk4@nottingham.ac.uk";
-	String newAddrInvalid = "psyjk4@nott";
+	String eMessage = "body";
+	String newAddrValid = "sender@nottingham.ac.uk";
+	String newAddrInvalid = "abcdefg";
 	String newAddrLongBoye = "JulianKubelecIsAGoodBoiButLittleDidYouKnowThatIAmActuallyTheDestroyerOfWorldsXxammthorhahajklolThisIsJustATestToSeeIfThisEmailAddressWillWorkOrNotHahahaFunnixdddd@gmail.com";
 	String emptyStr = "";
 	
@@ -308,13 +308,36 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	@Test
 	public void isValidTest_2() {
-		
+		data = new CompanyEmail(null, emptyStr, null, null);
+		assertEquals(data.isValid(), false);
 	}
 		
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
+	//	Test ID: A.11.3
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void isValidTest_3() {
+		data = new CompanyEmail(null, null, emptyStr, null);
+		assertEquals(data.isValid(), false);
+	}
 	
+//	Test ID: A.11.4
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void isValidTest_4() {
+		data = new CompanyEmail(null, null, null, emptyStr);
+		assertEquals(data.isValid(), false);
+	}
+
+//	Test ID: A.11.5
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void isValidTest_5() {
+		data = new CompanyEmail(emptyStr, emptyStr, emptyStr, emptyStr);
+		assertEquals(data.isValid(), true);
+	}
 	
 	//	Test: checkValidEmail()
 	
@@ -326,6 +349,28 @@ public class TestCompanyEmail {
 	public void testCheckValidEmail_A121() {
 		CompanyEmail ce = new CompanyEmail();
 		String address = null;
+		assertFalse(ce.checkValidEmail(address));
+	}
+	
+	//	Test ID: A.12.2
+	// 	Test created by: Joshua Richardson
+	//	Date created: 01/05/18
+	
+	@Test
+	public void testCheckValidEmail_A122() {
+		CompanyEmail ce = new CompanyEmail();
+		String address = "bob@gmail.com";
+		assertTrue(ce.checkValidEmail(address));
+	}
+	
+	//	Test ID: A.12.3
+	// 	Test created by: Joshua Richardson
+	//	Date created: 01/05/18
+	
+	@Test
+	public void testCheckValidEmail_A123() {
+		CompanyEmail ce = new CompanyEmail();
+		String address = "bob@gmail_com";
 		ce.checkValidEmail(address);
 		assertFalse(ce.checkValidEmail(address));
 	}
