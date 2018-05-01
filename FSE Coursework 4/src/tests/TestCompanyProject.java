@@ -243,9 +243,20 @@ public class TestCompanyProject {
 //	Test get email for current phase
 
 //	Test ID: B.9.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
+// 	Test created by: Tim Bartrum
+//	Date created: 01/05/18
+	@Test
+	public void testGetEmailForCurrentPhase_B91() {
+		CompanyProject cp = new CompanyProject();
+		try {
+			CompanyEmail ce = new CompanyEmail("test1@gmail.com", "test2@gmail.com", "Hi", "Body");
+			cp.addEmail(ce);
+			ArrayList[] projectEmails = cp.getProjectEmails();
+			assertEquals(cp.getEmailsForPhase(), projectEmails[0]); // relies on starting at phase 0
+		} catch(Exception e) {
+			fail("No exception should be raised for this test");
+		}
+	}
 	
 	
 	
