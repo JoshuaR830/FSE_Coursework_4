@@ -245,8 +245,17 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.8.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Tim Bartrum
+//	Date created: 01/05/18
+	@Test
+	public void testAddEmail_B82() {
+		try {
+			CompanyProject testProject = new CompanyProject();
+			testProject.addEmail(new CompanyEmail("test@gmail.com", "test2@gmail.com", "Hi", "body"));
+		} catch (Exception e) {
+			fail("Exception shouldn't happen here");
+		}
+	}
 	
 	
 
