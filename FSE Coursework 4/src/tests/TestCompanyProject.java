@@ -2,7 +2,6 @@
 
 package tests;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -11,9 +10,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import emailScripts.CompanyEmail;
@@ -364,6 +361,7 @@ public class TestCompanyProject {
 		CompanyProject cp = new CompanyProject();
 		try {
 			cp.getEmailsForPhase(-1);
+			fail("Exception wasn't produced");
 		}catch(Exception e) {
 			assertEquals(e.getClass(), Exception.class); // From Inigo
 		}
@@ -380,6 +378,7 @@ public class TestCompanyProject {
 		CompanyProject cp = new CompanyProject();
 		try {
 			cp.getEmailsForPhase(cp.getPID()+1);
+			fail("Exception wasn't produced");
 		}catch(Exception e) {
 			assertEquals(e.getClass(), Exception.class); // From Inigo
 		}

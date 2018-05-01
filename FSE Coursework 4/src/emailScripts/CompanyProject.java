@@ -3,7 +3,6 @@
 package emailScripts;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class CompanyProject {
 	private static final int MIN_TITLE_LENGTH = 10;
