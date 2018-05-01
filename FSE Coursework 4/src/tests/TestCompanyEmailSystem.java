@@ -57,16 +57,11 @@ public class TestCompanyEmailSystem {
 		System.setOut(null);
 	}
 	
-//	Test  list projects function
+//	Test list projects function
 
 //	Test ID: C.2.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
-	
-//	Test ID: C.2.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
 	
 	
 // 	Test add project function
@@ -109,6 +104,9 @@ public class TestCompanyEmailSystem {
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
+//	Test ID: C.5.2
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
 	
 	
 //	Test list contacts function
@@ -120,7 +118,6 @@ public class TestCompanyEmailSystem {
 //	Test ID: C.6.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
-	
 	
 	
 //	Test add email function
