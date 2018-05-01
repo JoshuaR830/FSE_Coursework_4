@@ -345,8 +345,8 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.11.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 30/04/18
 	
 	@Test
 	public void testNextPhase_B112(){
@@ -363,7 +363,12 @@ public class TestCompanyProject {
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-	
+	@Test
+	public void testGetPhaseByName_B121(){
+		CompanyProject testProject = new CompanyProject("1");
+		System.out.println(testProject.getPhaseByName());
+		assertEquals("Design", testProject.getPhaseByName());
+	}
 
 //	Test get phase by id
 
