@@ -4,13 +4,16 @@ package tests;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import emailScripts.CompanyEmail;
@@ -90,8 +93,6 @@ public class TestCompanyProject {
 		CompanyProject testProject = new CompanyProject("0123456789");
 		assertEquals("0123456789", testProject.getPTitle());
 	}
-	
-	
 
 //	Test get project id
 
@@ -174,13 +175,24 @@ public class TestCompanyProject {
 //	Test is contact
 
 //	Test ID: B.6.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Tim Bartrum
+//	Date created: 01/05/18
+	@Test
+	public void testIsContact_B61() {
+		CompanyProject testProject = new CompanyProject();
+		testProject.addContact("test@gmail.com");
+		assertTrue(testProject.isContact("test@gmail.com"));
+	}
 	
 //	Test ID: B.6.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
+// 	Test created by: Tim Bartrum
+//	Date created: 01/05/18
+	@Test
+	public void testIsContact_B62() {
+		CompanyProject testProject = new CompanyProject();
+		testProject.addContact("test2@gmail.com");
+		assertFalse(testProject.isContact("test@gmail.com"));
+	}
 	
 
 //	Test add contact
