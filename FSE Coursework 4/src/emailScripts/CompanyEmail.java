@@ -42,20 +42,24 @@ public class CompanyEmail {
     // By Joshua Richardson - 01/05/18
     // Added a new function to simplify the check to see if the email address is valid
     public boolean checkValidEmail(String address) {
-    	if(address == null) {
-    		return false;
-    	}else {
+    	boolean emailValidity = false;
+    	if(address != null) {
 	      	String [] splitUp = address.split("@");
-	    		
+	    	
 	    	if (splitUp.length == 2) {
-
+	    			if(splitUp[0].length() <= 64 && splitUp[1].length() <= 255) {
+	    				emailValidity = true;
+	    			}
 					if(splitUp[1].split("\\.").length > 1 && splitUp[1].split("\\.").length < 4) {
-						return true;
-					}
-				
-			}	
-	    	return false;
+						emailValidity = true;
+					}		
+			}
+	    	else {
+	    		emailValidity = false;
+	    	}
     	}
+   
+    	return emailValidity;
     }
     
     
