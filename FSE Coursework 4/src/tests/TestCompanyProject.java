@@ -2,7 +2,6 @@
 
 package tests;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -11,9 +10,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import emailScripts.CompanyEmail;
@@ -222,9 +219,20 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.7.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor, Joshua Richardson
+//	Date created: 01/05/18
 	
+	@Test
+	public void testAddEmail_B072() {
+		CompanyProject testProject = new CompanyProject();
+		CompanyEmail testEmail = new CompanyEmail();
+		try {
+			testProject.addEmail(testEmail);
+			fail("Email was added, this is wrong as the email was invalid");
+		} catch (Exception e) {
+			assertEquals(new ArrayList<String>(), testProject.getProjectContacts());
+		}
+	}
 	
 
 //	Test add email
@@ -245,8 +253,17 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.8.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Tim Bartrum
+//	Date created: 01/05/18
+	@Test
+	public void testAddEmail_B82() {
+		try {
+			CompanyProject testProject = new CompanyProject();
+			testProject.addEmail(new CompanyEmail("test@gmail.com", "test2@gmail.com", "Hi", "body"));
+		} catch (Exception e) {
+			fail("Exception shouldn't happen here");
+		}
+	}
 	
 	
 
@@ -344,6 +361,7 @@ public class TestCompanyProject {
 		CompanyProject cp = new CompanyProject();
 		try {
 			cp.getEmailsForPhase(-1);
+			fail("Exception wasn't produced");
 		}catch(Exception e) {
 			assertEquals(e.getClass(), Exception.class); // From Inigo
 		}
@@ -360,6 +378,7 @@ public class TestCompanyProject {
 		CompanyProject cp = new CompanyProject();
 		try {
 			cp.getEmailsForPhase(cp.getPID()+1);
+			fail("Exception wasn't produced");
 		}catch(Exception e) {
 			assertEquals(e.getClass(), Exception.class); // From Inigo
 		}
@@ -382,8 +401,8 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.11.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 30/04/18
 	
 	@Test
 	public void testNextPhase_B112(){
@@ -408,8 +427,6 @@ public class TestCompanyProject {
 			assertEquals(CompanyEmailSystem.ProjectPhases[i], cp.getPhaseByName());
 		}
 	}
-	
-	
 
 //	Test get phase by id
 

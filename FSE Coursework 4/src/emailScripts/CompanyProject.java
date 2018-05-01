@@ -3,7 +3,6 @@
 package emailScripts;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class CompanyProject {
 	private static final int MIN_TITLE_LENGTH = 10;
@@ -58,15 +57,15 @@ public class CompanyProject {
         ProjectContacts.add(emailAddress);
     }
     
+    // Changes made by Joshua Richardson, Inigo Taylor - 01/05/2018
+    // Changed the address that is added to ProjectContacts from fromAddress to toAddress
     public void addEmail(CompanyEmail newEmail) throws Exception {
         if (newEmail.isValid()) {
             ProjectEmails[ProjectPhase].add(newEmail);
-//            System.out.println(Arrays.toString(ProjectEmails));
-//            System.out.println(Arrays.toString(ProjectEmails[ProjectPhase].toArray()));
-            if (ProjectContacts.contains(newEmail.fromAddress())) {
+            if (ProjectContacts.contains(newEmail.toAddress())) {
                 //do nothing
             } else {
-                ProjectContacts.add(newEmail.fromAddress());
+                ProjectContacts.add(newEmail.toAddress());
             }
         } else {
         	throw new Exception("Invalid email");

@@ -44,10 +44,14 @@ public class TestCompanyEmail {
 		
 	//	Test ID: A.2.1
 	// 	Test created by: Julian Kubelec
-	//	Date created: 26/04/18 
+	//	Date created: 1/05/18 
 	@Test
 	public void testMainConstructor_1() {
-		assertNotNull(new CompanyEmail(fAddress, tAddress, subLine, eMessage));
+		data =new CompanyEmail(fAddress, tAddress, subLine, eMessage);
+		assertEquals(data.fromAddress(), fAddress);
+		assertEquals(data.toAddress(), tAddress);
+		assertEquals(data.subjectLine(), subLine);
+		assertEquals(data.emailMessage(), eMessage);
 	}
 
 
@@ -79,8 +83,8 @@ public class TestCompanyEmail {
 	//	Date created: 26/04/18
 	@Test
 	public void testToAddress_1() {
-		data = new CompanyEmail(null, "receiver@nottingham.ac.uk", null, null);
-		assertEquals(data.toAddress(), "receiver@nottingham.ac.uk");
+		data = new CompanyEmail(null, tAddress, null, null);
+		assertEquals(data.toAddress(), tAddress);
 	}
 	
 	//	Test ID: A.4.2
@@ -100,8 +104,8 @@ public class TestCompanyEmail {
 	//	Date created: 27/04/18
 	@Test
 	public void testSubjectLine_1() {
-		data = new CompanyEmail(null, null, "subject", null);
-		assertEquals(data.subjectLine(), "subject");
+		data = new CompanyEmail(null, null, subLine, null);
+		assertEquals(data.subjectLine(), subLine);
 	}
 		
 	//	Test ID: A.5.2
@@ -179,14 +183,41 @@ public class TestCompanyEmail {
 	
 	//	Test: setTo()
 	
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
-		
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
-		
+	//	Test ID: A.8.1
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void testSetTo_1() {
+		data = new CompanyEmail();
+		data.setTo(newAddrValid);
+		assertEquals(data.toAddress(), newAddrValid);
+	}	
+	//	Test ID: A.8.2
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void testSetTo_2() {
+		data = new CompanyEmail();
+		data.setTo(newAddrInvalid);
+		assertNull(data.toAddress());
+	}
+//	Test ID: A.8.3
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void testSetTo_3() {
+		data = new CompanyEmail();
+		data.setTo(newAddrLongBoye);
+		assertNull(data.toAddress());
+	}	
+//	Test ID: A.7.4
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void testSetTo_4() {
+		data = new CompanyEmail();
+		assertNull(data.fromAddress());
+	}
 		
 	//	Test: setSubject()
 	
@@ -269,4 +300,16 @@ public class TestCompanyEmail {
 	//	Test ID: L.N.N
 	// 	Test created by: f_name s_name
 	//	Date created: dd/mm/yy
+	
+	
+	//	Test: checkValidEmail()
+	
+	//	Test ID: A.12.1
+	// 	Test created by: Joshua Richardson
+	//	Date created: 01/05/18
+	
+	@Test
+	public void testCheckValidEmail_A121() {
+		
+	}
 }

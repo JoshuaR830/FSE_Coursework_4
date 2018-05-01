@@ -39,29 +39,33 @@ public class CompanyEmail {
         return emailMessage;
     }
     
-    //setFrom() and setTo() employ a simple verification method written by Joshua and partially editied by Julian.
-    public void setFrom(String fromAddr) {
-    			String [] splitUp = fromAddr.split("@");
-    			
-    			if (splitUp.length == 2) {
-    				if(splitUp[0].split("\\.").length == 1) {
-    					if(splitUp[1].split("\\.").length > 2 && splitUp[0].split("\\.").length < 4) {
-    						fromAddress = fromAddr;
-    					}
-    				}
-    			}	
-    	}	
-    	
-    public void setTo(String toAddr) {
-		String [] splitUp = toAddr.split("@");
-		
-		if (splitUp.length == 2) {
+    // By Joshua Richardson - 01/05/18
+    // Added a new function to simplify the check to see if the email address is valid
+    public boolean checkValidEmail(String address) {
+      	String [] splitUp = address.split("@");
+    		
+    	if (splitUp.length == 2) {
 			if(splitUp[0].split("\\.").length == 1) {
 				if(splitUp[1].split("\\.").length > 2 && splitUp[0].split("\\.").length < 4) {
-					toAddress = toAddr;
+					return true;
 				}
 			}
 		}	
+    	return false;
+    }
+    
+    
+    //setFrom() and setTo() employ a simple verification method written by Joshua and partially editied by Julian.
+    public void setFrom(String fromAddr) {
+    			if(checkValidEmail(fromAddr)) {
+    				fromAddress = fromAddr;
+    			}
+    	}	
+    	
+    public void setTo(String toAddr) {
+    	if(checkValidEmail(toAddr)) {
+			fromAddress = toAddr;
+		}
 }
     
     public void setSubject(String subLine) {
