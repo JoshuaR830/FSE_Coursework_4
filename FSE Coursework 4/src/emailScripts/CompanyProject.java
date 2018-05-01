@@ -104,6 +104,12 @@ public class CompanyProject {
         }
     }
     
+    // Added by Joshua Richardson - 01/05/18
+    // This function will allow you to set the current phase
+    public void setProjectPhase(int phase) {
+        ProjectPhase = phase;
+    }
+    
     public String getPhaseByName() {
         return CompanyEmailSystem.ProjectPhases[ProjectPhase];
     }

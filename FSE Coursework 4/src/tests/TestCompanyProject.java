@@ -339,7 +339,11 @@ public class TestCompanyProject {
 	
 	@Test
 	public void testGetPhaseByName_B121() {
-		
+		CompanyProject cp = new CompanyProject();
+		for (int i = 0; i < 7; i++) {
+			cp.setProjectPhase(i);
+			assertEquals(CompanyEmailSystem.ProjectPhases[i], cp.getPhaseByName());
+		}
 	}
 	
 //	Test ID: B.12.2
