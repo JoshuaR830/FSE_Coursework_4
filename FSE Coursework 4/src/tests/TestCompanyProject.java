@@ -248,6 +248,7 @@ public class TestCompanyProject {
 			testProject.addEmail(new CompanyEmail());
 			fail("Exception wasn't produced");
 		} catch (Exception e) {
+			System.out.println(e.getClass());
 			assertEquals(e.getClass(), Exception.class);
 		}
 	}
