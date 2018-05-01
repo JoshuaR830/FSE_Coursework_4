@@ -76,7 +76,7 @@ public class CompanyEmail {
         emailMessage = eMessage;
     }
     
-    public boolean isValid() {
+	public boolean isValid() {
         boolean isComplete = true;
         if (fromAddress == null) isComplete = false;
         if (toAddress == null) isComplete = false;
