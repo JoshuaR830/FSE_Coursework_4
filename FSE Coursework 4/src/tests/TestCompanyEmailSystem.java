@@ -2,32 +2,60 @@
 
 package tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
+import emailScripts.CompanyEmailSystem;
 
 public class TestCompanyEmailSystem {
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 
 //	Test main method
 
 //	Test ID: C.1.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
-	
+
 //	Test ID: C.1.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
 //	Test ID: C.1.3
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 01/05/18
 	
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	
+	@Before
+	public void setUpStreams() {
+		System.setOut(new PrintStream(outContent));
+	}
+	
+	@Test
+	public void testMainMethod_C13(){
+		String closeInput = "X";
+		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
+		System.setIn(inStream);
+		
+		CompanyEmailSystem.main(null);
+		assertTrue(outContent.toString().contains("Goodbye!"));
+	}
+
+	@After
+	public void cleanUpStreams() {
+		System.setOut(null);
+	}
 	
 //	Test  list projects function
 
