@@ -90,47 +90,6 @@ public class TestCompanyProject {
 		assertEquals("0123456789", testProject.getPTitle());
 	}
 	
-//	Test ID: B.2.2
-// 	Test created by: Tim Bartrum
-//	Date created: 29/04/18
-	@Test
-	public void testMainConstructor_B22() {
-		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
-		CompanyProject testProject = new CompanyProject("Cool Test2");
-		assertEquals(++testProjectCounter,  CompanyEmailSystem.GlobalProjectCounter);
-	}
-	
-	
-//	Test ID: B.2.3
-// 	Test created by: Tim Bartrum
-//	Date created: 03/04/18
-	@Test
-	public void testMainConstructor_B23() {
-		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
-		CompanyProject testProject = new CompanyProject("Cool Test3");
-		assertEquals(++testProjectCounter, testProject.getPID());
-	}
-	
-	
-//	Test ID: B.2.4
-// 	Test created by: Tim Bartrum
-//	Date created: 29/04/18
-	@Test
-	public void testDefaultConstructor_B24() {
-		CompanyProject testProject = new CompanyProject("Cool Test4");
-		assertNotNull(testProject.getProjectContacts());
-		assertTrue(testProject.getProjectContacts().isEmpty());
-	}
-	
-	
-//	Test ID: B.2.5
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: B.2.6
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
 	
 
 //	Test get project id
