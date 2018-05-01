@@ -265,7 +265,7 @@ public class TestCompanyProject {
 
 //	Test ID: B.10.1
 // 	Test created by: Joshua Richardson and Inigo Taylor
-//	Date created: 31/04/18
+//	Date created: 01/05/18
 	
 	@Test
 	public void testGetEmailForSpecificPhase_B101(){
@@ -345,8 +345,31 @@ public class TestCompanyProject {
 //	Test get phase by name
 
 //	Test ID: B.12.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 01/05/18
+	
+	@Test
+	public void testGetPhaseByName_B121() {
+		
+	}
+	
+//	Test ID: B.12.2
+// 	Test created by: Joshua Richardson
+//	Date created: 01/05/18
+	
+	@Test
+	public void testGetPhaseByName_B122() {
+		
+	}
+	
+//	Test ID: B.12.3
+// 	Test created by: Joshua Richardson
+//	Date created: 01/05/18
+	
+	@Test
+	public void testGetPhaseByName_B123() {
+		
+	}
 	
 	
 
