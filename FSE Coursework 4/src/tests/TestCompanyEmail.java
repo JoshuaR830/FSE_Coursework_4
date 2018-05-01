@@ -47,7 +47,7 @@ public class TestCompanyEmail {
 	//	Date created: 1/05/18 
 	@Test
 	public void testMainConstructor_1() {
-		assertNotNull(new CompanyEmail(fAddress, tAddress, subLine, eMessage));
+		data =new CompanyEmail(fAddress, tAddress, subLine, eMessage);
 		assertEquals(data.fromAddress(), fAddress);
 		assertEquals(data.toAddress(), tAddress);
 		assertEquals(data.subjectLine(), subLine);
