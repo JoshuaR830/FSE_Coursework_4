@@ -179,14 +179,41 @@ public class TestCompanyEmail {
 	
 	//	Test: setTo()
 	
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
-		
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
-		
+	//	Test ID: A.8.1
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void testSetTo_1() {
+		data = new CompanyEmail();
+		data.setTo(newAddrValid);
+		assertEquals(data.toAddress(), newAddrValid);
+	}	
+	//	Test ID: A.8.2
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void testSetTo_2() {
+		data = new CompanyEmail();
+		data.setTo(newAddrInvalid);
+		assertNull(data.toAddress());
+	}
+//	Test ID: A.8.3
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void testSetTo_3() {
+		data = new CompanyEmail();
+		data.setTo(newAddrLongBoye);
+		assertNull(data.toAddress());
+	}	
+//	Test ID: A.7.4
+	// 	Test created by: Julian Kubelec
+	//	Date created: 01/05/18
+	@Test
+	public void testSetTo_4() {
+		data = new CompanyEmail();
+		assertNull(data.fromAddress());
+	}
 		
 	//	Test: setSubject()
 	
