@@ -81,8 +81,17 @@ public class TestCompanyProject {
 //	Test ID: B.1.6
 // 	Test created by: Joshua Richardson
 //	Date created: 01/05/18
+	@Test
 	public void testDefaultConstructor_B16() {
-		
+		cp = new CompanyProject();
+		ArrayList empty = new ArrayList();
+		try {
+			System.out.println(cp.getEmailsForPhase(0));
+			System.out.println(empty);
+			assertEquals(cp.getEmailsForPhase(0), empty);
+		} catch (Exception e) {
+			System.out.println("Out of range");
+		}
 	}
 	
 	
