@@ -400,15 +400,17 @@ public class TestCompanyProject {
 //	Test ID: B.11.1
 // 	Test created by: Inigo Taylor
 //	Date created: 30/04/18
-	
+		
 	@Test
 	public void testNextPhase_B111(){
 		CompanyProject testProject = new CompanyProject();
-		for(int i=0; i<6; i++) {
-			assertEquals(true, testProject.nextPhase());
+		for(int i=0; i<5; i++) {
+			testProject.nextPhase();
 		}
+		assertEquals(false, testProject.nextPhase());
 	}
-	
+
+
 //	Test ID: B.11.2
 // 	Test created by: Inigo Taylor
 //	Date created: 30/04/18
@@ -416,10 +418,9 @@ public class TestCompanyProject {
 	@Test
 	public void testNextPhase_B112(){
 		CompanyProject testProject = new CompanyProject();
-		for(int i=0; i<6; i++) {
-			testProject.nextPhase();
+		for(int i=0; i<5; i++) {
+			assertEquals(true, testProject.nextPhase());
 		}
-		assertEquals(false, testProject.nextPhase());
 	}
 
 //	Test get phase by name

@@ -63,7 +63,8 @@ public class CompanyProject {
     public void addEmail(CompanyEmail newEmail) throws Exception {
     	boolean validFrom = newEmail.checkValidEmail(newEmail.fromAddress());
     	boolean validTo = newEmail.checkValidEmail(newEmail.toAddress());
-
+    	// Changes made by Inigo Taylor - 01/05/18
+    	// Added an if statement to check whether the email is valid before adding it (and to give an error if it isn't)
         if (newEmail.isValid() && validFrom && validTo) {
             ProjectEmails[ProjectPhase].add(newEmail);
             if (ProjectContacts.contains(newEmail.toAddress())) {
@@ -84,7 +85,8 @@ public class CompanyProject {
     // Changes made by Joshua Richardson - 30/04/18
     // Added throws exception
     public ArrayList<CompanyEmail> getEmailsForPhase(int thePhase) throws Exception {
-    	if(thePhase > CompanyEmailSystem.ProjectPhases.length || thePhase < 0) {
+    	if(thePhase >= CompanyEmailSystem.ProjectPhases.length -1 || thePhase < 0) {
+    		System.out.println(CompanyEmailSystem.ProjectPhases.length);
     		throw new Exception();
     	}
     	
@@ -99,11 +101,13 @@ public class CompanyProject {
     	return ProjectEmails;
     }
     
+    // Changes made by Inigo Taylor 01/05/18
+    // Moved ProjectPhase++ from outside the if to inside the if so the phase only changes when not at the final stage
     public boolean nextPhase() {
-        ProjectPhase++;
-        if (ProjectPhase > CompanyEmailSystem.ProjectPhases.length) {
+        if (ProjectPhase >= CompanyEmailSystem.ProjectPhases.length-1) {
             return false;
         } else {
+            ProjectPhase++;
             return true;
         }
     }
