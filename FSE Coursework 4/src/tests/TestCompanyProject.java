@@ -79,8 +79,11 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.1.6
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 01/05/18
+	public void testDefaultConstructor_B16() {
+		
+	}
 	
 	
 //	Test main constructor 
