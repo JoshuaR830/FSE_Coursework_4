@@ -15,11 +15,15 @@ public class TestCompanyEmailSystem {
 
 //	Test main method
 
-//	Test ID: L.N.N
+//	Test ID: C.1.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: C.1.2
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+	
+//	Test ID: C.1.3
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -27,59 +31,55 @@ public class TestCompanyEmailSystem {
 	
 //	Test  list projects function
 
-//	Test ID: L.N.N
+//	Test ID: C.2.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: C.2.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
 	
 	
-// 	Test list contacts function
+// 	Test add project function
 
-//	Test ID: L.N.N
+//	Test ID: C.3.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: C.3.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-	
-	
-//	Test add project function
-	
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
+//	Test ID: C.3.3
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
 	
 	
-//	Test change project phase function
+//	Test list emails function
+	
+//	Test ID: C.4.1
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+		
+	
+	
+//	Test list phases function function
 
-//	Test ID: L.N.N
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
-//	Test ID: L.N.N
+//	Test ID: C.5.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
 	
 	
-//	Test list phases function
+//	Test list contacts function
 	
-//	Test ID: L.N.N
+//	Test ID: C.6.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+//	Test ID: C.6.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
@@ -87,11 +87,15 @@ public class TestCompanyEmailSystem {
 	
 //	Test add email function
 	
-//	Test ID: L.N.N
+//	Test ID: C.7.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
-//	Test ID: L.N.N
+	
+	
+//	Test change project phase function
+	
+//	Test ID: C.8.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 
