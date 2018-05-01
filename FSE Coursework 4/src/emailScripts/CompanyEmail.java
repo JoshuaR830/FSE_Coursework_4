@@ -61,12 +61,18 @@ public class CompanyEmail {
 		if(checkValidEmail(fromAddr)) {
 			fromAddress = fromAddr;
 		}
+		else {
+			fromAddress = null;
+		}
     }	
     	
     public void setTo(String toAddr) {
     	if(checkValidEmail(toAddr)) {
 			toAddress = toAddr;
 		}
+    	else {
+    		toAddress = null;
+    	}
     }
     
     public void setSubject(String subLine) {

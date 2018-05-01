@@ -18,7 +18,7 @@ public class TestCompanyEmail {
 	String eMessage = "body";
 	String newAddrValid = "sender@nottingham.ac.uk";
 	String newAddrInvalid = "abcdefg";
-	String newAddrLongBoye = "JulianKubelecIsAGoodBoiButLittleDidYouKnowThatIAmActuallyTheDestroyerOfWorldsXxammthorhahajklolThisIsJustATestToSeeIfThisEmailAddressWillWorkOrNotHahahaFunnixdddd@gmail.com";
+	String newAddrLong = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccccccccccccccccccccccc@gmail.com";
 	String emptyStr = "";
 	
 	CompanyEmail data = new CompanyEmail();
@@ -168,7 +168,7 @@ public class TestCompanyEmail {
 	@Test
 	public void testSetFrom_3() {
 		data = new CompanyEmail();
-		data.setFrom(newAddrLongBoye);
+		data.setFrom(newAddrLong);
 		assertNull(data.fromAddress());
 	}
 	
@@ -177,7 +177,8 @@ public class TestCompanyEmail {
 	//	Date created: 30/04/18
 	@Test
 	public void testSetFrom_4() {
-		data = new CompanyEmail();
+		data = new CompanyEmail(fAddress, tAddress, subLine, eMessage);
+		data.setFrom(null);
 		assertNull(data.fromAddress());
 	}
 	
@@ -208,7 +209,7 @@ public class TestCompanyEmail {
 	@Test
 	public void testSetTo_3() {
 		data = new CompanyEmail();
-		data.setTo(newAddrLongBoye);
+		data.setTo(newAddrLong);
 		assertNull(data.toAddress());
 	}	
 //	Test ID: A.7.4
@@ -216,8 +217,9 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	@Test
 	public void testSetTo_4() {
-		data = new CompanyEmail();
-		assertNull(data.fromAddress());
+		data = new CompanyEmail(fAddress, tAddress, subLine, eMessage);
+		data.setTo(null);
+		assertNull(data.toAddress());
 	}
 		
 	//	Test: setSubject()
@@ -228,9 +230,9 @@ public class TestCompanyEmail {
 	@Test
 	public void testSetSubject_1() {
 		data = new CompanyEmail();
-		data.setSubject("this is the subject");
+		data.setSubject(subLine);
 		
-		assertEquals(data.subjectLine(), "this is the subject");
+		assertEquals(data.subjectLine(), subLine);
 	}
 	
 	//	Test ID: A.9.2
@@ -239,9 +241,9 @@ public class TestCompanyEmail {
 	@Test
 	public void testSetSubject_2() {
 		data = new CompanyEmail();
-		data.setSubject("");
+		data.setSubject(emptyStr);
 		
-		assertEquals(data.subjectLine(), "");
+		assertEquals(data.subjectLine(), emptyStr);
 	}
 	
 	//	Test ID: A.9.3
@@ -264,9 +266,9 @@ public class TestCompanyEmail {
 	@Test
 	public void testSetMessage_1() {
 		data = new CompanyEmail();
-		data.setMessage("this is the body");
+		data.setMessage(eMessage);
 		
-		assertEquals(data.emailMessage(), "this is the body");
+		assertEquals(data.emailMessage(), eMessage);
 	}
 	
 	//	Test ID: A.10.2
@@ -277,7 +279,7 @@ public class TestCompanyEmail {
 		data = new CompanyEmail();
 		data.setMessage("");
 		
-		assertEquals(data.emailMessage(), "");
+		assertEquals(data.emailMessage(), emptyStr);
 	}
 	
 	//	Test ID: A.10.3
@@ -285,7 +287,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	@Test
 	public void testSetMessage_3() {
-		data = new CompanyEmail();
+		data = new CompanyEmail(fAddress, tAddress, subLine, eMessage);
 		data.setMessage(null);
 		
 		assertNull(data.emailMessage());
@@ -389,7 +391,7 @@ public class TestCompanyEmail {
 	@Test
 	public void testCheckValidEmail_A125() {
 		CompanyEmail ce = new CompanyEmail();
-		assertFalse(ce.checkValidEmail(newAddrLongBoye));
+		assertFalse(ce.checkValidEmail(newAddrLong));
 	}
 	
 }
