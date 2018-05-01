@@ -222,9 +222,20 @@ public class TestCompanyProject {
 	}
 	
 //	Test ID: B.7.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor, Joshua Richardson
+//	Date created: 01/05/18
 	
+	@Test
+	public void testAddEmail_B072() {
+		CompanyProject testProject = new CompanyProject();
+		CompanyEmail testEmail = new CompanyEmail();
+		try {
+			testProject.addEmail(testEmail);
+			fail("Email was added, this is wrong as the email was invalid");
+		} catch (Exception e) {
+			assertEquals(new ArrayList<String>(), testProject.getProjectContacts());
+		}
+	}
 	
 
 //	Test add email
@@ -407,13 +418,6 @@ public class TestCompanyProject {
 			cp.setProjectPhase(i);
 			assertEquals(CompanyEmailSystem.ProjectPhases[i], cp.getPhaseByName());
 		}
-	}
-	
-	@Test
-	public void testGetPhaseByName_B121(){
-		CompanyProject testProject = new CompanyProject("1");
-		System.out.println(testProject.getPhaseByName());
-		assertEquals("Design", testProject.getPhaseByName());
 	}
 
 //	Test get phase by id
