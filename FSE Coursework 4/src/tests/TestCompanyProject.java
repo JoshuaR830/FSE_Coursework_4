@@ -291,9 +291,12 @@ public class TestCompanyProject {
 		try {
 			// I'm confused - lol doesn't take much
 			cp.addEmail(new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body"));
-			ArrayList[] ProjectEmails = cp.getProjectEmails();
+			cp.addEmail(new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hello","Body"));
+			ArrayList[] projectEmails = cp.getProjectEmails();
+			System.out.println(projectEmails[1].get(0));
+			System.out.println(projectEmails[1].get(1));
 			System.out.println(cp.getEmailsForPhase(1)); 
-			assertEquals(cp.getEmailsForPhase(1), ProjectEmails[1]);
+			assertEquals(cp.getEmailsForPhase(1), projectEmails[1]);
 		}catch(Exception e) {
 			fail("No exception should be raised for this test");
 		}
