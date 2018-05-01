@@ -50,9 +50,15 @@ public class CompanyEmail {
 	    			if(splitUp[0].length() <= 64 && splitUp[1].length() <= 255) {
 	    				emailValidity = true;
 	    			}
+	    			else {
+	    	    		emailValidity = false;
+	    	    	}
 					if(splitUp[1].split("\\.").length > 1 && splitUp[1].split("\\.").length < 4) {
 						emailValidity = true;
-					}		
+					}
+					else {
+			    		emailValidity = false;
+			    	}
 			}
 	    	else {
 	    		emailValidity = false;
