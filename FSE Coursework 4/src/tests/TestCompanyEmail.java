@@ -250,4 +250,16 @@ public class TestCompanyEmail {
 	//	Test ID: L.N.N
 	// 	Test created by: f_name s_name
 	//	Date created: dd/mm/yy
+	
+	
+	//	Test: checkValidEmail()
+	
+	//	Test ID: A.12.1
+	// 	Test created by: Joshua Richardson
+	//	Date created: 01/05/18
+	
+	@Test
+	public void testCheckValidEmail_A121() {
+		
+	}
 }
