@@ -2,6 +2,7 @@
 
 package tests;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -252,18 +253,19 @@ public class TestCompanyProject {
 //	Test get email for specific phase
 
 //	Test ID: B.10.1
-// 	Test created by: Joshua Richardson
-//	Date created: 30/04/18
+// 	Test created by: Joshua Richardson and Inigo Taylor
+//	Date created: 31/04/18
 	
 	@Test
 	public void testGetEmailForSpecificPhase_B101(){
 		CompanyProject cp = new CompanyProject();
 		try {
-			// I'm confused - lol doesn't take much
+
 			CompanyEmail ce = new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body");
 			cp.addEmail(ce);
-			ArrayList[] ProjectEmails = cp.getProjectEmails();
-			assertEquals(cp.getEmailsForPhase(1), ProjectEmails[1]);
+			ArrayList[] projectEmails = cp.getProjectEmails();	
+			assertEquals(cp.getEmailsForPhase(1), projectEmails[1]);
+
 		}catch(Exception e) {
 			fail("No exception should be raised for this test");
 		}
