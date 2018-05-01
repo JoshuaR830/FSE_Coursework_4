@@ -3,6 +3,7 @@
 package emailScripts;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CompanyProject {
 	private static final int MIN_TITLE_LENGTH = 10;
@@ -13,6 +14,7 @@ public class CompanyProject {
     private int ProjectPhase;
     private ArrayList[] ProjectEmails = new ArrayList[6];
     
+    // Changes to constructors made by Tim Bartrum - 30/04/18
     public CompanyProject() {
         setupProject("New Project");
     }
@@ -59,6 +61,8 @@ public class CompanyProject {
     public void addEmail(CompanyEmail newEmail) throws Exception {
         if (newEmail.isValid()) {
             ProjectEmails[ProjectPhase].add(newEmail);
+//            System.out.println(Arrays.toString(ProjectEmails));
+//            System.out.println(Arrays.toString(ProjectEmails[ProjectPhase].toArray()));
             if (ProjectContacts.contains(newEmail.fromAddress())) {
                 //do nothing
             } else {
@@ -99,6 +103,12 @@ public class CompanyProject {
         } else {
             return true;
         }
+    }
+    
+    // Added by Joshua Richardson - 01/05/18
+    // This function will allow you to set the current phase
+    public void setProjectPhase(int phase) {
+        ProjectPhase = phase;
     }
     
     public String getPhaseByName() {
