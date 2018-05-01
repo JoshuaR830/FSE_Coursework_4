@@ -6,10 +6,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.junit.Test;
 
@@ -248,7 +250,6 @@ public class TestCompanyProject {
 			testProject.addEmail(new CompanyEmail());
 			fail("Exception wasn't produced");
 		} catch (Exception e) {
-			System.out.println(e.getClass());
 			assertEquals(e.getClass(), Exception.class);
 		}
 	}
@@ -259,9 +260,20 @@ public class TestCompanyProject {
 	@Test
 	public void testAddEmail_B82() {
 		try {
-			CompanyProject testProject = new CompanyProject();
+			CompanyProject testProject = new CompanyProject();		
+			
 			testProject.addEmail(new CompanyEmail("test@gmail.com", "test2@gmail.com", "Hi", "body"));
+			
+			ArrayList[] testList = new ArrayList[6];			
+	        testList[0] = new ArrayList<CompanyEmail>();
+	        
+			CompanyEmail testEmail = new CompanyEmail("test@gmail.com", "test2@gmail.com", "Hi", "body");
+            	        
+            testList[0].add(testEmail);
+            
+			assertEquals(Arrays.toString(testProject.getProjectEmails()), Arrays.toString(testList));
 		} catch (Exception e) {
+			System.out.println(e.getClass());
 			fail("Exception shouldn't happen here");
 		}
 	}
@@ -276,7 +288,6 @@ public class TestCompanyProject {
 	@Test
 	public void testGetEmailCurrentPhase_B091() {
 		cp = new CompanyProject();
-		System.out.println(cp.getEmailsForPhase());
 		ArrayList array = new ArrayList();
 		assertEquals(array,cp.getEmailsForPhase());
 	}
@@ -295,9 +306,7 @@ public class TestCompanyProject {
 		}catch(Exception e) {
 			System.out.println("Invalid email");
 		}
-		
-		System.out.println(cp.getEmailsForPhase());
-		
+				
 		ArrayList array = new ArrayList();
 		array.add(email);
 		
