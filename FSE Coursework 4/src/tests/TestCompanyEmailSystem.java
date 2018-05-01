@@ -83,6 +83,9 @@ public class TestCompanyEmailSystem {
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
+//	Test ID: C.3.4
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
 	
 	
 //	Test list emails function
@@ -91,7 +94,14 @@ public class TestCompanyEmailSystem {
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 		
-	
+//	Test ID: C.4.2
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+		
+//	Test ID: C.4.3
+// 	Test created by: f_name s_name
+//	Date created: dd/mm/yy
+		
 	
 //	Test list phases function function
 
