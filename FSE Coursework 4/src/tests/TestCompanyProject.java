@@ -241,7 +241,7 @@ public class TestCompanyProject {
 //	Test get email for specific phase
 
 //	Test ID: B.10.1
-// 	Test created by: Joshua Richardson and Inigo taylor
+// 	Test created by: Joshua Richardson and Inigo Taylor
 //	Date created: 31/04/18
 	
 	@Test
