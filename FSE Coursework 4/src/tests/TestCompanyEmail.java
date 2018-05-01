@@ -359,8 +359,7 @@ public class TestCompanyEmail {
 	@Test
 	public void testCheckValidEmail_A122() {
 		CompanyEmail ce = new CompanyEmail();
-		String address = "bob@gmail.com";
-		assertTrue(ce.checkValidEmail(address));
+		assertTrue(ce.checkValidEmail(tAddress));
 	}
 	
 	//	Test ID: A.12.3
@@ -370,8 +369,27 @@ public class TestCompanyEmail {
 	@Test
 	public void testCheckValidEmail_A123() {
 		CompanyEmail ce = new CompanyEmail();
-		String address = "bob@gmail_com";
-		ce.checkValidEmail(address);
-		assertFalse(ce.checkValidEmail(address));
+		assertFalse(ce.checkValidEmail(newAddrInvalid));
 	}
+	
+	//	Test ID: A.12.4
+	// 	Test created by: Joshua Richardson
+	//	Date created: 01/05/18
+	
+	@Test
+	public void testCheckValidEmail_A124() {
+		CompanyEmail ce = new CompanyEmail();
+		assertFalse(ce.checkValidEmail(emptyStr));
+	}
+	
+	//	Test ID: A.12.5
+	// 	Test created by: Joshua Richardson
+	//	Date created: 01/05/18
+	
+	@Test
+	public void testCheckValidEmail_A125() {
+		CompanyEmail ce = new CompanyEmail();
+		assertFalse(ce.checkValidEmail(newAddrLongBoye));
+	}
+	
 }
