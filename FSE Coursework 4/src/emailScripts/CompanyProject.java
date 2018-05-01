@@ -56,6 +56,8 @@ public class CompanyProject {
     public void addEmail(CompanyEmail newEmail) throws Exception {
         if (newEmail.isValid()) {
             ProjectEmails[ProjectPhase].add(newEmail);
+            System.out.println(Arrays.toString(ProjectEmails));
+            System.out.println(Arrays.toString(ProjectEmails[ProjectPhase].toArray()));
             if (ProjectContacts.contains(newEmail.fromAddress())) {
                 //do nothing
             } else {

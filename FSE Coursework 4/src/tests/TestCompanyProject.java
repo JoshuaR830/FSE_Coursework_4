@@ -291,7 +291,8 @@ public class TestCompanyProject {
 		CompanyProject cp = new CompanyProject();
 		try {
 			// I'm confused - lol doesn't take much
-			cp.addEmail(new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body"));
+			CompanyEmail ce = new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body");
+			cp.addEmail(ce);
 			ArrayList[] ProjectEmails = cp.getProjectEmails();
 			assertEquals(cp.getEmailsForPhase(1), ProjectEmails[1]);
 		}catch(Exception e) {
