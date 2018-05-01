@@ -191,7 +191,7 @@ public class TestCompanyEmail {
 	public void testSetTo_1() {
 		data = new CompanyEmail();
 		data.setTo(newAddrValid);
-		assertEquals(data.toAddress(), newAddrValid);
+		assertEquals(newAddrValid, data.toAddress());
 	}	
 	//	Test ID: A.8.2
 	// 	Test created by: Julian Kubelec
