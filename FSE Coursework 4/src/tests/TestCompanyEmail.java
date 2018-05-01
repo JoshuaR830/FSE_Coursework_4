@@ -190,25 +190,75 @@ public class TestCompanyEmail {
 		
 	//	Test: setSubject()
 	
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
+	//	Test ID: A.9.1
+	// 	Test created by: Henry Hunt
+	//	Date created: 01/05/18
+	@Test
+	public void testSetSubject_1() {
+		data = new CompanyEmail();
+		data.setSubject("this is the subject");
 		
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
+		assertEquals(data.subjectLine(), "this is the subject");
+	}
+	
+	//	Test ID: A.9.2
+	// 	Test created by: Henry Hunt
+	//	Date created: 01/05/18
+	@Test
+	public void testSetSubject_2() {
+		data = new CompanyEmail();
+		data.setSubject("");
 		
+		assertEquals(data.subjectLine(), "");
+	}
+	
+	//	Test ID: A.9.3
+	// 	Test created by: Henry Hunt
+	//	Date created: 01/05/18
+	@Test
+	public void testSetSubject_3() {
+		data = new CompanyEmail();
+		data.setSubject(null);
+		
+		assertNull(data.subjectLine());
+	}
+	
 		
 	//	Test: setMessage()
 	
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
+	//	Test ID: A.10.1
+	// 	Test created by: Henry Hunt
 	//	Date created: dd/mm/yy
+	@Test
+	public void testSetMessage_1() {
+		data = new CompanyEmail();
+		data.setMessage("this is the body");
 		
-	//	Test ID: L.N.N
-	// 	Test created by: f_name s_name
-	//	Date created: dd/mm/yy
+		assertEquals(data.emailMessage(), "this is the body");
+	}
+	
+	//	Test ID: A.10.2
+	// 	Test created by: Henry Hunt
+	//	Date created: 01/05/18
+	@Test
+	public void testSetMessage_2() {
+		data = new CompanyEmail();
+		data.setMessage("");
 		
+		assertEquals(data.emailMessage(), "");
+	}
+	
+	//	Test ID: A.10.3
+	// 	Test created by: Henry Hunt
+	//	Date created: 01/05/18
+	@Test
+	public void testSetMessage_3() {
+		data = new CompanyEmail();
+		data.setMessage(null);
+		
+		assertNull(data.emailMessage());
+	}
+	
 		
 	//	Test: isValid()
 	
