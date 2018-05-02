@@ -83,8 +83,21 @@ public class TestCompanyEmailSystem {
 		readInput("1");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
-		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
 		assertTrue(outputArray[3].toString().contains("L = [L]ist Emails, A = [A]dd Email, F = List Phase [F]olders, N = Move to [N]ext Phase, [num] = List Emails in Phase [num], C = List [C]ontacts, X =  E[x]it Project"));
+	}
+	
+//	Test ID: C.1.6
+// 	Test created by: Inigo Taylor
+//	Date created: 02/05/18
+	
+	@Test
+	public void testMainMethod_C16() {
+		readInput("-2");
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+		System.out.println(outputArray[2]);
+		assertTrue(outputArray[3].toString().contains("Command not recognised"));
 	}
 	
 //	Test list projects function
