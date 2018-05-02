@@ -9,6 +9,8 @@ import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.regex.Pattern;
@@ -22,6 +24,7 @@ import emailScripts.CompanyEmailSystem;
 public class TestCompanyEmailSystem {
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	private final ByteArrayOutputStream outContent2 = new ByteArrayOutputStream();
 
 	@Before
 	public void setUpStreams() {
@@ -78,17 +81,21 @@ public class TestCompanyEmailSystem {
 //	Test list projects function
 
 //	Test ID: C.2.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor, Joshua Richardson
+//	Date created: 02/04/18
 	
 	@Test
 	public void testListProjects_C21() {
+		System.setOut(new PrintStream(outContent2));
+
 		String closeInput = "P";
 		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
 		System.setIn(inStream);
-		String[] outputArray = outContent.toString().split("\n");
-		System.out.println(outputArray[0]);
-		assertTrue(Pattern.matches(".{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* emails", "123456789ab [Feasibility] - 4 emails"));
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent2.toString().split("\r\n|\r|\n");
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+		// Looked up regex expressions using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
+		assertTrue(Pattern.matches("\\d*\\).{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* email(s|)", outputArray[2].toString()));
 	}
 	
 // 	Test add project function
