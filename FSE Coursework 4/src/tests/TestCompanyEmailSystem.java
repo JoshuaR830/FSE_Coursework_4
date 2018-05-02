@@ -26,8 +26,7 @@ import emailScripts.CompanyProject;
 public class TestCompanyEmailSystem {
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-	
-	
+
 	@Before
 	public void setUpStreams() {
 		setOutputStreamTest();
@@ -83,17 +82,21 @@ public class TestCompanyEmailSystem {
 //	Test list projects function
 
 //	Test ID: C.2.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor, Joshua Richardson
+//	Date created: 02/04/18
 	
 	@Test
 	public void testListProjects_C21() {
+		System.setOut(new PrintStream(outContent));
+
 		String closeInput = "P";
 		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
 		System.setIn(inStream);
-		String[] outputArray = outContent.toString().split("\n");
-		System.out.println(outputArray[0]);
-		assertTrue(Pattern.matches(".{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* emails", "123456789ab [Feasibility] - 4 emails"));
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+		// Looked up regex expressions using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
+		assertTrue(Pattern.matches("\\d*\\).{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* email(s|)", outputArray[2].toString()));
 	}
 	
 // 	Test add project function
@@ -145,6 +148,10 @@ public class TestCompanyEmailSystem {
 		readInput("1");
 		readInput("L");
 		
+		String closeInput = "P";
+		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
+		String selectProject = "1";
+		//InputStream inStream = new ByteArrayInputStream(select.getBytes());
 		
 	}
 		
