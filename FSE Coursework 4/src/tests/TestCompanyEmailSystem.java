@@ -227,11 +227,10 @@ public class TestCompanyEmailSystem {
 	@Test
 	public void testChangeProjectPhase_C81() {
 		setOutputStreamDebug();
-		String string = "1";
+		String string = "2";
 		for(int i = 0; i < 6; i++) {
 			string = string + "\nN";
 		}
-		System.out.println(string);
 		readInput(string);
 		CompanyEmailSystem.main(null);
 		
