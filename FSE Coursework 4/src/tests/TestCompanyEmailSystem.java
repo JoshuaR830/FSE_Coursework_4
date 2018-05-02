@@ -18,6 +18,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import emailScripts.CompanyEmailSystem;
+import emailScripts.CompanyProject;
 
 public class TestCompanyEmailSystem {
 
@@ -240,10 +241,28 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testChangeProjectPhase_C83() {
-		CompanyEmailSystem ces = new CompanyEmailSystem();
-//		ces.ChangeProjectPhase();
+//		CompanyProject cp = new CompanyProject();
+		setOutputStreamDebug();
+		
+		
+		CompanyEmailSystem.main(null);
+		for(int i = 0; i < 6; i++) {
+			readInput("1");
+			readInput("N");
+			CompanyEmailSystem.ChangeProjectPhase();
+		}
+		
+		
+//		System.out.println(cp.getPhaseByName());
+		
 		
 	}
+	
+	
+	
+	
+	
+	
 	
 	private void setOutputStreamDebug() {
 		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));

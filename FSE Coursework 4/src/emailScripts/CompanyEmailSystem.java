@@ -215,7 +215,9 @@ public class CompanyEmailSystem {
         System.out.println("[Email added to " + cp.toString() + "]");
     }
     
-    private static void ChangeProjectPhase() {
+    //Set to public for testing by Joshua Richardson - 02/05/18
+    
+    public static void ChangeProjectPhase() {
         CompanyProject cp = AllProjects.get(currentProjShowing);
         if (cp.nextPhase()) {
             System.out.println("[Phase changed: " + cp.toString());
