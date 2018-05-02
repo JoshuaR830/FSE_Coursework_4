@@ -216,11 +216,31 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testChangeProjectPhase_C81() {
-		readInput("2 \n N");
+		int num = 3;
+		String string = "";
+		for(int x = 1; x <= num; x++) {
+			
+			string = string + x;
+			for(int i = 0; i < 6; i++) {
+				string += "\nN";
+			}
+			string += "\nX";
+			if(x < num) {
+				string += "\n";
+			}
+		}
+		readInput(string);
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
-		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
-		System.out.println(outputArray[2]);
+		setOutputStreamTest();
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n"); // By Inigo
+		setOutputStreamDebug();
+		int y = 0, z = 0;
+		for(y += 4; z < 5; z++, y+=3) {
+			System.out.println(outputArray[y].toString());
+			System.out.println(CompanyEmailSystem.ProjectPhases[z+1].toString());
+			assertTrue(outputArray[y].toString().contains(CompanyEmailSystem.ProjectPhases[z+1].toString()));
+		}
+
 	}
 
 //	Test ID: C.8.2
