@@ -99,7 +99,7 @@ public class TestCompanyEmailSystem {
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		// Looked up Regex usage using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
 		for(int x = 0; x < 3; x++) {
-			assertTrue(Pattern.matches("\\d*\\).{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* email(s|)", outputArray[2+x]));
+			assertTrue(outputArray[2+x].matches("\\d*\\).{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* email(s|)"));
 		}
 	}
 
@@ -176,11 +176,12 @@ public class TestCompanyEmailSystem {
 	
 	@Test
 	public void testListPhases_C51() {
-		readInput("N \n F");
+		readInput("1 \n N \n F");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		// Looked up Regex usage using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
-		assertTrue(Pattern.matches("\\d*\\) Feasibility - \\d* (e|E)mail(s|)", outputArray[5]));
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+		assertTrue(Pattern.matches("\\d*\\) Feasibility - \\d* (e|E)mail(s|)", outputArray[8]));
 	}
 	
 	

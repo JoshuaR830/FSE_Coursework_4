@@ -172,7 +172,7 @@ public class CompanyEmailSystem {
     }
     
     private static void ListPhases() {
-        CompanyProject cp = AllProjects.get(currentProjShowing);
+        CompanyProject cp = AllProjects.get(currentProjShowing-1);
         for (int x=0; x < cp.getPhaseByID(); x++ ) {
         	// This catches an exception if an invalid PID is entered
         	// Added by Joshua 30/04/18
@@ -187,7 +187,7 @@ public class CompanyEmailSystem {
     }
     
     private static void ListContacts() {
-        CompanyProject cp = AllProjects.get(currentProjShowing);
+        CompanyProject cp = AllProjects.get(currentProjShowing-1);
         ArrayList<String> projectContacts = cp.getProjectContacts();
         for (int x=0; x < projectContacts.size(); x++ ) {
             System.out.println((x+1)+") "+projectContacts.get(x));
@@ -205,7 +205,7 @@ public class CompanyEmailSystem {
         System.out.println("What is the Message?");
         String emailBody = in.nextLine();
         System.out.println(fromAddress + toAddress + subjectLine + emailBody);
-        CompanyProject cp = AllProjects.get(currentProjShowing);
+        CompanyProject cp = AllProjects.get(currentProjShowing-1);
         CompanyEmail ce = new CompanyEmail(fromAddress,toAddress,subjectLine,emailBody);
         try {
 			cp.addEmail(ce);
