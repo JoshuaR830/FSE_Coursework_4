@@ -11,7 +11,7 @@ public class CompanyEmailSystem {
 	public static int GlobalProjectCounter;
 	public static String[] ProjectPhases = new String[]{"Feasibility","Design","Implementation","Testing","Deployment","Completed"};
 	
-    private static ArrayList<CompanyProject> AllProjects;
+    public static ArrayList<CompanyProject> AllProjects;
     public static int currentProjShowing;
     
     public static void main(String[] args) {
@@ -30,15 +30,14 @@ public class CompanyEmailSystem {
         CompanyProject cp2 = new CompanyProject("Proj2");
         CompanyProject cp3 = new CompanyProject("Proj3");
         
-        for (int x=0;x <10; x++) {
-        	CompanyEmail ce = new CompanyEmail("me"+x+"@me.com", "you"+x+"@you.com", "this is a test subject for email"+x, "this is a test message for email "+x);
+        for (int x = 0; x < 10; x++) {
+        	CompanyEmail ce = new CompanyEmail("me" + x + "@me.com", "you" + x + "@you.com", "this is a test subject for email" + x, "this is a test message for email " + x);
         	
-        	switch(x%3) {
+        	switch(x % 3) {
         	case 0:
         		try {
 					cp1.addEmail(ce);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
         		break;
@@ -46,7 +45,6 @@ public class CompanyEmailSystem {
         		try {
 					cp2.addEmail(ce);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
         		break;
@@ -54,7 +52,6 @@ public class CompanyEmailSystem {
         		try {
 					cp3.addEmail(ce);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
         		break;
@@ -133,7 +130,7 @@ public class CompanyEmailSystem {
         System.out.println("[Project added]");
     }
     
-    private static void ListEmails(int phaseToShow) {
+    public static void ListEmails(int phaseToShow) {
         CompanyProject cp = AllProjects.get(currentProjShowing);
         ArrayList<CompanyEmail> projectPhaseEmails = null;
         if (phaseToShow==0) {

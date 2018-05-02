@@ -9,8 +9,11 @@ import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 import org.junit.After;
@@ -18,14 +21,16 @@ import org.junit.Before;
 import org.junit.Test;
 
 import emailScripts.CompanyEmailSystem;
+import emailScripts.CompanyProject;
 
 public class TestCompanyEmailSystem {
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-
+	
+	
 	@Before
 	public void setUpStreams() {
-		System.setOut(new PrintStream(outContent));
+		setOutputStreamTest();
 	}
 	
 //	Test main method
@@ -94,12 +99,30 @@ public class TestCompanyEmailSystem {
 // 	Test add project function
 
 //	Test ID: C.3.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+	
+// 	Test created by: Tim Bartrum
+//	Date created: 02/05/18
+	@Test
+	public void testAddProject_C31() {
+		readInput("A");
+		CompanyEmailSystem.main(null);
+		assertTrue(outContent.toString().contains("What is the title of the project?"));
+	}
 	
 //	Test ID: C.3.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	@Test
+	public void testAddProject_C32() {
+		readInput("A");
+		CompanyEmailSystem.main(null);
+		
+		readInput("Proj4");
+		
+		setOutputStreamDebug();
+		System.out.println("Project: " + CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
+		//assertEquals(CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle(), "Proj4");
+	}
 	
 //	Test ID: C.3.3
 // 	Test created by: f_name s_name
@@ -113,8 +136,16 @@ public class TestCompanyEmailSystem {
 //	Test list emails function
 	
 //	Test ID: C.4.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Julian Kubelec
+//	Date created: 02/05/18
+	@Test
+	public void testListEmails_C041() {
+		String closeInput = "P";
+		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
+		String selectProject = "1";
+		InputStream inStream = new ByteArrayInputStream(select.getBytes());
+		
+	}
 		
 //	Test ID: C.4.2
 // 	Test created by: f_name s_name
@@ -150,8 +181,20 @@ public class TestCompanyEmailSystem {
 //	Test add email function
 	
 //	Test ID: C.7.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Henry Hunt
+//	Date created: 02/05/18
+	@Test
+	public void testAddEmail_C72() {
+		ByteArrayInputStream inContent;
+		inContent = new ByteArrayInputStream("sender@nottingham.ac.uk".getBytes());
+		System.setIn(inContent);
+		inContent = new ByteArrayInputStream("receiver@nottingham.ac.uk".getBytes());
+		System.setIn(inContent);
+		inContent = new ByteArrayInputStream("subject".getBytes());
+		System.setIn(inContent);
+		inContent = new ByteArrayInputStream("body".getBytes());
+		System.setIn(inContent);
+	}
 	
 //	Test ID: C.7.2
 // 	Test created by: f_name s_name
@@ -190,6 +233,18 @@ public class TestCompanyEmailSystem {
 		
 	}
 	
+	private void setOutputStreamDebug() {
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+	}
+	
+	private void setOutputStreamTest() {
+		System.setOut(new PrintStream(outContent));
+	}
+	
+	private void readInput(String input) {
+		InputStream inStream = new ByteArrayInputStream(input.getBytes());
+		System.setIn(inStream);
+	}
 	
 	@After
 	public void cleanUpStreams() {
