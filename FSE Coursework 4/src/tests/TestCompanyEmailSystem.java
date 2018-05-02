@@ -155,16 +155,28 @@ public class TestCompanyEmailSystem {
 //	Test change project phase function
 	
 //	Test ID: C.8.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 02/05/18
+	@Test
+	public void testChangeProjectPhase_C81() {
+		
+	}
 
 //	Test ID: C.8.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 02/05/18
+	@Test
+	public void testChangeProjectPhase_C82() {
+		
+	}
 	
 //	Test ID: C.8.3
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 02/05/18
+	@Test
+	public void testChangeProjectPhase_C83() {
+		
+	}
 	
 	
 	@After
