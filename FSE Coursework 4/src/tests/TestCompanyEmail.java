@@ -394,4 +394,41 @@ public class TestCompanyEmail {
 		assertFalse(ce.checkValidEmail(newAddrLong));
 	}
 	
+	//  Test: check toString()
+	
+	//	Test ID: A.13.1
+	// 	Test created by: Joshua Richardson
+	//	Date created: 02/05/18
+	
+	@Test
+	public void testToString_1() {
+		CompanyEmail ce = new CompanyEmail();
+		ce.setSubject("");
+		assertEquals("[no subject]", ce.toString());
+	}
+	
+	
+	
+	//	Test ID: A.13.2
+	// 	Test created by: Joshua Richardson
+	//	Date created: 02/05/18
+	
+	@Test
+	public void testToString_2() {
+		CompanyEmail ce = new CompanyEmail();
+		ce.setSubject("Test");
+		assertEquals("Test", ce.toString());
+	}
+	
+	
+	//	Test ID: A.13.3
+	// 	Test created by: Joshua Richardson
+	//	Date created: 02/05/18
+	
+	@Test
+	public void testToString_3() {
+		CompanyEmail ce = new CompanyEmail();
+		ce.setSubject("  ");
+		assertEquals("[no subject]", ce.toString());
+	}
 }

@@ -92,8 +92,10 @@ public class CompanyEmail {
         return isComplete;
     }
     
+    // Fixed by Joshua Richardson - 02/05/18
+    // Changed the condition so that it trimmed out unnecessary spaces
     public String toString() {
-    	if (subjectLine.equals("")) {
+    	if (subjectLine.trim().equals("")) {
     		return "[no subject]";
     	} else {
     		return subjectLine;
