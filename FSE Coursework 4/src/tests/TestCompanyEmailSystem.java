@@ -327,7 +327,6 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testchangProjectPhase_C84() {
-		setOutputStreamDebug();
 		String input = "1\nX\n2\nX\n3\nX";
 		
 		readInput("" + input);
