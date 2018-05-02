@@ -94,11 +94,10 @@ public class TestCompanyEmailSystem {
 		System.setIn(inStream);
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
-		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
 		// Looked up regex expressions using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
-		assertTrue(Pattern.matches("\\d*\\).{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* email(s|)", outputArray[2].toString()));
+		assertTrue(Pattern.matches("\\d*\\).{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* email(s|)", outputArray[2]));
 	}
-	
+
 // 	Test add project function
 
 //	Test ID: C.3.1
@@ -122,8 +121,8 @@ public class TestCompanyEmailSystem {
 		
 		readInput("Proj4");
 		
-		setOutputStreamDebug();
-		System.out.println("Project: " + CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
+		//setOutputStreamDebug();
+		//System.out.println("Project: " + CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
 		//assertEquals(CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle(), "Proj4");
 	}
 	

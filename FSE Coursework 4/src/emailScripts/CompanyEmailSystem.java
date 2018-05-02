@@ -64,8 +64,8 @@ public class CompanyEmailSystem {
         AllProjects.add(cp2);
         AllProjects.add(cp3);
         
-        System.out.println(cp1);
-        System.out.println(AllProjects.toString());
+        //System.out.println(cp1);
+        //System.out.println(AllProjects.toString());
 
         /// END OF TEST DATA ///
         
@@ -123,7 +123,7 @@ public class CompanyEmailSystem {
         for (int x = 0; x < AllProjects.size(); x++) {
             CompanyProject cp = AllProjects.get(x);
             int emailCount = cp.getEmailsForPhase().size();
-            System.out.println((x+1) + ") " + cp.toString() + " - " + emailCount + "emails");
+            System.out.println((x+1) + ") " + cp.toString() + " - " + emailCount + " emails");
         }
     }
     
