@@ -116,10 +116,10 @@ public class TestCompanyEmailSystem {
 	public void testAddProject_C32() {
 		readInput("A");
 		CompanyEmailSystem.main(null);
-		
+		setOutputStreamDebug();
 		readInput("Proj4");
 		
-		setOutputStreamDebug();
+		System.out.println(CompanyEmailSystem.AllProjects.get(0).getPTitle());
 		System.out.println("Project: " + CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
 		//assertEquals(CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle(), "Proj4");
 	}

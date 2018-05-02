@@ -2,6 +2,9 @@
 
 package emailScripts;
 
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 
 public class CompanyProject {
@@ -25,6 +28,7 @@ public class CompanyProject {
     // Changes made by Inigo Taylor, Tim Bartrum - 30/04/18
     // Changed the first ProjectPhase to be 0 rather than 1 as array indexing begins at 0 in Java
     private void setupProject(String title) {
+    	System.out.println("Creating project " + title);
     	CompanyEmailSystem.GlobalProjectCounter++;
     	PID = CompanyEmailSystem.GlobalProjectCounter;
         this.setPTitle(title);
