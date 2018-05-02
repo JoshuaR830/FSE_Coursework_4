@@ -5,6 +5,7 @@ package emailScripts;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class CompanyEmailSystem {
 
@@ -102,7 +103,7 @@ public class CompanyEmailSystem {
                         ChangeProjectPhase();
                     } else if (s.equals("X")) {
                         currentProjShowing = 0;
-                    } else if (Integer.parseInt(s) != -1 ) {
+                    } else if (Integer.parseInt(s) != 1 ) {
                         ListEmails(Integer.parseInt(s));
                     } else {
                         System.out.println("Command not recognised");
@@ -149,7 +150,7 @@ public class CompanyEmailSystem {
         	// Added by Joshua Richardson 30/04/18
         	try {
         		projectPhaseEmails = cp.getEmailsForPhase(phaseToShow);
-        	}catch(Exception e) {
+        	} catch(Exception e) {
         		System.out.println("Invalid email");
         	}
         } else {
@@ -216,7 +217,9 @@ public class CompanyEmailSystem {
     }
     
     private static void ChangeProjectPhase() {
-        CompanyProject cp = AllProjects.get(currentProjShowing);
+    	// Change made by Inigo Taylor - 02/05/18
+    	// Changed AllProjects.get(currentProjShowing) to AllProjects.get(currentProjShowing-1) because indexing begins at 0
+        CompanyProject cp = AllProjects.get(currentProjShowing-1);
         if (cp.nextPhase()) {
             System.out.println("[Phase changed: " + cp.toString());
         } else {
