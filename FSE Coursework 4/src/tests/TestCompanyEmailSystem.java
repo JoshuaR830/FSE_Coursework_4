@@ -113,18 +113,18 @@ public class TestCompanyEmailSystem {
 	}
 	
 //	Test ID: C.3.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Tim Bartrum
+//	Date created: 02/05/18
 	@Test
 	public void testAddProject_C32() {
 		readInput("A");
 		CompanyEmailSystem.main(null);
 		setOutputStreamDebug();
-		readInput("Proj4");
+		readInput("Test Project 4");
 		
-		System.out.println(CompanyEmailSystem.AllProjects.get(0).getPTitle());
+//		System.out.println(CompanyEmailSystem.AllProjects.get(0).getPTitle());
 		System.out.println("Project: " + CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
-		//assertEquals(CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle(), "Proj4");
+		assertEquals("Test Project 4", CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
 	}
 	
 //	Test ID: C.3.3
