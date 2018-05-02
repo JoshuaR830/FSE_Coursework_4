@@ -128,7 +128,7 @@ public class CompanyEmailSystem {
         System.out.println("[Project added]");
     }
     
-    private static void ListEmails(int phaseToShow) {
+    public static void ListEmails(int phaseToShow) {
         CompanyProject cp = AllProjects.get(currentProjShowing);
         ArrayList<CompanyEmail> projectPhaseEmails = null;
         if (phaseToShow==0) {
