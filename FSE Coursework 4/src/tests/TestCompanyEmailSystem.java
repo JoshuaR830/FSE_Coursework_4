@@ -104,9 +104,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testAddProject_C31() {
-		String addProject = "A";
-		InputStream inStream = new ByteArrayInputStream(addProject.getBytes());
-		System.setIn(inStream);
+		readInput("A");
 		CompanyEmailSystem.main(null);
 		assertTrue(outContent.toString().contains("What is the title of the project?"));
 	}
@@ -116,16 +114,13 @@ public class TestCompanyEmailSystem {
 //	Date created: dd/mm/yy
 	@Test
 	public void testAddProject_C32() {
-		String addProject = "A";
-		InputStream inStream = new ByteArrayInputStream(addProject.getBytes());
-		System.setIn(inStream);
+		readInput("A");
 		CompanyEmailSystem.main(null);
 		
-		String newProject = "Proj4";
-		inStream = new ByteArrayInputStream(newProject.getBytes());
-		System.setIn(inStream);
+		readInput("Proj4");
+		
 		setOutputStreamDebug();
-		System.out.println("AllProjects: " + Arrays.toString(CompanyEmailSystem.AllProjects.toArray()));
+		System.out.println("Project: " + CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
 		//assertEquals(CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle(), "Proj4");
 	}
 	
@@ -224,6 +219,11 @@ public class TestCompanyEmailSystem {
 	
 	private void setOutputStreamTest() {
 		System.setOut(new PrintStream(outContent));
+	}
+	
+	private void readInput(String input) {
+		InputStream inStream = new ByteArrayInputStream(input.getBytes());
+		System.setIn(inStream);
 	}
 	
 	@After
