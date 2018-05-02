@@ -9,7 +9,7 @@ public class CompanyEmailSystem {
 	public static int GlobalProjectCounter;
 	public static String[] ProjectPhases = new String[]{"Feasibility","Design","Implementation","Testing","Deployment","Completed"};
 	
-    private static ArrayList<CompanyProject> AllProjects;
+    public static ArrayList<CompanyProject> AllProjects;
     public static int currentProjShowing;
     
     public static void main(String[] args) {

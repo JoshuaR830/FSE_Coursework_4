@@ -9,8 +9,11 @@ import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 import org.junit.After;
@@ -18,11 +21,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import emailScripts.CompanyEmailSystem;
+import emailScripts.CompanyProject;
 
 public class TestCompanyEmailSystem {
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-
+	
+	
 	@Before
 	public void setUpStreams() {
 		System.setOut(new PrintStream(outContent));
@@ -109,6 +114,21 @@ public class TestCompanyEmailSystem {
 //	Test ID: C.3.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	@Test
+	public void testAddProject_C32() {
+		String addProject = "A";
+		InputStream inStream = new ByteArrayInputStream(addProject.getBytes());
+		System.setIn(inStream);
+		CompanyEmailSystem.main(null);
+		
+		String newProject = "Proj4";
+		inStream = new ByteArrayInputStream(newProject.getBytes());
+		System.setIn(inStream);
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+		
+		System.out.println("AllProjects: " + Arrays.toString(CompanyEmailSystem.AllProjects.toArray()));
+		//assertEquals(CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle(), "Proj4");
+	}
 	
 //	Test ID: C.3.3
 // 	Test created by: f_name s_name
