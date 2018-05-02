@@ -86,10 +86,9 @@ public class TestCompanyEmailSystem {
 		String closeInput = "P";
 		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
 		System.setIn(inStream);
-		
-		CompanyEmailSystem.main(null);
-		
-		assertTrue(Pattern.matches(".{10,} \\[[Feasibility|Design]\\].*", "123456789ab [Feasibility] - 4 emails"));
+		String[] outputArray = outContent.toString().split("\n");
+		System.out.println(outputArray[0]);
+		assertTrue(Pattern.matches(".{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* emails", "123456789ab [Feasibility] - 4 emails"));
 	}
 	
 // 	Test add project function
