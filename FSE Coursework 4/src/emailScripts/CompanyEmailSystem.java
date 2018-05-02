@@ -2,6 +2,8 @@
 
 package emailScripts;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.*;
 
 public class CompanyEmailSystem {
@@ -24,6 +26,8 @@ public class CompanyEmailSystem {
         //example test data
         //////////////
         
+        // Bug found
+        // Problem created by the fact that the project titles are of invalid length
         CompanyProject cp1 = new CompanyProject("Proj1");
         CompanyProject cp2 = new CompanyProject("Proj2");
         CompanyProject cp3 = new CompanyProject("Proj3");
@@ -59,6 +63,9 @@ public class CompanyEmailSystem {
         AllProjects.add(cp1);
         AllProjects.add(cp2);
         AllProjects.add(cp3);
+        
+        System.out.println(cp1);
+        System.out.println(AllProjects.toString());
 
         /// END OF TEST DATA ///
         
