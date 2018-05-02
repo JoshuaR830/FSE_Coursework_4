@@ -348,7 +348,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	
 	@Test
-	public void testCheckValidEmail_A121() {
+	public void testCheckValidEmail_1() {
 		CompanyEmail ce = new CompanyEmail();
 		String address = null;
 		assertFalse(ce.checkValidEmail(address));
@@ -359,7 +359,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	
 	@Test
-	public void testCheckValidEmail_A122() {
+	public void testCheckValidEmail_2() {
 		CompanyEmail ce = new CompanyEmail();
 		assertTrue(ce.checkValidEmail(tAddress));
 	}
@@ -369,7 +369,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	
 	@Test
-	public void testCheckValidEmail_A123() {
+	public void testCheckValidEmail_3() {
 		CompanyEmail ce = new CompanyEmail();
 		assertFalse(ce.checkValidEmail(newAddrInvalid));
 	}
@@ -379,7 +379,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	
 	@Test
-	public void testCheckValidEmail_A124() {
+	public void testCheckValidEmail_4() {
 		CompanyEmail ce = new CompanyEmail();
 		assertFalse(ce.checkValidEmail(emptyStr));
 	}
@@ -389,7 +389,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	
 	@Test
-	public void testCheckValidEmail_A125() {
+	public void testCheckValidEmail_5() {
 		CompanyEmail ce = new CompanyEmail();
 		assertFalse(ce.checkValidEmail(newAddrLong));
 	}
