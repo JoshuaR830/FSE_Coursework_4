@@ -113,8 +113,13 @@ public class TestCompanyEmailSystem {
 //	Test list emails function
 	
 //	Test ID: C.4.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Julian Kubelec
+//	Date created: 02/05/18
+	@Test
+	public void testListEmails_C041() {
+		String closeInput = "P";
+		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
+	}
 		
 //	Test ID: C.4.2
 // 	Test created by: f_name s_name
