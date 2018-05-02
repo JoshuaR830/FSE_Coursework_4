@@ -43,9 +43,17 @@ public class CompanyProject {
     
     // Changes made by Inigo Taylor - 29/04/18
     // Changed condition from > to >= when comparing pTitle.length() with MIN_TITLE_LENGTH
+    
+    
+    // Bug fixed by Joshua Richardson - 02/05/18
+    // Fixed a bug where if no title was entered the title would be null and break regex, this was the simplest option
+    // We would have to check what the client would want it to do in this situation in real life - perhaps asking the user to enter a different title
+    
     public void setPTitle(String pTitle) {
     	if (pTitle.length() >= MIN_TITLE_LENGTH ) {
     		PTitle = pTitle;
+    	}else {
+    		PTitle = "New Project";
     	}
     }
     
