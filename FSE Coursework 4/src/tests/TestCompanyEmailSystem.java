@@ -2,7 +2,9 @@
 
 package tests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -17,7 +19,13 @@ import emailScripts.CompanyEmailSystem;
 
 public class TestCompanyEmailSystem {
 
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
+	@Before
+	public void setUpStreams() {
+		System.setOut(new PrintStream(outContent));
+	}
+	
 //	Test main method
 
 //	Test ID: C.1.1
@@ -26,19 +34,22 @@ public class TestCompanyEmailSystem {
 
 //	Test ID: C.1.2
 // 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+//	Date created: 02/05/18
+	
+	@Test
+	public void testMainMethod_C12(){
+		String closeInput = "1\nX";
+		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
+		System.setIn(inStream);
+		CompanyEmailSystem.main(null);
+		assertEquals(0, CompanyEmailSystem.currentProjShowing);
+	}
+
 	
 //	Test ID: C.1.3
 // 	Test created by: Inigo Taylor
 //	Date created: 01/05/18
-	
-	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-	
-	@Before
-	public void setUpStreams() {
-		System.setOut(new PrintStream(outContent));
-	}
-	
+
 	// I have added timeout as this is the easiest way I can see to test to see if the program is still running
 	// Once X is entered by the user, the program should close and so main should exit its infinite waiting loop
 	// If the test reaches the timeout, this means we are still on the line "CompanyEmailSystem.main(null)"
@@ -50,11 +61,6 @@ public class TestCompanyEmailSystem {
 		
 		CompanyEmailSystem.main(null);
 		assertTrue(outContent.toString().contains("Goodbye!"));
-	}
-
-	@After
-	public void cleanUpStreams() {
-		System.setOut(null);
 	}
 	
 //	Test list projects function
@@ -149,6 +155,12 @@ public class TestCompanyEmailSystem {
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
+	
+	@After
+	public void cleanUpStreams() {
+		System.setOut(null);
+	}
 }
+
 
 

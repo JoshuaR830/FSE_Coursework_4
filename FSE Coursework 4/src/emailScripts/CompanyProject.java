@@ -3,7 +3,6 @@
 package emailScripts;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class CompanyProject {
 	private static final int MIN_TITLE_LENGTH = 10;
@@ -24,7 +23,7 @@ public class CompanyProject {
     }
     
     // Changes made by Inigo Taylor, Tim Bartrum - 30/04/18
-    // Changed the first ProjectPhase to be 0 rather than 1 as array indexing begins at 0
+    // Changed the first ProjectPhase to be 0 rather than 1 as array indexing begins at 0 in Java
     private void setupProject(String title) {
     	CompanyEmailSystem.GlobalProjectCounter++;
     	PID = CompanyEmailSystem.GlobalProjectCounter;
@@ -67,9 +66,10 @@ public class CompanyProject {
     	// Added an if statement to check whether the email is valid before adding it (and to give an error if it isn't)
         if (newEmail.isValid() && validFrom && validTo) {
             ProjectEmails[ProjectPhase].add(newEmail);
-            if (ProjectContacts.contains(newEmail.toAddress())) {
-                //do nothing
-            } else {
+            
+            // Changes made by Inigo Taylor - 01/05/18
+            // Refactored code to be slightly more readable
+            if (!ProjectContacts.contains(newEmail.toAddress())) {
                 ProjectContacts.add(newEmail.toAddress());
             }
         } else {
@@ -85,8 +85,7 @@ public class CompanyProject {
     // Changes made by Joshua Richardson - 30/04/18
     // Added throws exception
     public ArrayList<CompanyEmail> getEmailsForPhase(int thePhase) throws Exception {
-    	if(thePhase >= CompanyEmailSystem.ProjectPhases.length -1 || thePhase < 0) {
-    		System.out.println(CompanyEmailSystem.ProjectPhases.length);
+    	if(thePhase >= CompanyEmailSystem.ProjectPhases.length-1 || thePhase < 0) {
     		throw new Exception();
     	}
     	
