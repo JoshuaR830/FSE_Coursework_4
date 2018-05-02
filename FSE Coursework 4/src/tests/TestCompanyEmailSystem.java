@@ -322,7 +322,23 @@ public class TestCompanyEmailSystem {
 	}
 	
 	
-	
+//	Test ID: C.8.4
+// 	Test created by: Joshua Richardson
+//	Date created: 02/05/18
+	@Test
+	public void testchangProjectPhase_C84() {
+		setOutputStreamDebug();
+		String input = "1\nX\n2\nX\n3\nX";
+		
+		readInput("" + input);
+		CompanyEmailSystem.main(null);
+		
+		for(int x = 0; x < 3; x++) {
+			assertTrue(CompanyEmailSystem.AllProjects.get(0).toString().contains("Feasibility"));
+			assertTrue(CompanyEmailSystem.AllProjects.get(1).toString().contains("Feasibility"));
+			assertTrue(CompanyEmailSystem.AllProjects.get(2).toString().contains("Feasibility"));
+		}
+	}
 	
 	
 	
