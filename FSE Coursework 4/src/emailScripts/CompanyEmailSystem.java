@@ -172,11 +172,12 @@ public class CompanyEmailSystem {
         	// This catches an exception if an invalid PID is entered
         	// Added by Joshua 30/04/18
         	try {
-        		System.out.println((x+1)+") "+cp.getPhaseByName()+" - "+cp.getEmailsForPhase(x).size()+" Emails");
+        		// Change made by Inigo Taylor - 02/05/18
+        		// Changed the function cp.getPhaseByName to ProjectPhases[x] to get the previous phase names, rather than the current
+        		System.out.println((x+1)+") "+ProjectPhases[x]+" - "+cp.getEmailsForPhase(x).size()+" Emails");
         	}catch(Exception e) {
         		System.out.println("Invalid email");
-        	}
-            
+        	}            
         }
     }
     
@@ -198,6 +199,7 @@ public class CompanyEmailSystem {
         String subjectLine = in.nextLine();
         System.out.println("What is the Message?");
         String emailBody = in.nextLine();
+        System.out.println(fromAddress + toAddress + subjectLine + emailBody);
         CompanyProject cp = AllProjects.get(currentProjShowing);
         CompanyEmail ce = new CompanyEmail(fromAddress,toAddress,subjectLine,emailBody);
         try {

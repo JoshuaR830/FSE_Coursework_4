@@ -13,7 +13,7 @@ public class CompanyProject {
     private int ProjectPhase;
     private ArrayList[] ProjectEmails = new ArrayList[6];
     
-    // Changes to constructors made by Tim Bartrum - 30/04/18
+    // Change to constructors made by Tim Bartrum - 30/04/18
     public CompanyProject() {
         setupProject("New Project");
     }
@@ -22,7 +22,7 @@ public class CompanyProject {
     	setupProject(pTitle);
     }
     
-    // Changes made by Inigo Taylor, Tim Bartrum - 30/04/18
+    // Change made by Inigo Taylor, Tim Bartrum - 30/04/18
     // Changed the first ProjectPhase to be 0 rather than 1 as array indexing begins at 0 in Java
     private void setupProject(String title) {
     	CompanyEmailSystem.GlobalProjectCounter++;
@@ -43,8 +43,7 @@ public class CompanyProject {
     
     // Changes made by Inigo Taylor - 29/04/18
     // Changed condition from > to >= when comparing pTitle.length() with MIN_TITLE_LENGTH
-    
-    
+        
     // Bug fixed by Joshua Richardson - 02/05/18
     // Fixed a bug where if no title was entered the title would be null and break regex, this was the simplest option
     // We would have to check what the client would want it to do in this situation in real life - perhaps asking the user to enter a different title
@@ -52,7 +51,7 @@ public class CompanyProject {
     public void setPTitle(String pTitle) {
     	if (pTitle.length() >= MIN_TITLE_LENGTH ) {
     		PTitle = pTitle;
-    	}else {
+    	} else {
     		PTitle = "New Project";
     	}
     }
@@ -95,11 +94,8 @@ public class CompanyProject {
     public ArrayList<CompanyEmail> getEmailsForPhase(int thePhase) throws Exception {
     	if(thePhase >= CompanyEmailSystem.ProjectPhases.length-1 || thePhase < 0) {
     		throw new Exception();
-    	}
-    	
-    	return ProjectEmails[thePhase];
-    	
-        
+    	}    	
+    	return ProjectEmails[thePhase];        
     }
     
     // Added by Joshua Richardson - 30/04/18
@@ -108,13 +104,16 @@ public class CompanyProject {
     	return ProjectEmails;
     }
     
-    // Changes made by Inigo Taylor 01/05/18
+    // Change made by Inigo Taylor 01/05/18
     // Moved ProjectPhase++ from outside the if to inside the if so the phase only changes when not at the final stage
     public boolean nextPhase() {
         if (ProjectPhase >= CompanyEmailSystem.ProjectPhases.length-1) {
             return false;
         } else {
             ProjectPhase++;
+            // Addition made by Inigo Taylor 02/05/18
+            // Added an initialisation of an ArrayList for the next element in ProjectEmails when incrementing the phase number
+            ProjectEmails[ProjectPhase] = new ArrayList<CompanyEmail>();
             return true;
         }
     }
@@ -127,9 +126,7 @@ public class CompanyProject {
     
     public String getPhaseByName() {
         return CompanyEmailSystem.ProjectPhases[ProjectPhase];
-    }
-    
-    
+    }    
     
     public int getPhaseByID() {
         return ProjectPhase;

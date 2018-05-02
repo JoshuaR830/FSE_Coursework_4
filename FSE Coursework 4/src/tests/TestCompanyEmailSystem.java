@@ -147,15 +147,20 @@ public class TestCompanyEmailSystem {
 //	Date created: dd/mm/yy
 		
 	
-//	Test list phases function function
+//	Test list phases function
 
 //	Test ID: C.5.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 02/05/18
 	
-//	Test ID: C.5.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+	@Test
+	public void testListPhases_C51() {
+		readInput("N \n F");
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		// Looked up Regex usage using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
+		assertTrue(Pattern.matches("\\d*\\) Feasibility - \\d* (e|E)mail(s|)", outputArray[5]));
+	}
 	
 	
 //	Test list contacts function
