@@ -150,19 +150,7 @@ public class TestCompanyEmailSystem {
 //	Test ID: C.4.1
 // 	Test created by: Julian Kubelec
 //	Date created: 02/05/18
-	@Test
-	public void testListEmails_C041() {
-		CompanyEmailSystem.main(null);
-		readInput("P");
-		readInput("1");
-		readInput("L");
-		
-		String closeInput = "P";
-		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
-		String selectProject = "1";
-		//InputStream inStream = new ByteArrayInputStream(select.getBytes());
-		
-	}
+
 		
 //	Test ID: C.4.2
 // 	Test created by: f_name s_name
@@ -185,7 +173,6 @@ public class TestCompanyEmailSystem {
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		// Looked up Regex usage using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
-		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
 		assertTrue(outputArray[8].matches("\\d*\\) Feasibility - \\d* (e|E)mail(s|)"));
 	}
 	
@@ -208,7 +195,6 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testAddEmail_C72() {
-		setOutputStreamTest();
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body");
 		CompanyEmailSystem.main(null);
@@ -230,14 +216,11 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testChangeProjectPhase_C81() {
-		setOutputStreamDebug();
-		String string = "2";
-		for(int i = 0; i < 6; i++) {
-			string = string + "\nN";
-		}
-		readInput(string);
+		readInput("2 \n N");
 		CompanyEmailSystem.main(null);
-		
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+		System.out.println(outputArray[2]);
 	}
 
 //	Test ID: C.8.2
