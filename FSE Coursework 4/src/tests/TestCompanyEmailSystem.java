@@ -95,8 +95,16 @@ public class TestCompanyEmailSystem {
 // 	Test add project function
 
 //	Test ID: C.3.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Tim Bartrum
+//	Date created: 02/05/18
+	@Test
+	public void testAddProject_C31() {
+		String addProject = "A";
+		InputStream inStream = new ByteArrayInputStream(addProject.getBytes());
+		System.setIn(inStream);
+		CompanyEmailSystem.main(null);
+		assertTrue(outContent.toString().contains("What is the title of the project?"));
+	}
 	
 //	Test ID: C.3.2
 // 	Test created by: f_name s_name
