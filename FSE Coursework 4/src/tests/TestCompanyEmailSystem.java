@@ -185,6 +185,8 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testChangeProjectPhase_C83() {
+		CompanyEmailSystem ces = new CompanyEmailSystem();
+		ces.ChangeProjectPhase();
 		
 	}
 	
