@@ -143,6 +143,11 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testListEmails_C041() {
+		CompanyEmailSystem.main(null);
+		readInput("P");
+		readInput("1");
+		readInput("L");
+		
 		String closeInput = "P";
 		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
 		String selectProject = "1";
