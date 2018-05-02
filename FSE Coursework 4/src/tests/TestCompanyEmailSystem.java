@@ -233,9 +233,8 @@ public class TestCompanyEmailSystem {
 		int num = 3;
 		String string = "";
 		for(int x = 1; x <= num; x++) {
-			
 			string = string + x;
-			for(int i = 0; i < 6; i++) {
+			for(int i = 0; i < 5; i++) {
 				string += "\nN";
 			}
 			string += "\nX";
@@ -246,14 +245,15 @@ public class TestCompanyEmailSystem {
 		readInput(string);
 		CompanyEmailSystem.main(null);
 		setOutputStreamTest();
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n"); // By Inigo
-		setOutputStreamDebug();
-		int y = 0, z = 0;
-		for(y += 4; z < 5; z++, y+=3) {
-			System.out.println(outputArray[y].toString());
-			System.out.println(CompanyEmailSystem.ProjectPhases[z+1].toString());
-			assertTrue(outputArray[y].toString().contains(CompanyEmailSystem.ProjectPhases[z+1].toString()));
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");	
+		int y = 0, z;
+		for(int i = 1; i < 4; i++) {
+			z = 0;
+			for(y += 4; z < 5; z++, y+=3) {
+				assertTrue(outputArray[y].toString().contains(CompanyEmailSystem.ProjectPhases[z+1].toString()));
+			}
 		}
+		
 
 
 		
