@@ -117,13 +117,9 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testAddProject_C32() {
-		readInput("A");
+		readInput("A\nTest Project 4");
 		CompanyEmailSystem.main(null);
 		setOutputStreamDebug();
-		readInput("Test Project 4");
-		
-//		System.out.println(CompanyEmailSystem.AllProjects.get(0).getPTitle());
-		System.out.println("Project: " + CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
 		assertEquals("Test Project 4", CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
 	}
 	
