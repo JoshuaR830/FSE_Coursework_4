@@ -3,9 +3,7 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -13,7 +11,6 @@ import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.Arrays;
 import java.util.regex.Pattern;
 
 import org.junit.After;
@@ -21,7 +18,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import emailScripts.CompanyEmailSystem;
-import emailScripts.CompanyProject;
 
 public class TestCompanyEmailSystem {
 
@@ -44,9 +40,7 @@ public class TestCompanyEmailSystem {
 	
 	@Test
 	public void testMainMethod_C12(){
-		String closeInput = "1\nX";
-		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
-		System.setIn(inStream);
+		readInput("1 \n X");
 		CompanyEmailSystem.main(null);
 		assertEquals(0, CompanyEmailSystem.currentProjShowing);
 	}
@@ -57,10 +51,7 @@ public class TestCompanyEmailSystem {
 
 	@Test
 	public void testMainMethod_C13(){
-		String closeInput = "X";
-		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
-		System.setIn(inStream);
-		
+		readInput("X");		
 		CompanyEmailSystem.main(null);
 		assertTrue(outContent.toString().contains("Goodbye!"));
 	}
@@ -71,10 +62,7 @@ public class TestCompanyEmailSystem {
 	
 	@Test(timeout=2000)
 	public void testMainMethod_C14() {
-		String closeInput = "X";
-		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
-		System.setIn(inStream);
-		
+		readInput("X");		
 		CompanyEmailSystem.main(null);
 		return;
 	}
@@ -87,14 +75,10 @@ public class TestCompanyEmailSystem {
 	
 	@Test
 	public void testListProjects_C21() {
-		System.setOut(new PrintStream(outContent));
-
-		String closeInput = "P";
-		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
-		System.setIn(inStream);
+		readInput("P");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
-		// Looked up regex expressions using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
+		// Looked up Regex usage using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
 		assertTrue(Pattern.matches("\\d*\\).{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* email(s|)", outputArray[2]));
 	}
 
@@ -195,7 +179,7 @@ public class TestCompanyEmailSystem {
 		setOutputStreamTest();
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body");
-		CompanyEmailSystem.main((null);
+		CompanyEmailSystem.main(null);
 	}
 	
 //	Test ID: C.7.2
