@@ -5,6 +5,7 @@ package emailScripts;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class CompanyEmailSystem {
 
@@ -102,7 +103,7 @@ public class CompanyEmailSystem {
                         ChangeProjectPhase();
                     } else if (s.equals("X")) {
                         currentProjShowing = 0;
-                    } else if (Integer.parseInt(s) != -1 ) {
+                    } else if (Integer.parseInt(s) != 1 ) {
                         ListEmails(Integer.parseInt(s));
                     } else {
                         System.out.println("Command not recognised");
@@ -149,7 +150,7 @@ public class CompanyEmailSystem {
         	// Added by Joshua Richardson 30/04/18
         	try {
         		projectPhaseEmails = cp.getEmailsForPhase(phaseToShow);
-        	}catch(Exception e) {
+        	} catch(Exception e) {
         		System.out.println("Invalid email");
         	}
         } else {
@@ -171,7 +172,7 @@ public class CompanyEmailSystem {
     }
     
     private static void ListPhases() {
-        CompanyProject cp = AllProjects.get(currentProjShowing);
+        CompanyProject cp = AllProjects.get(currentProjShowing-1);
         for (int x=0; x < cp.getPhaseByID(); x++ ) {
         	// This catches an exception if an invalid PID is entered
         	// Added by Joshua 30/04/18
@@ -186,7 +187,7 @@ public class CompanyEmailSystem {
     }
     
     private static void ListContacts() {
-        CompanyProject cp = AllProjects.get(currentProjShowing);
+        CompanyProject cp = AllProjects.get(currentProjShowing-1);
         ArrayList<String> projectContacts = cp.getProjectContacts();
         for (int x=0; x < projectContacts.size(); x++ ) {
             System.out.println((x+1)+") "+projectContacts.get(x));
@@ -204,7 +205,7 @@ public class CompanyEmailSystem {
         System.out.println("What is the Message?");
         String emailBody = in.nextLine();
         System.out.println(fromAddress + toAddress + subjectLine + emailBody);
-        CompanyProject cp = AllProjects.get(currentProjShowing);
+        CompanyProject cp = AllProjects.get(currentProjShowing-1);
         CompanyEmail ce = new CompanyEmail(fromAddress,toAddress,subjectLine,emailBody);
         try {
 			cp.addEmail(ce);
@@ -218,7 +219,9 @@ public class CompanyEmailSystem {
     //Set to public for testing by Joshua Richardson - 02/05/18
     
     public static void ChangeProjectPhase() {
-        CompanyProject cp = AllProjects.get(currentProjShowing);
+    	// Change made by Inigo Taylor - 02/05/18
+    	// Changed AllProjects.get(currentProjShowing) to AllProjects.get(currentProjShowing-1) because indexing begins at 0
+        CompanyProject cp = AllProjects.get(currentProjShowing-1);
         if (cp.nextPhase()) {
             System.out.println("[Phase changed: " + cp.toString());
         } else {
