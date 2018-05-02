@@ -192,15 +192,10 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testAddEmail_C72() {
-		ByteArrayInputStream inContent;
-		inContent = new ByteArrayInputStream("sender@nottingham.ac.uk".getBytes());
-		System.setIn(inContent);
-		inContent = new ByteArrayInputStream("receiver@nottingham.ac.uk".getBytes());
-		System.setIn(inContent);
-		inContent = new ByteArrayInputStream("subject".getBytes());
-		System.setIn(inContent);
-		inContent = new ByteArrayInputStream("body".getBytes());
-		System.setIn(inContent);
+		setOutputStreamTest();
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body");
+		CompanyEmailSystem.main((null);
 	}
 	
 //	Test ID: C.7.2
