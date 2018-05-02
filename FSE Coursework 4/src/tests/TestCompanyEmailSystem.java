@@ -227,13 +227,13 @@ public class TestCompanyEmailSystem {
 	@Test
 	public void testChangeProjectPhase_C81() {
 		setOutputStreamDebug();
-		CompanyEmailSystem.main(null);
+		String string = "1";
 		for(int i = 0; i < 6; i++) {
-			readInput("1");
-			readInput("N");
-			CompanyEmailSystem.ChangeProjectPhase();
+			string = string + "\nN";
 		}
-		
+		System.out.println(string);
+		readInput(string);
+		CompanyEmailSystem.main(null);
 		
 	}
 
@@ -250,7 +250,6 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testChangeProjectPhase_C83() {
-		
 		
 	}
 	
