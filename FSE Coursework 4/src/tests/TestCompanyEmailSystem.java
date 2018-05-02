@@ -3,6 +3,7 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -33,7 +34,7 @@ public class TestCompanyEmailSystem {
 //	Date created: dd/mm/yy
 
 //	Test ID: C.1.2
-// 	Test created by: f_name s_name
+// 	Test created by: Inigo Taylor
 //	Date created: 02/05/18
 	
 	@Test
@@ -44,16 +45,12 @@ public class TestCompanyEmailSystem {
 		CompanyEmailSystem.main(null);
 		assertEquals(0, CompanyEmailSystem.currentProjShowing);
 	}
-
 	
 //	Test ID: C.1.3
 // 	Test created by: Inigo Taylor
 //	Date created: 01/05/18
 
-	// I have added timeout as this is the easiest way I can see to test to see if the program is still running
-	// Once X is entered by the user, the program should close and so main should exit its infinite waiting loop
-	// If the test reaches the timeout, this means we are still on the line "CompanyEmailSystem.main(null)"
-	@Test(timeout=2000)
+	@Test
 	public void testMainMethod_C13(){
 		String closeInput = "X";
 		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
@@ -61,6 +58,20 @@ public class TestCompanyEmailSystem {
 		
 		CompanyEmailSystem.main(null);
 		assertTrue(outContent.toString().contains("Goodbye!"));
+	}
+	
+//	Test ID: C.1.4
+// 	Test created by: Inigo Taylor, Joshua Richardson
+//	Date created: 01/05/18
+	
+	@Test(timeout=2000)
+	public void testMainMethod_C14() {
+		String closeInput = "X";
+		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
+		System.setIn(inStream);
+		
+		CompanyEmailSystem.main(null);
+		return;
 	}
 	
 //	Test list projects function
