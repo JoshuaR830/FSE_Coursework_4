@@ -30,7 +30,7 @@ public class TestCompanyEmailSystem {
 	
 	@Before
 	public void setUpStreams() {
-		System.setOut(new PrintStream(outContent));
+		setOutputStreamTest();
 	}
 	
 //	Test main method
@@ -124,8 +124,7 @@ public class TestCompanyEmailSystem {
 		String newProject = "Proj4";
 		inStream = new ByteArrayInputStream(newProject.getBytes());
 		System.setIn(inStream);
-		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
-		
+		setOutputStreamDebug();
 		System.out.println("AllProjects: " + Arrays.toString(CompanyEmailSystem.AllProjects.toArray()));
 		//assertEquals(CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle(), "Proj4");
 	}
@@ -219,6 +218,13 @@ public class TestCompanyEmailSystem {
 		
 	}
 	
+	private void setOutputStreamDebug() {
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+	}
+	
+	private void setOutputStreamTest() {
+		System.setOut(new PrintStream(outContent));
+	}
 	
 	@After
 	public void cleanUpStreams() {
