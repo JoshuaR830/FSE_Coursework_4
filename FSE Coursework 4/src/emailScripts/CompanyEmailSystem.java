@@ -83,7 +83,7 @@ public class CompanyEmailSystem {
                     } else if (s.equals("X")) {
                         System.out.println("Goodbye!");
                         break;
-                    } else if (Integer.parseInt(s) != -1 ) {
+                    } else if (Integer.parseInt(s) > 0 ) {
                     	// Change made by Inigo Taylor - 02/05/18
                     	// Changed Integer.parseInt(s)-1 to Integer.parseInt(s) so the currentProject stores the correct value
                         currentProjShowing = Integer.parseInt(s);
@@ -103,7 +103,7 @@ public class CompanyEmailSystem {
                         ChangeProjectPhase();
                     } else if (s.equals("X")) {
                         currentProjShowing = 0;
-                    } else if (Integer.parseInt(s) != 1 ) {
+                    } else if (Integer.parseInt(s) > 0 ) {
                         ListEmails(Integer.parseInt(s));
                     } else {
                         System.out.println("Command not recognised");
