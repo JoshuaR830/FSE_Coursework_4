@@ -31,14 +31,13 @@ public class TestCompanyEmailSystem {
 //	Test main method
 
 //	Test ID: C.1.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 02/04/18
 	
 	@Test
 	public void testMainMethod_C11(){
-		readInput("1");		
 		CompanyEmailSystem.main(null);
-		assertTrue(outContent.toString().contains(" "));
+		assertTrue(outContent.toString().contains("P = List [P]rojects, [num] = Open Project [num], A = [A]dd Project, X = E[x]it"));
 	}
 
 //	Test ID: C.1.2
