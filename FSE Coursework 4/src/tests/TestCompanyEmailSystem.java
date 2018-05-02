@@ -33,6 +33,13 @@ public class TestCompanyEmailSystem {
 //	Test ID: C.1.1
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
+	
+	@Test
+	public void testMainMethod_C11(){
+		readInput("1");		
+		CompanyEmailSystem.main(null);
+		assertTrue(outContent.toString().contains(" "));
+	}
 
 //	Test ID: C.1.2
 // 	Test created by: Inigo Taylor
@@ -65,6 +72,19 @@ public class TestCompanyEmailSystem {
 		readInput("X");		
 		CompanyEmailSystem.main(null);
 		return;
+	}
+	
+//	Test ID: C.1.5
+// 	Test created by: Inigo Taylor
+//	Date created: 01/05/18
+	
+	@Test
+	public void testMainMethod_C15() {
+		readInput("1");
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+		assertTrue(outputArray[3].toString().contains("L = [L]ist Emails, A = [A]dd Email, F = List Phase [F]olders, N = Move to [N]ext Phase, [num] = List Emails in Phase [num], C = List [C]ontacts, X =  E[x]it Project"));
 	}
 	
 //	Test list projects function

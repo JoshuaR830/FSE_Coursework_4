@@ -83,7 +83,9 @@ public class CompanyEmailSystem {
                         System.out.println("Goodbye!");
                         break;
                     } else if (Integer.parseInt(s) != -1 ) {
-                        currentProjShowing = Integer.parseInt(s)-1;
+                    	// Change made by Inigo Taylor - 02/05/18
+                    	// Changed Integer.parseInt(s)-1 to Integer.parseInt(s) so the currentProject stores the correct value
+                        currentProjShowing = Integer.parseInt(s);
                     } else {
                         System.out.println("Command not recognised");
                     }
@@ -136,7 +138,9 @@ public class CompanyEmailSystem {
     }
     
     public static void ListEmails(int phaseToShow) {
-        CompanyProject cp = AllProjects.get(currentProjShowing);
+    	// Change made by Inigo Taylor - 02/05/18
+    	// Changed AllProjects.get(currentProjShowing) to AllProjects.get(currentProjShowing-1) because indexing begins at 0
+        CompanyProject cp = AllProjects.get(currentProjShowing-1);
         ArrayList<CompanyEmail> projectPhaseEmails = null;
         if (phaseToShow==0) {
             projectPhaseEmails = cp.getEmailsForPhase();
@@ -175,7 +179,7 @@ public class CompanyEmailSystem {
         		// Change made by Inigo Taylor - 02/05/18
         		// Changed the function cp.getPhaseByName to ProjectPhases[x] to get the previous phase names, rather than the current
         		System.out.println((x+1)+") "+ProjectPhases[x]+" - "+cp.getEmailsForPhase(x).size()+" Emails");
-        	}catch(Exception e) {
+        	} catch(Exception e) {
         		System.out.println("Invalid email");
         	}            
         }
