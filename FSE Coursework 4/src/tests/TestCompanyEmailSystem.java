@@ -186,7 +186,14 @@ public class TestCompanyEmailSystem {
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		// Looked up Regex usage using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
 		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
-		assertTrue(outputArray[8].matches("\\d*\\) Feasibility - \\d* (e|E)mail(s|)"));
+		
+		// Joshua trying to work out what happened
+		setOutputStreamDebug();
+		for(int x = 0; x < 9; x++) {
+			System.out.println(outputArray[x]);
+		}
+		// Due to zero indexing i think this should be 7 - Joshua
+		assertTrue(outputArray[7].matches("\\d*\\) Feasibility - \\d* (e|E)mail(s|)"));
 	}
 	
 	
