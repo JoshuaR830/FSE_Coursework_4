@@ -403,7 +403,7 @@ public class TestCompanyEmail {
 	@Test
 	public void testToString_1() {
 		CompanyEmail ce = new CompanyEmail();
-		ce.setSubject("");
+		ce.setSubject(emptyStr);
 		assertEquals("[no subject]", ce.toString());
 	}
 	
@@ -416,8 +416,8 @@ public class TestCompanyEmail {
 	@Test
 	public void testToString_2() {
 		CompanyEmail ce = new CompanyEmail();
-		ce.setSubject("Test");
-		assertEquals("Test", ce.toString());
+		ce.setSubject(subLine);
+		assertEquals(subLine, ce.toString());
 	}
 	
 	
