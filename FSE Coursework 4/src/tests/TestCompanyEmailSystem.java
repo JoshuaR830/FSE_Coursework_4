@@ -136,8 +136,13 @@ public class TestCompanyEmailSystem {
 //	Test list emails function
 	
 //	Test ID: C.4.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Julian Kubelec
+//	Date created: 02/05/18
+	@Test
+	public void testListEmails_C041() {
+		String closeInput = "P";
+		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
+	}
 		
 //	Test ID: C.4.2
 // 	Test created by: f_name s_name
@@ -173,8 +178,20 @@ public class TestCompanyEmailSystem {
 //	Test add email function
 	
 //	Test ID: C.7.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Henry Hunt
+//	Date created: 02/05/18
+	@Test
+	public void testAddEmail_C72() {
+		ByteArrayInputStream inContent;
+		inContent = new ByteArrayInputStream("sender@nottingham.ac.uk".getBytes());
+		System.setIn(inContent);
+		inContent = new ByteArrayInputStream("receiver@nottingham.ac.uk".getBytes());
+		System.setIn(inContent);
+		inContent = new ByteArrayInputStream("subject".getBytes());
+		System.setIn(inContent);
+		inContent = new ByteArrayInputStream("body".getBytes());
+		System.setIn(inContent);
+	}
 	
 //	Test ID: C.7.2
 // 	Test created by: f_name s_name
