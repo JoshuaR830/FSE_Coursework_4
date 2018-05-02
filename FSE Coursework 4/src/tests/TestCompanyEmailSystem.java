@@ -11,6 +11,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.regex.Pattern;
 
 import org.junit.After;
 import org.junit.Before;
@@ -80,6 +81,16 @@ public class TestCompanyEmailSystem {
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
 	
+	@Test
+	public void testListProjects_C21() {
+		String closeInput = "P";
+		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
+		System.setIn(inStream);
+		
+		CompanyEmailSystem.main(null);
+		
+		assertTrue(Pattern.matches(".{10,} \\[[Feasibility|Design]\\].*", "123456789ab [Feasibility] - 4 emails"));
+	}
 	
 // 	Test add project function
 
