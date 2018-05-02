@@ -98,7 +98,9 @@ public class TestCompanyEmailSystem {
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		// Looked up Regex usage using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
-		assertTrue(Pattern.matches("\\d*\\).{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* email(s|)", outputArray[2]));
+		for(int x = 0; x < 3; x++) {
+			assertTrue(Pattern.matches("\\d*\\).{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* email(s|)", outputArray[2+x]));
+		}
 	}
 
 // 	Test add project function
