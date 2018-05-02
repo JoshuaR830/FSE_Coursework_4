@@ -90,16 +90,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Inigo Taylor
 //	Date created: 02/05/18
 	
-	@Test
-	public void testMainMethod_C16() {
-		readInput("-2");
-		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
-		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
-		System.out.println(outputArray[2]);
-		assertTrue(outputArray[3].toString().contains("Command not recognised"));
-	}
-	
+
 //	Test list projects function
 
 //	Test ID: C.2.1
