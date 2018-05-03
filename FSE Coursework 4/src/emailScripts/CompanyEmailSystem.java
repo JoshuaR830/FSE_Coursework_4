@@ -41,21 +41,21 @@ public class CompanyEmailSystem {
         		try {
 					cp1.addEmail(ce);
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println("Could not add");
 				}
         		break;
         	case 1:
         		try {
 					cp2.addEmail(ce);
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println("Could not add");
 				}
         		break;
         	case 2:
         		try {
 					cp3.addEmail(ce);
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println("Could not add");
 				}
         		break;
         	}
@@ -238,7 +238,7 @@ public class CompanyEmailSystem {
 			cp.addEmail(ce);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Could not add");
 		}
         System.out.println("[Email added to " + cp.toString() + "]");
     }
