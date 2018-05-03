@@ -150,7 +150,19 @@ public class TestCompanyEmailSystem {
 //	Test ID: C.4.1
 // 	Test created by: Julian Kubelec
 //	Date created: 02/05/18
-
+	@Test
+	public void testListEmails_C041() {
+		CompanyEmailSystem.main(null);
+		readInput("P");
+		readInput("1");
+		readInput("L");
+		
+		String closeInput = "P";
+		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
+		String selectProject = "1";
+		//InputStream inStream = new ByteArrayInputStream(select.getBytes());
+		
+	}
 		
 //	Test ID: C.4.2
 // 	Test created by: f_name s_name
@@ -203,6 +215,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testAddEmail_C72() {
+		setOutputStreamTest();
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body");
 		CompanyEmailSystem.main(null);
@@ -224,7 +237,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testChangeProjectPhase_C81() {
-		int num = 3;
+		/*int num = 3;
 		String string = "";
 		for(int x = 1; x <= num; x++) {
 			string = string + x;
@@ -236,8 +249,7 @@ public class TestCompanyEmailSystem {
 				string += "\n";
 			}
 		}
-		readInput("1 \n N");
-		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+		readInput(string);
 		CompanyEmailSystem.main(null);
 		setOutputStreamTest();
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");	
@@ -249,7 +261,11 @@ public class TestCompanyEmailSystem {
 				// Checks that it is in the correct order by looking to see if it matches the project phase
 				assertTrue(outputArray[y].toString().contains(CompanyEmailSystem.ProjectPhases[z+1].toString()));
 			}
-		}	
+		}	*/
+		readInput("");
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body");
+		CompanyEmailSystem.main(null);
 	}
 
 //	Test ID: C.8.2
