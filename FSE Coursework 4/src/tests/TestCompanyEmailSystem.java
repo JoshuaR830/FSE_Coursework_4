@@ -11,14 +11,14 @@ import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.regex.Pattern;
+import java.util.Arrays;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import emailScripts.CompanyEmailSystem;
-import emailScripts.CompanyProject;
 
 public class TestCompanyEmailSystem {
 
@@ -217,8 +217,23 @@ public class TestCompanyEmailSystem {
 //	Test list contacts function
 	
 //	Test ID: C.6.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Tim Bartrum
+//	Date created: 03/03/18
+	@Test
+	public void testListContacts_C61() {
+		readInput("P\n1\nC");
+		CompanyEmailSystem.main(null);
+		String[] output = readOutput();
+		
+		int contactNum = 0;
+		int num = 1;
+		for(int i = 9; i <= 12; i++) {
+			assertEquals(num + ") you" + contactNum + "@you.com", output[i]);
+			num++;
+			contactNum += 3;
+		}
+	}
+	
 	
 //	Test ID: C.6.2
 // 	Test created by: f_name s_name
