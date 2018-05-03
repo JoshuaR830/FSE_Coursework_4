@@ -13,7 +13,7 @@ public class CompanyEmailSystem {
 	public static String[] ProjectPhases = new String[]{"Feasibility","Design","Implementation","Testing","Deployment","Completed"};
 	
     public static ArrayList<CompanyProject> AllProjects;
-    public static int currentProjShowing;
+    public static int currentProjShowing = 5;
     
     public static void main(String[] args) {
         

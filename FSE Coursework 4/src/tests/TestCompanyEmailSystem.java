@@ -13,6 +13,8 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -190,14 +192,15 @@ public class TestCompanyEmailSystem {
 //	Test list emails function
 	
 //	Test ID: C.4.1
-// 	Test created by: Julian Kubelec, Joshua Richardson & Inigo Taylor
+// 	Test created by: Julian Kubelec, Joshua Richardson, Inigo Taylor
 //	Date created: 02/05/18
 	@Test
 	public void testListEmails_C041() {
-		int lineNum = 9;
+		int lineNum = 6;
 		readInput("1 \n L");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();
+
 		for(int i = 9; i >= 0;  i-=3) {
 			assertTrue(outputArray[lineNum].contains((lineNum-8)+") me"+i+"@me.com - this is a test subject for email"+i));
 			lineNum++;
@@ -286,11 +289,11 @@ public class TestCompanyEmailSystem {
 		String body = "What is the Message?";
 		readInput("2 \n A \n sender@nottingham.ac.uk\n receiver@nottingham.ac.uk\n subject\n body\n X");
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");		
-		assertTrue(outputArray[5].contains("from"));
-		assertTrue(outputArray[6].contains("to"));
-		assertTrue(outputArray[7].contains("Subject"));
-		assertTrue(outputArray[8].contains("Message"));
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		assertTrue(outputArray[4].contains("from"));
+		assertTrue(outputArray[5].contains("to"));
+		assertTrue(outputArray[6].contains("Subject"));
+		assertTrue(outputArray[7].contains("Message"));
 	}
 	
 //	Test ID: C.7.2
