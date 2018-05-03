@@ -135,16 +135,18 @@ public class TestCompanyEmailSystem {
 	public void testAddProject_C32() {
 		readInput("A\nTest Project 4");
 		CompanyEmailSystem.main(null);
-		setOutputStreamDebug();
 		assertEquals("Test Project 4", CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
 	}
 	
 //	Test ID: C.3.3
 // 	Test created by: Tim Bartrum
-//	Date created: dd/mm/yy
+//	Date created: 03/05/18
 	@Test
 	public void testAddProject_C33() {
-		
+		readInput("A\nTest Project 4");
+		CompanyEmailSystem.main(null);
+		String[] outputArray = readOutput();
+		assertEquals("[Project added]", outputArray[3]);
 	}
 	
 	
@@ -414,6 +416,15 @@ public class TestCompanyEmailSystem {
 		InputStream inStream = new ByteArrayInputStream(input.getBytes());
 		System.setIn(inStream);
 	}
+	
+	/**
+	 * Read the contents of the outputstream
+	 * @author Tim Bartrum
+	 */
+	private String[] readOutput() {
+		return outContent.toString().split("\r\n|\r|\n");
+	}
+	
 	
 	@After
 	public void cleanUpStreams() {
