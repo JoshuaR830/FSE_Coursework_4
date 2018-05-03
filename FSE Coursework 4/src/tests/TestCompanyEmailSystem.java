@@ -83,7 +83,7 @@ public class TestCompanyEmailSystem {
 		readInput("1");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
-		assertTrue(outputArray[3].contains("L = [L]ist Emails, A = [A]dd Email, F = List Phase [F]olders, N = Move to [N]ext Phase, [num] = List Emails in Phase [num], C = List [C]ontacts, X =  E[x]it Project"));
+		assertTrue(outputArray[3].toString().contains("L = [L]ist Emails, A = [A]dd Email, F = List Phase [F]olders, N = Move to [N]ext Phase, [num] = List Emails in Phase [num], C = List [C]ontacts, X =  E[x]it Project"));
 	}
 	
 //	Test ID: C.1.6
@@ -212,7 +212,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Henry Hunt
 //	Date created: 02/05/18
 	@Test
-	public void testAddEmail_C72() {
+	public void testAddEmail_C71() {
 //		setOutputStreamTest();
 		
 		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body \n X");
@@ -223,12 +223,23 @@ public class TestCompanyEmailSystem {
 	}
 	
 //	Test ID: C.7.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 03/05/18
+	
+	@Test
+	public void testAddEmail_C72() {
+		String sender = "sender@nottingham.ac.uk";
+		String subject = "subject";
+		readInput("2 \n A \n "+ sender + "\n receiver@nottingham.ac.uk \n" + subject + " \n body \n L \n X");
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		assertTrue(outputArray[16].contains(sender));
+		assertTrue(outputArray[16].contains(subject));		
+	}
 	
 //	Test ID: C.7.3
 // 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+//	Date created: dd/mm/yy	
 	
 	
 //	Test change project phase function
