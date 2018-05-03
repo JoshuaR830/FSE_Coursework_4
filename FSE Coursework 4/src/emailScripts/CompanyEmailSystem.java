@@ -90,7 +90,8 @@ public class CompanyEmailSystem {
             			if (Integer.parseInt(s) > 0 ) {
             				// Change made by Inigo Taylor - 02/05/18
                         	// Changed Integer.parseInt(s)-1 to Integer.parseInt(s) so the currentProject stores the correct value
-                            currentProjShowing = Integer.parseInt(s);
+                            // In addition, so that when obtaining values still works when calling functions in CompanyProject I decremented 1 in all the other functions using it
+            				currentProjShowing = Integer.parseInt(s);
             			}
                     } else {
                         System.out.println("Command not recognised");
@@ -162,9 +163,7 @@ public class CompanyEmailSystem {
     }
     
     public static void ListEmails(int phaseToShow) {
-    	// Change made by Inigo Taylor - 02/05/18
-    	// Changed AllProjects.get(currentProjShowing) to AllProjects.get(currentProjShowing-1) because indexing begins at 0
-        CompanyProject cp = AllProjects.get(currentProjShowing-1);
+    	CompanyProject cp = AllProjects.get(currentProjShowing-1);
         ArrayList<CompanyEmail> projectPhaseEmails = null;
         if (phaseToShow==0) {
             projectPhaseEmails = cp.getEmailsForPhase();
@@ -246,9 +245,7 @@ public class CompanyEmailSystem {
     //Set to public for testing by Joshua Richardson - 02/05/18
     
     public static void ChangeProjectPhase() {
-    	// Change made by Inigo Taylor - 02/05/18
-    	// Changed AllProjects.get(currentProjShowing) to AllProjects.get(currentProjShowing-1) because indexing begins at 0
-        CompanyProject cp = AllProjects.get(currentProjShowing-1);
+    	CompanyProject cp = AllProjects.get(currentProjShowing-1);
         if (cp.nextPhase()) {
             System.out.println("[Phase changed: " + cp.toString());
         } else {
