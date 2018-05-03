@@ -167,7 +167,7 @@ public class TestCompanyEmailSystem {
 //	Test list emails function
 	
 //	Test ID: C.4.1
-// 	Test created by: Julian Kubelec
+// 	Test created by: Julian Kubelec, Joshua Richardson, Inigo Taylor
 //	Date created: 02/05/18
 	@Test
 	public void testListEmails_C041() {
@@ -177,9 +177,8 @@ public class TestCompanyEmailSystem {
 		String[] outputArray = readOutput();
 		setOutputStreamDebug();
 		for(int i = 9; i >= 0;  i-=3) {
-			//assertTrue(outputArray[lineNum++].contains((lineNum-8)+") me"+i+"@me.com - this is a test subject for email"+i));
-			System.out.println((lineNum-8)+") me"+i+"@me.com - this is a test subject for email"+i);
-			System.out.println(outputArray[lineNum++]);
+			assertTrue(outputArray[lineNum].contains((lineNum-8)+") me"+i+"@me.com - this is a test subject for email"+i));
+			lineNum++;
 		}
 	}
 	
