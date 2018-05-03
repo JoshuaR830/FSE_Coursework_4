@@ -2,6 +2,9 @@
 
 package emailScripts;
 
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 
 public class CompanyProject {

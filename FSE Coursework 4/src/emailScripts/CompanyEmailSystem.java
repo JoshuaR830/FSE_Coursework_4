@@ -29,7 +29,7 @@ public class CompanyEmailSystem {
         
         // Bug found
         // Problem created by the fact that the project titles are of invalid length
-        CompanyProject cp1 = new CompanyProject("Proj1");
+        CompanyProject cp1 = new CompanyProject("Proj1234567");
         CompanyProject cp2 = new CompanyProject("Proj2");
         CompanyProject cp3 = new CompanyProject("Proj3");
         
@@ -148,7 +148,7 @@ public class CompanyEmailSystem {
         for (int x = 0; x < AllProjects.size(); x++) {
             CompanyProject cp = AllProjects.get(x);
             int emailCount = cp.getEmailsForPhase().size();
-            System.out.println((x+1) + ") " + cp.toString() + " - " + emailCount + " emails");
+            System.out.println((x+1) + ") " + cp.toString() + " - " + emailCount + " emails"); // Tim Bartrum
         }
     }
     

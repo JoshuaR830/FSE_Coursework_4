@@ -122,27 +122,37 @@ public class TestCompanyEmailSystem {
 	}
 	
 //	Test ID: C.3.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Tim Bartrum
+//	Date created: 02/05/18
 	@Test
 	public void testAddProject_C32() {
-		readInput("A");
+		readInput("A\nTest Project 4");
 		CompanyEmailSystem.main(null);
-		
-		readInput("Proj4");
-		
-		//setOutputStreamDebug();
-		//System.out.println("Project: " + CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
-		//assertEquals(CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle(), "Proj4");
+		setOutputStreamDebug();
+		assertEquals("Test Project 4", CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
 	}
 	
 //	Test ID: C.3.3
-// 	Test created by: f_name s_name
+// 	Test created by: Tim Bartrum
 //	Date created: dd/mm/yy
+	@Test
+	public void testAddProject_C33() {
+		
+	}
+	
 	
 //	Test ID: C.3.4
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 03/05/18
+	
+	@Test
+	public void testAddProject_C34(){
+		readInput("A \n \n P");
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		assertTrue(outputArray[9].contains("[Feasibility] - 0 emails"));
+		
+	}
 	
 	
 //	Test list emails function
@@ -213,7 +223,6 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testAddEmail_C71() {
-		
 		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body \n X");
 
 		CompanyEmailSystem.main(null);
@@ -222,8 +231,19 @@ public class TestCompanyEmailSystem {
 	}
 	
 //	Test ID: C.7.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 03/05/18
+	
+	@Test
+	public void testAddEmail_C72() {
+		String sender = "sender@nottingham.ac.uk";
+		String subject = "subject";
+		readInput("2 \n A \n "+ sender + "\n receiver@nottingham.ac.uk \n" + subject + " \n body \n L \n X");
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		assertTrue(outputArray[16].contains(sender));
+		assertTrue(outputArray[16].contains(subject));		
+	}
 	
 //	Test ID: C.7.3
 // 	Test created by: Joshua Richardson
@@ -362,15 +382,27 @@ public class TestCompanyEmailSystem {
 	
 	
 	
-	
+	/**
+	 * Sets output stream back to the console for debugging purposes
+	 * @author Tim Bartrum
+	 */
 	private void setOutputStreamDebug() {
 		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
 	}
 	
+	/**
+	 * Sets output stream back to test output for use after setOutputStreamDebug
+	 * @author Tim Bartrum
+	 */
 	private void setOutputStreamTest() {
 		System.setOut(new PrintStream(outContent));
 	}
 	
+	/**
+	 * Takes a string to read as an input for tests
+	 * @author Tim Bartrum
+	 * @param input the input to read
+	 */
 	private void readInput(String input) {
 		InputStream inStream = new ByteArrayInputStream(input.getBytes());
 		System.setIn(inStream);
