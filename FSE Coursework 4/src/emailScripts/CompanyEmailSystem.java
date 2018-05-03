@@ -83,6 +83,7 @@ public class CompanyEmailSystem {
                     } else if (s.equals("X")) {
                         System.out.println("Goodbye!");
                         break;
+                    }
                     // Change made by Joshua Richardson - 03/05/18
                     // Stop the error by seeing if it is a digit
                     else if(s.matches("\\d*")) {
