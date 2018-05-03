@@ -8,14 +8,16 @@ public class CompanyEmail {
     private String subjectLine;
     private String emailMessage;
     
+    // Cleaned up constructors - Tim Bartrum
     public CompanyEmail() {
-        fromAddress = null;
-        toAddress = null;
-        subjectLine = null;
-        emailMessage = null;
+        setupData(null, null, null, null);
     }
     
     public CompanyEmail(String fAddress, String tAddress, String subLine, String eMessage) {
+    	setupData(fAddress, tAddress, subLine, eMessage);
+    }
+    
+    private void setupData(String fAddress, String tAddress, String subLine, String eMessage) {
     	fromAddress = fAddress;
     	toAddress = tAddress;
     	subjectLine = subLine;
