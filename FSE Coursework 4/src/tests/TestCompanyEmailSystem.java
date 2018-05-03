@@ -212,7 +212,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Henry Hunt
 //	Date created: 02/05/18
 	@Test
-	public void testAddEmail_C72() {
+	public void testAddEmail_C71() {
 //		setOutputStreamTest();
 		
 		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body \n X");
@@ -227,8 +227,12 @@ public class TestCompanyEmailSystem {
 //	Date created: dd/mm/yy
 	
 //	Test ID: C.7.3
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Joshua Richardson
+//	Date created: 03/05/18
+	@Test
+	public void testAddEmail_C73() {
+		
+	}
 	
 	
 //	Test change project phase function
