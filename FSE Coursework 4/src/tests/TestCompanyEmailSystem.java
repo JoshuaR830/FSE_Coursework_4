@@ -25,9 +25,15 @@ public class TestCompanyEmailSystem {
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
+	//Email test data
+	String sender = "sender@nottingham.ac.uk";
+	String receiver = "receiver@nottingham.ac.uk";
+	String subject = "subject"; 
+	String body ="body";
+	
 	@Before
 	public void setUpStreams() {
-		setOutputStreamTest();
+		setOutputStreamTest();  
 	}
 	
 //	Test main method
@@ -83,7 +89,7 @@ public class TestCompanyEmailSystem {
 	public void testMainMethod_C15() {
 		readInput("1");
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		String[] outputArray = readOutput();
 		assertTrue(outputArray[3].toString().contains("L = [L]ist Emails, A = [A]dd Email, F = List Phase [F]olders, N = Move to [N]ext Phase, [num] = List Emails in Phase [num], C = List [C]ontacts, X =  E[x]it Project"));
 	}
 	
@@ -95,7 +101,7 @@ public class TestCompanyEmailSystem {
 	public void testMainMethod_C16() {
 		readInput("-2\nX");
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		String[] outputArray = readOutput();
 		assertTrue(outputArray[2].contains("Command not recognised"));
 	}	
 	
@@ -130,7 +136,7 @@ public class TestCompanyEmailSystem {
 	public void testListProjects_C21() {
 		readInput("P");
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		String[] outputArray = readOutput();
 		// Looked up Regex usage using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
 		for(int x = 0; x < 3; x++) {
 			assertTrue(outputArray[2+x].matches("\\d*\\).{10,} \\[(Feasibility|Design|Implementation|Testing|Deployment|Completed)\\] - \\d* email(s|)"));
@@ -180,7 +186,7 @@ public class TestCompanyEmailSystem {
 	public void testAddProject_C34(){
 		readInput("A \n \n P");
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		String[] outputArray = readOutput();
 		assertTrue(outputArray[9].contains("[Feasibility] - 0 emails"));
 		
 	}
@@ -237,7 +243,7 @@ public class TestCompanyEmailSystem {
 	public void testListPhases_C51() {
 		readInput("1 \n N \n F");
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		String[] outputArray = readOutput();
 		// Looked up Regex usage using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
 		
 		// Joshua trying to work out what happened
@@ -278,7 +284,7 @@ public class TestCompanyEmailSystem {
 		readInput("A \n New Project Title \n 4 \n C X");
 		
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		String[] outputArray = readOutput();
 		assertTrue(outputArray[8].contains("What do you want to do?"));
 	}
 	
@@ -289,13 +295,9 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testAddEmail_C71() {
-		String sender = "Which email address is it from?";
-		String receiver = "Which email address is it to?";
-		String subject ="What is the Subject?";
-		String body = "What is the Message?";
-		readInput("2 \n A \n sender@nottingham.ac.uk\n receiver@nottingham.ac.uk\n subject\n body\n X");
+		readInput("2 \n A \n"+ sender+"\n"+ receiver +"\n "+subject+"\n"+ body+"\n X");
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");		
+		String[] outputArray = readOutput();		
 		assertTrue(outputArray[4].contains("from"));
 		assertTrue(outputArray[5].contains("to"));
 		assertTrue(outputArray[6].contains("Subject"));
@@ -308,9 +310,7 @@ public class TestCompanyEmailSystem {
 	
 	@Test
 	public void testAddEmail_C72() {
-		String sender = "sender@nottingham.ac.uk";
-		String subject = "subject";
-		readInput("2 \n A \n "+ sender + "\n receiver@nottingham.ac.uk \n" + subject + " \n body \n L \n X");
+		readInput("2 \n A \n "+ sender + "\n"+ receiver +"\n" + subject + " \n"+ body +"\n L \n X");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		assertTrue(outputArray[16].contains(sender));
@@ -326,10 +326,10 @@ public class TestCompanyEmailSystem {
 				
 		for(int x = 1; x <= num; x++) {
 			// Inputs written by Henry Hunt 02/05/18
-			readInput(x+" \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body \n X");
+			readInput(x+" \n A \n"+ sender +"\n"+ receiver+ "\n" + subject + "\n"+  body +"\n X");
 	
 			CompanyEmailSystem.main(null);
-			String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+			String[] outputArray = readOutput();
 	
 			assertTrue(outputArray[9].contains("Email added to"));
 		}
@@ -357,7 +357,7 @@ public class TestCompanyEmailSystem {
 		}
 		readInput(string);
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");	
+		String[] outputArray =readOutput();	
 		int y = 0, z;
 		
 		
@@ -391,7 +391,7 @@ public class TestCompanyEmailSystem {
 		}
 		readInput(string);
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");	
+		String[] outputArray = readOutput();	
 		int y = 0, z;
 		for(int i = 1; i <= num; i++) {
 			z = 0;
@@ -423,7 +423,7 @@ public class TestCompanyEmailSystem {
 		}
 		readInput(string);
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");	
+		String[] outputArray = readOutput();	
 		int y = 0, z;
 		for(int i = 1; i <= num; i++) {
 			z = 5;
