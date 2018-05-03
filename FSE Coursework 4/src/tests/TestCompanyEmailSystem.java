@@ -107,8 +107,6 @@ public class TestCompanyEmailSystem {
 		
 		CompanyEmailSystem.main(null);
 		String[] output = readOutput();
-		setOutputStreamDebug();
-
 		
 		assertTrue(output[4].contains("Command not recognised"));
 		assertTrue(output[9].contains("Command not recognised"));
