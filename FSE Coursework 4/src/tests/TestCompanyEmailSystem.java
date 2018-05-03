@@ -11,12 +11,9 @@ import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.Arrays;
-import java.util.regex.Pattern;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import emailScripts.CompanyEmailSystem;
@@ -110,7 +107,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 03/05/18
 	@Test
 	public void testMainMethod_C17() {
-		readInput(1+ "\ns\nX \ns\n" + 1 + "\n"+1+"\nX");
+		readInput("1\ns\nX\ns\n1\n1\nX");
 		
 		CompanyEmailSystem.main(null);
 		String[] output = readOutput();
@@ -228,10 +225,6 @@ public class TestCompanyEmailSystem {
 			}
 		}
 	}	
-//	Test ID: C.4.3
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-		
 	
 //	Test list phases function
 

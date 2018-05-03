@@ -41,21 +41,21 @@ public class CompanyEmailSystem {
         		try {
 					cp1.addEmail(ce);
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println("Could not add");
 				}
         		break;
         	case 1:
         		try {
 					cp2.addEmail(ce);
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println("Could not add");
 				}
         		break;
         	case 2:
         		try {
 					cp3.addEmail(ce);
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println("Could not add");
 				}
         		break;
         	}
@@ -168,10 +168,12 @@ public class CompanyEmailSystem {
         ArrayList<CompanyEmail> projectPhaseEmails = null;
         if (phaseToShow==0) {
             projectPhaseEmails = cp.getEmailsForPhase();
+        // Changed this to show current phase if current phase is requested - it does exist
         } else if (phaseToShow <= cp.getPhaseByID()+1) {
         	// This catches an exception if an invalid PID is entered
         	// Added by Joshua Richardson 30/04/18
         	try {
+        		// Changed this to show current phase if current phase is requested - it does exist
         		projectPhaseEmails = cp.getEmailsForPhase(phaseToShow-1);
         	} catch(Exception e) {
         		System.out.println("Invalid email");
@@ -236,7 +238,7 @@ public class CompanyEmailSystem {
 			cp.addEmail(ce);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Could not add");
 		}
         System.out.println("[Email added to " + cp.toString() + "]");
     }
