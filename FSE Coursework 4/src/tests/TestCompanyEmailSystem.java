@@ -92,7 +92,7 @@ public class TestCompanyEmailSystem {
 	
 	@Test
 	public void testMainMethod_C16() {
-		readInput("-2");
+		readInput("-2\nX");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		assertTrue(outputArray[2].contains("Command not recognised"));
@@ -103,16 +103,16 @@ public class TestCompanyEmailSystem {
 //	Date created: 03/05/18
 	@Test
 	public void testMainMethod_C17() {
-		readInput(1+"\ns\nX\n"+1+"\n"+1+"\nX\ns\n"+1+"\nX\ns\ns\nX");
+		readInput(1+ "\ns\nX \ns\n" + 1 + "\n"+1+"\nX");
 		
 		CompanyEmailSystem.main(null);
 		String[] output = readOutput();
 		setOutputStreamDebug();
-		for(int x = 0; x < 6; x ++) {
-			System.out.println(output[x]);
-		}
+
+		
 		assertTrue(output[4].contains("Command not recognised"));
-//		assertTrue(output[2].contains("Command not recognised"));
+		assertTrue(output[9].contains("Command not recognised"));
+		assertTrue(output[14].contains("Feasibility"));
 		
 	}
 	
@@ -198,7 +198,6 @@ public class TestCompanyEmailSystem {
 		readInput("1 \n L");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();
-		setOutputStreamDebug();
 		for(int i = 9; i >= 0;  i-=3) {
 			assertTrue(outputArray[lineNum].contains((lineNum-8)+") me"+i+"@me.com - this is a test subject for email"+i));
 			lineNum++;
