@@ -11,14 +11,9 @@ import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.Arrays;
-import java.util.regex.Pattern;
-
-import javax.swing.plaf.synth.SynthSeparatorUI;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import emailScripts.CompanyEmailSystem;
@@ -191,7 +186,7 @@ public class TestCompanyEmailSystem {
 //	Test list emails function
 	
 //	Test ID: C.4.1
-// 	Test created by: Julian Kubelec, Joshua Richardson, Inigo Taylor
+// 	Test created by: Julian Kubelec, Joshua Richardson & Inigo Taylor
 //	Date created: 02/05/18
 	@Test
 	public void testListEmails_C041() {
@@ -199,7 +194,8 @@ public class TestCompanyEmailSystem {
 		readInput("1 \n L \n X");
 		
 		CompanyEmailSystem.main(null);
-		String[] outputArray = readOutput();		
+		String[] outputArray = readOutput();
+		
 		
 		for(int i = 9; i >= 0;  i-=3) {
 			assertTrue(outputArray[lineNum].contains((lineNum-5)+") me"+i+"@me.com - this is a test subject for email"+i));
@@ -214,7 +210,7 @@ public class TestCompanyEmailSystem {
 	public void testListEmails_C042() {
 		int lineNum = 9;
 		for(int k = 0; k < 5; k++) {
-			readInput("1 \n L \n N \n L");
+			readInput("1 \n L \n N \n L \n X");
 			CompanyEmailSystem.main(null);
 			String[] outputArray = readOutput();
 			for(int i = 9; i >= 0;  i-=3) {
@@ -223,10 +219,6 @@ public class TestCompanyEmailSystem {
 			}
 		}
 	}	
-//	Test ID: C.4.3
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-		
 	
 //	Test list phases function
 
@@ -296,7 +288,7 @@ public class TestCompanyEmailSystem {
 		String body = "What is the Message?";
 		readInput("2 \n A \n sender@nottingham.ac.uk\n receiver@nottingham.ac.uk\n subject\n body\n X");
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");		
 		assertTrue(outputArray[4].contains("from"));
 		assertTrue(outputArray[5].contains("to"));
 		assertTrue(outputArray[6].contains("Subject"));
