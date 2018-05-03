@@ -196,7 +196,7 @@ public class TestCompanyEmailSystem {
 	@Test
 	public void testListEmails_C041() {
 		int lineNum = 9;
-		readInput("1 \n L");
+		readInput("1 \n L \n X");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();
 		for(int i = 9; i >= 0;  i-=3) {
@@ -212,7 +212,7 @@ public class TestCompanyEmailSystem {
 	public void testListEmails_C042() {
 		int lineNum = 9;
 		for(int k = 0; k < 5; k++) {
-			readInput("1 \n L \n N \n L");
+			readInput("1 \n L \n N \n L \n X");
 			CompanyEmailSystem.main(null);
 			String[] outputArray = readOutput();
 			for(int i = 9; i >= 0;  i-=3) {
