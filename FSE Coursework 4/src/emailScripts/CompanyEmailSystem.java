@@ -83,31 +83,53 @@ public class CompanyEmailSystem {
                     } else if (s.equals("X")) {
                         System.out.println("Goodbye!");
                         break;
-                    } else if (Integer.parseInt(s) > 0 ) {
-                    	// Change made by Inigo Taylor - 02/05/18
-                    	// Changed Integer.parseInt(s)-1 to Integer.parseInt(s) so the currentProject stores the correct value
-                        currentProjShowing = Integer.parseInt(s);
+                    // Change made by Joshua Richardson - 03/05/18
+                    // Stop the error by seeing if it is a digit
+                    else if(s.matches("\\d*")) {
+            			if (Integer.parseInt(s) > 0 ) {
+            				// Change made by Inigo Taylor - 02/05/18
+                        	// Changed Integer.parseInt(s)-1 to Integer.parseInt(s) so the currentProject stores the correct value
+                            currentProjShowing = Integer.parseInt(s);
+            			}
                     } else {
                         System.out.println("Command not recognised");
-                    }
+                    } 
+
                 } else {
-                    if (s.equals("A")) {
-                        AddEmail(in);
-                    }else if (s.equals("L")) {
-                        ListEmails(0);
-                    } else if (s.equals("F")) {
-                        ListPhases();
-                    } else if (s.equals("C")) {
-                        ListContacts();
-                    } else if (s.equals("N")) {
-                        ChangeProjectPhase();
-                    } else if (s.equals("X")) {
-                        currentProjShowing = 0;
-                    } else if (Integer.parseInt(s) > 0 ) {
-                        ListEmails(Integer.parseInt(s));
-                    } else {
-                        System.out.println("Command not recognised");
-                    }
+                	// Change made by Joshua Richardson - 03/05/18
+                	// Swapped if statements for a case switch
+                	
+                	switch(s){
+	                	case "A":
+	                		AddEmail(in);
+	                		break;
+	                	case "L":
+	                		ListEmails(0);
+	                		break;
+	                	case "F":
+	                		ListPhases();
+	                		break;
+	                	case "C":
+	                		ListContacts();
+	                		break;
+	                	case "N":
+	                		ChangeProjectPhase();
+	                		break;
+	                	case "X":
+	                		currentProjShowing = 0;
+	                		break;
+	            		default:
+	            			// Change made by Joshua Richardson - 03/05/18
+	                        // Stop the error by seeing if it is a digit
+	            			if(s.matches("\\d*")) {
+		            			if (Integer.parseInt(s) > 0 ) {
+		                            ListEmails(Integer.parseInt(s));
+		            			}
+	                        } else {
+	                            System.out.println("Command not recognised");
+	                        }
+	            			break;
+                	}
                 }
             } catch (Exception e) {
                 System.out.println("Something went wrong: " + e.toString() + "\n");
