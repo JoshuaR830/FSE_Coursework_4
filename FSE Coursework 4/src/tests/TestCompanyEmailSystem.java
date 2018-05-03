@@ -210,12 +210,14 @@ public class TestCompanyEmailSystem {
 	@Test
 	public void testListEmails_C042() {
 		int lineNum = 9;
-		readInput("1 \n L");
-		CompanyEmailSystem.main(null);
-		String[] outputArray = readOutput();
-		for(int i = 9; i >= 0;  i-=3) {
-			assertTrue(outputArray[lineNum].contains((lineNum-8)+") me"+i+"@me.com - this is a test subject for email"+i));
-			lineNum++;
+		for(int k = 0; k < 5; k++) {
+			readInput("1 \n L \n N \n L");
+			CompanyEmailSystem.main(null);
+			String[] outputArray = readOutput();
+			for(int i = 9; i >= 0;  i-=3) {
+				assertTrue(outputArray[lineNum].contains((lineNum-8)+") me"+i+"@me.com - this is a test subject for email"+i));
+				lineNum++;
+			}
 		}
 	}	
 //	Test ID: C.4.3
