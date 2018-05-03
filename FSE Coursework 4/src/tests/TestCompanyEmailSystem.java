@@ -211,13 +211,16 @@ public class TestCompanyEmailSystem {
 //	Test ID: C.7.1
 // 	Test created by: Henry Hunt
 //	Date created: 02/05/18
-//	@Test
-//	public void testAddEmail_C72() {
+	@Test
+	public void testAddEmail_C72() {
 //		setOutputStreamTest();
-//		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
-//		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body");
-//		CompanyEmailSystem.main(null);
-//	}
+		
+		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body \n X");
+
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		
+	}
 	
 //	Test ID: C.7.2
 // 	Test created by: f_name s_name
@@ -249,14 +252,16 @@ public class TestCompanyEmailSystem {
 		}
 		readInput(string);
 		CompanyEmailSystem.main(null);
-		setOutputStreamTest();
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");	
 		int y = 0, z;
+		
+		
 		for(int i = 1; i <= num; i++) {
 			z = 0;
 			for(y += 4; z < 5; z++, y+=3) {
 				
 				// Checks that it is in the correct order by looking to see if it matches the project phase
+				System.out.println(outputArray[y].toString());
 				assertTrue(outputArray[y].toString().contains(CompanyEmailSystem.ProjectPhases[z+1].toString()));
 			}
 		}	
@@ -281,7 +286,6 @@ public class TestCompanyEmailSystem {
 		}
 		readInput(string);
 		CompanyEmailSystem.main(null);
-		setOutputStreamTest();
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");	
 		int y = 0, z;
 		for(int i = 1; i <= num; i++) {
@@ -314,7 +318,6 @@ public class TestCompanyEmailSystem {
 		}
 		readInput(string);
 		CompanyEmailSystem.main(null);
-		setOutputStreamTest();
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");	
 		int y = 0, z;
 		for(int i = 1; i <= num; i++) {
