@@ -106,7 +106,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 03/05/18
 	@Test
 	public void testMainMethod_C17() {
-		readInput(1+ "\ns\nX \ns\n" + 1 + "\n"+1+"\nX");
+		readInput("1\ns\nX\ns\n1\n1\nX");
 		
 		CompanyEmailSystem.main(null);
 		String[] output = readOutput();
