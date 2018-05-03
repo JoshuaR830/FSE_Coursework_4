@@ -389,7 +389,7 @@ public class TestCompanyEmailSystem {
 		}
 	}
 	
-	
+
 	
 	/**
 	 * Sets output stream back to the console for debugging purposes
