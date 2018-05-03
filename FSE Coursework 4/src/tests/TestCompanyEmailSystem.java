@@ -171,18 +171,18 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testListEmails_C041() {
+		int lineNum = 9;
+		readInput("1 \n L");
 		CompanyEmailSystem.main(null);
-		readInput("P");
-		readInput("1");
-		readInput("L");
-		
-		String closeInput = "P";
-		InputStream inStream = new ByteArrayInputStream(closeInput.getBytes());
-		String selectProject = "1";
-		//InputStream inStream = new ByteArrayInputStream(select.getBytes());
-		
+		String[] outputArray = readOutput();
+		setOutputStreamDebug();
+		for(int i = 9; i >= 0;  i-=3) {
+			//assertTrue(outputArray[lineNum++].contains((lineNum-8)+") me"+i+"@me.com - this is a test subject for email"+i));
+			System.out.println((lineNum-8)+") me"+i+"@me.com - this is a test subject for email"+i);
+			System.out.println(outputArray[lineNum++]);
+		}
 	}
-		
+	
 //	Test ID: C.4.2
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
@@ -228,15 +228,21 @@ public class TestCompanyEmailSystem {
 //	Test add email function
 	
 //	Test ID: C.7.1
-// 	Test created by: Henry Hunt
+// 	Test created by: Henry Hunt and Julian Kubelec
 //	Date created: 02/05/18
 	@Test
 	public void testAddEmail_C71() {
-		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body \n X");
-
+		String sender = "Which email address is it from?";
+		String receiver = "Which email address is it to?";
+		String subject ="What is the Subject?";
+		String body = "What is the Message?";
+		readInput("2 \n A \n sender@nottingham.ac.uk\n receiver@nottingham.ac.uk\n subject\n body\n X");
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
-		
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");		
+		assertTrue(outputArray[5].contains("from"));
+		assertTrue(outputArray[6].contains("to"));
+		assertTrue(outputArray[7].contains("Subject"));
+		assertTrue(outputArray[8].contains("Message"));
 	}
 	
 //	Test ID: C.7.2
