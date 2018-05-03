@@ -173,7 +173,7 @@ public class TestCompanyEmailSystem {
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		// Looked up Regex usage using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
-		assertTrue(outputArray[8].matches("\\d*\\) Feasibility - \\d* (e|E)mail(s|)"));
+		assertTrue(outputArray[7].matches("\\d*\\) Feasibility - \\d* (e|E)mail(s|)"));
 	}
 	
 	
@@ -229,16 +229,15 @@ public class TestCompanyEmailSystem {
 				string += "\n";
 			}
 		}
-		readInput(string);
+		readInput("1 \n N");
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
 		CompanyEmailSystem.main(null);
-		setOutputStreamTest();
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n"); // By Inigo
-		setOutputStreamDebug();
-		int y = 0, z = 0;
-		for(y += 4; z < 5; z++, y+=3) {
-			System.out.println(outputArray[y].toString());
-			System.out.println(CompanyEmailSystem.ProjectPhases[z+1].toString());
-			assertTrue(outputArray[y].toString().contains(CompanyEmailSystem.ProjectPhases[z+1].toString()));
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		int y = 0, z = 0;		
+
+		for(y = 5; z < 5; y++) {
+			System.out.println(outputArray[y]);
+			assertTrue(outputArray[y].contains(CompanyEmailSystem.ProjectPhases[z].toString()));
 		}
 
 	}
