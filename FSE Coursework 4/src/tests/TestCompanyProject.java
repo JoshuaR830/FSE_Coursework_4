@@ -327,7 +327,7 @@ public class TestCompanyProject {
 			try {
 				cp.addEmail(email);
 			}catch(Exception e) {
-				System.out.println("Invalid email");
+				fail("Invalid email");
 			}
 			
 			array.add(email);
