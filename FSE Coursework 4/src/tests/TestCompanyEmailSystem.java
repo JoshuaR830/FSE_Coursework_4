@@ -11,14 +11,14 @@ import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.regex.Pattern;
+import java.util.Arrays;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import emailScripts.CompanyEmailSystem;
-import emailScripts.CompanyProject;
 
 public class TestCompanyEmailSystem {
 
@@ -167,7 +167,7 @@ public class TestCompanyEmailSystem {
 //	Test list emails function
 	
 //	Test ID: C.4.1
-// 	Test created by: Julian Kubelec, Joshua Richardson, Inigo Taylor
+// 	Test created by: Julian Kubelec, Joshua Richardson & Inigo Taylor
 //	Date created: 02/05/18
 	@Test
 	public void testListEmails_C041() {
@@ -183,9 +183,19 @@ public class TestCompanyEmailSystem {
 	}
 	
 //	Test ID: C.4.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-		
+// 	Test created by: Julian Kubelec
+//	Date created: 03/05/18
+	@Test
+	public void testListEmails_C042() {
+		int lineNum = 9;
+		readInput("1 \n L");
+		CompanyEmailSystem.main(null);
+		String[] outputArray = readOutput();
+		for(int i = 9; i >= 0;  i-=3) {
+			assertTrue(outputArray[lineNum].contains((lineNum-8)+") me"+i+"@me.com - this is a test subject for email"+i));
+			lineNum++;
+		}
+	}	
 //	Test ID: C.4.3
 // 	Test created by: f_name s_name
 //	Date created: dd/mm/yy
@@ -216,8 +226,23 @@ public class TestCompanyEmailSystem {
 //	Test list contacts function
 	
 //	Test ID: C.6.1
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Tim Bartrum
+//	Date created: 03/03/18
+	@Test
+	public void testListContacts_C61() {
+		readInput("P\n1\nC");
+		CompanyEmailSystem.main(null);
+		String[] output = readOutput();
+		
+		int contactNum = 0;
+		int num = 1;
+		for(int i = 9; i <= 12; i++) {
+			assertEquals(num + ") you" + contactNum + "@you.com", output[i]);
+			num++;
+			contactNum += 3;
+		}
+	}
+	
 	
 //	Test ID: C.6.2
 // 	Test created by: f_name s_name
