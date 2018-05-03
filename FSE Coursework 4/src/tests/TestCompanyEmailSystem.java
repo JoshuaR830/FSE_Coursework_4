@@ -278,10 +278,7 @@ public class TestCompanyEmailSystem {
 		
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
-		
-		setOutputStreamDebug();
-		System.out.println(outputArray[10]);
-		assertTrue(outputArray[10].contains("What do you want to do?"));
+		assertTrue(outputArray[8].contains("What do you want to do?"));
 	}
 	
 //	Test add email function
