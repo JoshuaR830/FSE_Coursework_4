@@ -168,11 +168,11 @@ public class CompanyEmailSystem {
         ArrayList<CompanyEmail> projectPhaseEmails = null;
         if (phaseToShow==0) {
             projectPhaseEmails = cp.getEmailsForPhase();
-        } else if (phaseToShow < cp.getPhaseByID()) {
+        } else if (phaseToShow <= cp.getPhaseByID()+1) {
         	// This catches an exception if an invalid PID is entered
         	// Added by Joshua Richardson 30/04/18
         	try {
-        		projectPhaseEmails = cp.getEmailsForPhase(phaseToShow);
+        		projectPhaseEmails = cp.getEmailsForPhase(phaseToShow-1);
         	} catch(Exception e) {
         		System.out.println("Invalid email");
         	}
