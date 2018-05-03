@@ -37,7 +37,7 @@ public class CompanyEmail {
     }
     
     public String emailMessage() {
-    	// Bug fix: removed brackets at end
+    	// Fixed by Henry Hunt on 27/04/18 - removed brackets at end of variable name
         return emailMessage;
     }
     
