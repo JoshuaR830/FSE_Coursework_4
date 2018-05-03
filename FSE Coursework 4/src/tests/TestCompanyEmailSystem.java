@@ -214,7 +214,6 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testAddEmail_C71() {
-		
 		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body \n X");
 
 		CompanyEmailSystem.main(null);
@@ -223,8 +222,19 @@ public class TestCompanyEmailSystem {
 	}
 	
 //	Test ID: C.7.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 03/05/18
+	
+	@Test
+	public void testAddEmail_C72() {
+		String sender = "sender@nottingham.ac.uk";
+		String subject = "subject";
+		readInput("2 \n A \n "+ sender + "\n receiver@nottingham.ac.uk \n" + subject + " \n body \n L \n X");
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		assertTrue(outputArray[16].contains(sender));
+		assertTrue(outputArray[16].contains(subject));		
+	}
 	
 //	Test ID: C.7.3
 // 	Test created by: Joshua Richardson
