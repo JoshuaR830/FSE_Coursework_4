@@ -193,12 +193,15 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testListEmails_C041() {
-		int lineNum = 9;
+		int lineNum = 6;
 		readInput("1 \n L \n X");
+		
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();
+		
+		
 		for(int i = 9; i >= 0;  i-=3) {
-			assertTrue(outputArray[lineNum].contains((lineNum-8)+") me"+i+"@me.com - this is a test subject for email"+i));
+			assertTrue(outputArray[lineNum].contains((lineNum-5)+") me"+i+"@me.com - this is a test subject for email"+i));
 			lineNum++;
 		}
 	}
