@@ -287,10 +287,10 @@ public class TestCompanyEmailSystem {
 		readInput("2 \n A \n sender@nottingham.ac.uk\n receiver@nottingham.ac.uk\n subject\n body\n X");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");		
-		assertTrue(outputArray[5].contains("from"));
-		assertTrue(outputArray[6].contains("to"));
-		assertTrue(outputArray[7].contains("Subject"));
-		assertTrue(outputArray[8].contains("Message"));
+		assertTrue(outputArray[4].contains("from"));
+		assertTrue(outputArray[5].contains("to"));
+		assertTrue(outputArray[6].contains("Subject"));
+		assertTrue(outputArray[7].contains("Message"));
 	}
 	
 //	Test ID: C.7.2
