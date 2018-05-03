@@ -90,6 +90,13 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Inigo Taylor
 //	Date created: 02/05/18
 	
+	@Test
+	public void testMainMethod_C16() {
+		readInput("-2");
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		assertTrue(outputArray[2].contains("Command not recognised"));
+	}	
 
 //	Test list projects function
 
@@ -232,6 +239,10 @@ public class TestCompanyEmailSystem {
 		readInput("2 \n A \n sender@nottingham.ac.uk\n receiver@nottingham.ac.uk\n subject\n body\n X");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");		
+		assertTrue(outputArray[5].contains("from"));
+		assertTrue(outputArray[6].contains("to"));
+		assertTrue(outputArray[7].contains("Subject"));
+		assertTrue(outputArray[8].contains("Message"));
 	}
 	
 //	Test ID: C.7.2
