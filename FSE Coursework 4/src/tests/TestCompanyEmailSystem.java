@@ -363,15 +363,27 @@ public class TestCompanyEmailSystem {
 	
 	
 	
-	
+	/**
+	 * Sets output stream back to the console for debugging purposes
+	 * @author Tim Bartrum
+	 */
 	private void setOutputStreamDebug() {
 		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
 	}
 	
+	/**
+	 * Sets output stream back to test output for use after setOutputStreamDebug
+	 * @author Tim Bartrum
+	 */
 	private void setOutputStreamTest() {
 		System.setOut(new PrintStream(outContent));
 	}
 	
+	/**
+	 * Takes a string to read as an input for tests
+	 * @author Tim Bartrum
+	 * @param input the input to read
+	 */
 	private void readInput(String input) {
 		InputStream inStream = new ByteArrayInputStream(input.getBytes());
 		System.setIn(inStream);
