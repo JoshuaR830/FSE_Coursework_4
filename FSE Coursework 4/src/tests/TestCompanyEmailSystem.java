@@ -11,6 +11,7 @@ import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 import org.junit.After;
@@ -221,9 +222,19 @@ public class TestCompanyEmailSystem {
 //	Date created: dd/mm/yy
 	
 //	Test ID: C.6.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
+// 	Test created by: Henry Hunt
+//	Date created: 03/05/18
+	@Test
+	public void testListContacts_C62() {
+		readInput("A \n New Project Title \n 4 \n C X");
+		
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		
+		setOutputStreamDebug();
+		System.out.println(outputArray[10]);
+		assertTrue(outputArray[10].contains("What do you want to do?"));
+	}
 	
 //	Test add email function
 	
