@@ -230,6 +230,10 @@ public class TestCompanyEmailSystem {
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		
+		assertTrue(outputArray[5].contains("from"));
+		assertTrue(outputArray[6].contains("to"));
+		assertTrue(outputArray[7].contains("Subject"));
+		assertTrue(outputArray[8].contains("Message"));
 	}
 	
 //	Test ID: C.7.2
