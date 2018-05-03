@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 import org.junit.After;
 import org.junit.Before;
@@ -269,9 +270,19 @@ public class TestCompanyEmailSystem {
 	
 	
 //	Test ID: C.6.2
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
-	
+// 	Test created by: Henry Hunt
+//	Date created: 03/05/18
+	@Test
+	public void testListContacts_C62() {
+		readInput("A \n New Project Title \n 4 \n C X");
+		
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		
+		setOutputStreamDebug();
+		System.out.println(outputArray[10]);
+		assertTrue(outputArray[10].contains("What do you want to do?"));
+	}
 	
 //	Test add email function
 	
@@ -287,10 +298,10 @@ public class TestCompanyEmailSystem {
 		readInput("2 \n A \n sender@nottingham.ac.uk\n receiver@nottingham.ac.uk\n subject\n body\n X");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");		
-		assertTrue(outputArray[5].contains("from"));
-		assertTrue(outputArray[6].contains("to"));
-		assertTrue(outputArray[7].contains("Subject"));
-		assertTrue(outputArray[8].contains("Message"));
+		assertTrue(outputArray[4].contains("from"));
+		assertTrue(outputArray[5].contains("to"));
+		assertTrue(outputArray[6].contains("Subject"));
+		assertTrue(outputArray[7].contains("Message"));
 	}
 	
 //	Test ID: C.7.2
