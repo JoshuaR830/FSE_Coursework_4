@@ -142,8 +142,17 @@ public class TestCompanyEmailSystem {
 	
 	
 //	Test ID: C.3.4
-// 	Test created by: f_name s_name
-//	Date created: dd/mm/yy
+// 	Test created by: Inigo Taylor
+//	Date created: 03/05/18
+	
+	@Test
+	public void testAddProject_C34(){
+		readInput("A \n \n P");
+		CompanyEmailSystem.main(null);
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		assertTrue(outputArray[9].contains("[Feasibility] - 0 emails"));
+		
+	}
 	
 	
 //	Test list emails function
