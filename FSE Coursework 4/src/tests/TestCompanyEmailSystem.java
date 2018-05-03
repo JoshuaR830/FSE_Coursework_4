@@ -173,6 +173,14 @@ public class TestCompanyEmailSystem {
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		// Looked up Regex usage using http://files.zeroturnaround.com/pdf/zt_regular-expressions-cheat-sheet.pdf
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+		
+		// Joshua trying to work out what happened
+		setOutputStreamDebug();
+		for(int x = 0; x < 9; x++) {
+			System.out.println(outputArray[x]);
+		}
+		// Due to zero indexing i think this should be 7 - Joshua
 		assertTrue(outputArray[7].matches("\\d*\\) Feasibility - \\d* (e|E)mail(s|)"));
 	}
 	
@@ -219,9 +227,8 @@ public class TestCompanyEmailSystem {
 		int num = 3;
 		String string = "";
 		for(int x = 1; x <= num; x++) {
-			
 			string = string + x;
-			for(int i = 0; i < 6; i++) {
+			for(int i = 0; i < 5; i++) {
 				string += "\nN";
 			}
 			string += "\nX";
@@ -232,14 +239,17 @@ public class TestCompanyEmailSystem {
 		readInput("1 \n N");
 		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
-		int y = 0, z = 0;		
-
-		for(y = 5; z < 5; y++) {
-			System.out.println(outputArray[y]);
-			assertTrue(outputArray[y].contains(CompanyEmailSystem.ProjectPhases[z].toString()));
-		}
-
+		setOutputStreamTest();
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");	
+		int y = 0, z;
+		for(int i = 1; i <= num; i++) {
+			z = 0;
+			for(y += 4; z < 5; z++, y+=3) {
+				
+				// Checks that it is in the correct order by looking to see if it matches the project phase
+				assertTrue(outputArray[y].toString().contains(CompanyEmailSystem.ProjectPhases[z+1].toString()));
+			}
+		}	
 	}
 
 //	Test ID: C.8.2
@@ -247,19 +257,82 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testChangeProjectPhase_C82() {
-		
+		int num = 3;
+		String string = "";
+		for(int x = 1; x <= num; x++) {
+			string = string + x;
+			for(int i = 0; i < 5; i++) {
+				string += "\nN";
+			}
+			string += "\nX";
+			if(x < num) {
+				string += "\n";
+			}
+		}
+		readInput(string);
+		CompanyEmailSystem.main(null);
+		setOutputStreamTest();
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");	
+		int y = 0, z;
+		for(int i = 1; i <= num; i++) {
+			z = 0;
+			for(y += 4; z < 5; z++, y+=3) {
+				
+				// Checks that a confirmation message is always displayed
+				assertTrue(outputArray[y].toString().contains("Phase changed:"));
+			}
+		}	
 	}
+		
 	
 //	Test ID: C.8.3
 // 	Test created by: Joshua Richardson
 //	Date created: 02/05/18
 	@Test
 	public void testChangeProjectPhase_C83() {
-		
+		int num = 3;
+		String string = "";
+		for(int x = 1; x <= num; x++) {
+			string = string + x;
+			for(int i = 0; i < 10; i++) {
+				string += "\nN";
+			}
+			string += "\nX";
+			if(x < num) {
+				string += "\n";
+			}
+		}
+		readInput(string);
+		CompanyEmailSystem.main(null);
+		setOutputStreamTest();
+		String[] outputArray = outContent.toString().split("\r\n|\r|\n");	
+		int y = 0, z;
+		for(int i = 1; i <= num; i++) {
+			z = 5;
+			for(y += 19; z < 10; z++, y+=3) {
+				// Checks that a failure is displayed if the system fails
+				assertTrue(outputArray[y].toString().contains("Project already in last phase."));
+			}
+		}	
 	}
 	
 	
-	
+//	Test ID: C.8.4
+// 	Test created by: Joshua Richardson
+//	Date created: 02/05/18
+	@Test
+	public void testchangProjectPhase_C84() {
+		String input = "1\nX\n2\nX\n3\nX";
+		
+		readInput("" + input);
+		CompanyEmailSystem.main(null);
+		
+		for(int x = 0; x < 3; x++) {
+			assertTrue(CompanyEmailSystem.AllProjects.get(0).toString().contains("Feasibility"));
+			assertTrue(CompanyEmailSystem.AllProjects.get(1).toString().contains("Feasibility"));
+			assertTrue(CompanyEmailSystem.AllProjects.get(2).toString().contains("Feasibility"));
+		}
+	}
 	
 	
 	
