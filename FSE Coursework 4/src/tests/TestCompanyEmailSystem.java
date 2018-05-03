@@ -213,7 +213,6 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	@Test
 	public void testAddEmail_C71() {
-//		setOutputStreamTest();
 		
 		readInput("2 \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body \n X");
 
@@ -231,7 +230,17 @@ public class TestCompanyEmailSystem {
 //	Date created: 03/05/18
 	@Test
 	public void testAddEmail_C73() {
-		
+		int num = 3;
+				
+		for(int x = 1; x <= num; x++) {
+			// Inputs written by Henry Hunt 02/05/18
+			readInput(x+" \n A \n sender@nottingham.ac.uk \n receiver@nottingham.ac.uk \n subject \n body \n X");
+	
+			CompanyEmailSystem.main(null);
+			String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+	
+			assertTrue(outputArray[9].contains("Email added to"));
+		}
 	}
 	
 	
