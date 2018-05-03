@@ -97,6 +97,29 @@ public class TestCompanyEmailSystem {
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
 		assertTrue(outputArray[2].contains("Command not recognised"));
 	}	
+	
+//	Test ID: C.1.7
+// 	Test created by: Joshua Richardson
+//	Date created: 03/05/18
+	@Test
+	public void testMainMethod_C17() {
+		readInput(1+"\ns\nX\n"+1+"\n"+1+"\nX\ns\n"+1+"\nX\ns\ns\nX");
+		
+		CompanyEmailSystem.main(null);
+		String[] output = readOutput();
+		setOutputStreamDebug();
+		for(int x = 0; x < 6; x ++) {
+			System.out.println(output[x]);
+		}
+		assertTrue(output[4].contains("Command not recognised"));
+//		assertTrue(output[2].contains("Command not recognised"));
+		
+	}
+	
+	
+	
+	
+	
 
 //	Test list projects function
 
