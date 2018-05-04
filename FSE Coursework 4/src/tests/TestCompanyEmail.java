@@ -179,8 +179,7 @@ public class TestCompanyEmail {
 		data = new CompanyEmail(fAddress, tAddress, subLine, eMessage);
 		data.setFrom(null);
 		assertNull(data.fromAddress());
-	}
-	
+	}	
 	
 	//	Test: setTo()
 	//	Test ID: A.8.1
@@ -189,9 +188,10 @@ public class TestCompanyEmail {
 	@Test
 	public void testSetTo1() {
 		data = new CompanyEmail();
-		data.setTo(fAddress);
-		assertEquals(fAddress, data.toAddress());
+		data.setTo(tAddress);
+		assertEquals(tAddress, data.toAddress());
 	}	
+	
 	//	Test ID: A.8.2
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
@@ -201,7 +201,8 @@ public class TestCompanyEmail {
 		data.setTo(newAddrInvalid);
 		assertNull(data.toAddress());
 	}
-//	Test ID: A.8.3
+	
+	//	Test ID: A.8.3
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
 	@Test
@@ -210,7 +211,8 @@ public class TestCompanyEmail {
 		data.setTo(newAddrLong);
 		assertNull(data.toAddress());
 	}	
-//	Test ID: A.7.4
+	
+	//	Test ID: A.7.4
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
 	@Test
@@ -274,7 +276,7 @@ public class TestCompanyEmail {
 	@Test
 	public void testSetMessage2() {
 		data = new CompanyEmail();
-		data.setMessage("");
+		data.setMessage(emptyStr);
 		
 		assertEquals(data.emailMessage(), emptyStr);
 	}
@@ -307,7 +309,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	@Test
 	public void isValidTest2() {
-		data = new CompanyEmail(null, emptyStr, null, null);
+		data = new CompanyEmail(null, null, emptyStr, null);
 		assertEquals(data.isValid(), false);
 	}
 		
@@ -316,7 +318,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	@Test
 	public void isValidTest3() {
-		data = new CompanyEmail(null, null, emptyStr, null);
+		data = new CompanyEmail(null, emptyStr, null, null);
 		assertEquals(data.isValid(), false);
 	}
 	
@@ -325,7 +327,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	@Test
 	public void isValidTest4() {
-		data = new CompanyEmail(null, null, null, emptyStr);
+		data = new CompanyEmail(emptyStr, null, null, null);
 		assertEquals(data.isValid(), false);
 	}
 
@@ -413,8 +415,8 @@ public class TestCompanyEmail {
 	@Test
 	public void testToString2() {
 		CompanyEmail ce = new CompanyEmail();
-		ce.setSubject(subLine);
-		assertEquals(subLine, ce.toString());
+		ce.setSubject("  ");
+		assertEquals("[no subject]", ce.toString());
 	}
 	
 	
@@ -425,7 +427,7 @@ public class TestCompanyEmail {
 	@Test
 	public void testToString3() {
 		CompanyEmail ce = new CompanyEmail();
-		ce.setSubject("  ");
-		assertEquals("[no subject]", ce.toString());
+		ce.setSubject(subLine);
+		assertEquals(subLine, ce.toString());
 	}
 }
