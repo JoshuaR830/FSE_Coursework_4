@@ -33,14 +33,16 @@ public class TestCompanyProject {
 	String body = "body"; 
 	
 	String testPTitle = "Test Project";
-	String testPTitle2= "New Project";
-	String testPTitleInvalid= "Test";
+	String defaultPTitle = "New Project";
+	String testPTitle2 = "Test Title";
+	String testPTitleInvalid = "Test";
 	
 	String failMsg1 = "Email was added, this is wrong as the email was invalid";
 	String failMsg2 = "Exception wasn't produced"; 
 	String failMsg3 = "Exception shouldn't happen here";
 	String failMsg4 = "Invalid email";
 	String failMsg5 = "Out of range";
+	
 //	Test default constructor
 
 //	Test ID: B.1.1
@@ -70,7 +72,7 @@ public class TestCompanyProject {
 	@Test
 	public void testDefaultConstructor3() {
 		CompanyProject testProject = new CompanyProject();
-		assertEquals(testPTitle2, testProject.getPTitle());
+		assertEquals(defaultPTitle, testProject.getPTitle());
 	}
 	
 //	Test ID: B.1.4
@@ -386,7 +388,7 @@ public class TestCompanyProject {
 			cp.getEmailsForPhase(-1);
 			fail(failMsg2);
 		}catch(Exception e) {
-			assertEquals(e.getClass(), Exception.class); // From Inigo
+			assertEquals(e.getClass(), Exception.class);
 		}
 	}
 
@@ -403,7 +405,7 @@ public class TestCompanyProject {
 			cp.getEmailsForPhase(cp.getPID()+1);
 			fail(failMsg2);
 		}catch(Exception e) {
-			assertEquals(e.getClass(), Exception.class); // From Inigo
+			assertEquals(e.getClass(), Exception.class);
 		}
 		
 	}
