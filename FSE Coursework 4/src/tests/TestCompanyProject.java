@@ -23,6 +23,11 @@ public class TestCompanyProject {
 	
 	CompanyProject cp;
 	
+	String testEmail = "test1@gmail.com";
+	String testEmail2 = "test2@gmail.com";
+	String testPTitle = "Test Project";
+	String testPTitle2= "New Project";
+	String testPTitleInvalid= "Test";
 //	Test default constructor
 
 //	Test ID: B.1.1
@@ -52,7 +57,7 @@ public class TestCompanyProject {
 	@Test
 	public void testDefaultConstructor3() {
 		CompanyProject testProject = new CompanyProject();
-		assertEquals("New Project", testProject.getPTitle());
+		assertEquals(testPTitle2, testProject.getPTitle());
 	}
 	
 //	Test ID: B.1.4
@@ -153,8 +158,8 @@ public class TestCompanyProject {
 	@Test
 	public void testSetPTitle1() {
 		CompanyProject testProject = new CompanyProject();
-		testProject.setPTitle("Test Project");
-		assertEquals("Test Project", testProject.getPTitle());
+		testProject.setPTitle(testPTitle);
+		assertEquals(testPTitle, testProject.getPTitle());
 	}
 	
 //	Test ID: B.5.2
@@ -164,8 +169,8 @@ public class TestCompanyProject {
 	@Test
 	public void testSetPTitle2() {
 		CompanyProject testProject = new CompanyProject();
-		testProject.setPTitle("Test Title");
-		assertEquals("Test Title", testProject.getPTitle());
+		testProject.setPTitle(testPTitle2);
+		assertEquals(testPTitle2, testProject.getPTitle());
 	}
 	
 //	Test ID: B.5.3
@@ -175,8 +180,8 @@ public class TestCompanyProject {
 	@Test
 	public void testSetPTitle3() {
 		CompanyProject testProject = new CompanyProject();
-		testProject.setPTitle("Test");
-		assertNotEquals("Test", testProject.getPTitle());
+		testProject.setPTitle(testPTitleInvalid);
+		assertNotEquals(testPTitleInvalid, testProject.getPTitle());
 	}
 	
 
@@ -188,8 +193,8 @@ public class TestCompanyProject {
 	@Test
 	public void testIsContact1() {
 		CompanyProject testProject = new CompanyProject();
-		testProject.addContact("test@gmail.com");
-		assertTrue(testProject.isContact("test@gmail.com"));
+		testProject.addContact(testEmail);
+		assertTrue(testProject.isContact(testEmail));
 	}
 	
 //	Test ID: B.6.2
@@ -198,8 +203,8 @@ public class TestCompanyProject {
 	@Test
 	public void testIsContact2() {
 		CompanyProject testProject = new CompanyProject();
-		testProject.addContact("test2@gmail.com");
-		assertFalse(testProject.isContact("test@gmail.com"));
+		testProject.addContact(testEmail2);
+		assertFalse(testProject.isContact(testEmail));
 	}
 	
 
