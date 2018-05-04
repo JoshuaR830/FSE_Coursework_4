@@ -155,9 +155,8 @@ public class TestCompanyProject {
 	@Test
 	public void testProjectTitle2() {
 		CompanyProject cp = new CompanyProject();
-		cp.setPTitle(testPTitle);
-		cp.setPTitle(testPTitle2);
-		assertNotEquals(testPTitle2, cp.getPTitle());
+		cp.setPTitle(testPTitleInvalid);
+		assertNotEquals(testPTitleInvalid, cp.getPTitle());
 	}
 	
 	
