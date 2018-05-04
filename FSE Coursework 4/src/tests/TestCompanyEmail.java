@@ -31,7 +31,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//  Test created: 26/04/18
 	@Test
-	public void testDefaultConstructor() {
+	public void testDefaultConstructor1() {
 		data = new CompanyEmail();
 		
 		assertNull(data.fromAddress());
@@ -47,7 +47,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 1/05/18 
 	@Test
-	public void testMainConstructor_A021() {
+	public void testMainConstructor1() {
 		data =new CompanyEmail(fAddress, tAddress, subLine, eMessage);
 		assertEquals(data.fromAddress(), fAddress);
 		assertEquals(data.toAddress(), tAddress);
@@ -62,7 +62,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//	Date created: 27/04/18
 	@Test
-	public void testFromAddress_A031() {
+	public void testFromAddress1() {
 		data = new CompanyEmail(fAddress, null, null, null);
 		assertEquals(data.fromAddress(), fAddress);
 	}
@@ -71,7 +71,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//	Date created: 27/04/18
 	@Test
-	public void testFromAddress_A032() {
+	public void testFromAddress2() {
 		data = new CompanyEmail(null, null, null, null);
 		assertNull(data.fromAddress());
 	}
@@ -83,7 +83,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 26/04/18
 	@Test
-	public void testToAddress_A041() {
+	public void testToAddress1() {
 		data = new CompanyEmail(null, tAddress, null, null);
 		assertEquals(data.toAddress(), tAddress);
 	}
@@ -92,7 +92,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 26/04/18
 	@Test
-	public void testToAddress_A042() {
+	public void testToAddress2() {
 		data = new CompanyEmail(null, null, null, null);
 		assertNull(data.toAddress());
 	}
@@ -104,7 +104,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//	Date created: 27/04/18
 	@Test
-	public void testSubjectLine_A051() {
+	public void testSubjectLine1() {
 		data = new CompanyEmail(null, null, subLine, null);
 		assertEquals(data.subjectLine(), subLine);
 	}
@@ -113,7 +113,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//	Date created: 27/04/18
 	@Test
-	public void testSubjectLine_A052() {
+	public void testSubjectLine2() {
 		data = new CompanyEmail(null, null, null, null);
 		assertNull(data.subjectLine());
 	}
@@ -125,7 +125,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//	Date created: 27/04/18
 	@Test
-	public void testEmailMessage_A061() {
+	public void testEmailMessage1() {
 		data = new CompanyEmail(null, null, null, eMessage);
 		assertEquals(data.emailMessage(), eMessage);
 	}
@@ -134,19 +134,17 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//	Date created: 27/04/18
 	@Test
-	public void testEmailMessage_A062() {
+	public void testEmailMessage2() {
 		data = new CompanyEmail(null, null, null, null);
 		assertNull(data.emailMessage());
 	}
 	
-	
 	//	Test: setFrom()
-	
 	//	Test ID: A.7.1
 	// 	Test created by: Julian Kubelec
 	//	Date created: 26/04/18
 	@Test
-	public void testSetFrom_A071() {
+	public void testSetFrom1() {
 		data = new CompanyEmail();
 		data.setFrom(newAddrValid);
 		assertEquals(data.fromAddress(), newAddrValid);
@@ -156,7 +154,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 26/04/18
 	@Test
-	public void testSetFrom_A072() {
+	public void testSetFrom2() {
 		data = new CompanyEmail();
 		data.setFrom(newAddrInvalid);
 		assertNull(data.fromAddress());
@@ -166,7 +164,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 30/04/18
 	@Test
-	public void testSetFrom_A073() {
+	public void testSetFrom3() {
 		data = new CompanyEmail();
 		data.setFrom(newAddrLong);
 		assertNull(data.fromAddress());
@@ -176,7 +174,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 30/04/18
 	@Test
-	public void testSetFrom_A074() {
+	public void testSetFrom4() {
 		data = new CompanyEmail(fAddress, tAddress, subLine, eMessage);
 		data.setFrom(null);
 		assertNull(data.fromAddress());
@@ -184,12 +182,11 @@ public class TestCompanyEmail {
 	
 	
 	//	Test: setTo()
-	
 	//	Test ID: A.8.1
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
 	@Test
-	public void testSetTo_A081() {
+	public void testSetTo1() {
 		data = new CompanyEmail();
 		data.setTo(newAddrValid);
 		assertEquals(newAddrValid, data.toAddress());
@@ -198,7 +195,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
 	@Test
-	public void testSetTo_A082() {
+	public void testSetTo2() {
 		data = new CompanyEmail();
 		data.setTo(newAddrInvalid);
 		assertNull(data.toAddress());
@@ -207,7 +204,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
 	@Test
-	public void testSetTo_A083() {
+	public void testSetTo3() {
 		data = new CompanyEmail();
 		data.setTo(newAddrLong);
 		assertNull(data.toAddress());
@@ -216,7 +213,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
 	@Test
-	public void testSetTo_A074() {
+	public void testSetTo4() {
 		data = new CompanyEmail(fAddress, tAddress, subLine, eMessage);
 		data.setTo(null);
 		assertNull(data.toAddress());
@@ -228,7 +225,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//	Date created: 01/05/18
 	@Test
-	public void testSetSubject_A091() {
+	public void testSetSubject1() {
 		data = new CompanyEmail();
 		data.setSubject(subLine);
 		
@@ -239,7 +236,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//	Date created: 01/05/18
 	@Test
-	public void testSetSubject_A092() {
+	public void testSetSubject2() {
 		data = new CompanyEmail();
 		data.setSubject(emptyStr);
 		assertEquals(data.subjectLine(), emptyStr);
@@ -249,7 +246,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//	Date created: 01/05/18
 	@Test
-	public void testSetSubject_A093() {
+	public void testSetSubject3() {
 		data = new CompanyEmail();
 		data.setSubject(null);
 		
@@ -261,9 +258,9 @@ public class TestCompanyEmail {
 	
 	//	Test ID: A.10.1
 	// 	Test created by: Henry Hunt
-	//	Date created: dd/mm/yy
+	//	Date created: 01/05/18
 	@Test
-	public void testSetMessage_A101() {
+	public void testSetMessage1() {
 		data = new CompanyEmail();
 		data.setMessage(eMessage);
 		
@@ -274,7 +271,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//	Date created: 01/05/18
 	@Test
-	public void testSetMessage_A102() {
+	public void testSetMessage2() {
 		data = new CompanyEmail();
 		data.setMessage("");
 		
@@ -285,7 +282,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Henry Hunt
 	//	Date created: 01/05/18
 	@Test
-	public void testSetMessage_A103() {
+	public void testSetMessage3() {
 		data = new CompanyEmail(fAddress, tAddress, subLine, eMessage);
 		data.setMessage(null);
 		
@@ -299,7 +296,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
 	@Test
-	public void isValidTest_A111() {
+	public void isValidTest1() {
 		data = new CompanyEmail();
 		assertEquals(data.isValid(), false);
 	}
@@ -308,7 +305,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
 	@Test
-	public void isValidTest_A112() {
+	public void isValidTest2() {
 		data = new CompanyEmail(null, emptyStr, null, null);
 		assertEquals(data.isValid(), false);
 	}
@@ -317,7 +314,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
 	@Test
-	public void isValidTest_A113() {
+	public void isValidTest3() {
 		data = new CompanyEmail(null, null, emptyStr, null);
 		assertEquals(data.isValid(), false);
 	}
@@ -326,7 +323,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
 	@Test
-	public void isValidTest_A114() {
+	public void isValidTest4() {
 		data = new CompanyEmail(null, null, null, emptyStr);
 		assertEquals(data.isValid(), false);
 	}
@@ -335,7 +332,7 @@ public class TestCompanyEmail {
 	// 	Test created by: Julian Kubelec
 	//	Date created: 01/05/18
 	@Test
-	public void isValidTest_A115() {
+	public void isValidTest5() {
 		data = new CompanyEmail(emptyStr, emptyStr, emptyStr, emptyStr);
 		assertEquals(data.isValid(), true);
 	}
@@ -347,7 +344,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	
 	@Test
-	public void testCheckValidEmail_A121() {
+	public void testCheckValidEmail1() {
 		CompanyEmail ce = new CompanyEmail();
 		String address = null;
 		assertFalse(ce.checkValidEmail(address));
@@ -358,7 +355,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	
 	@Test
-	public void testCheckValidEmail_A122() {
+	public void testCheckValidEmail2() {
 		CompanyEmail ce = new CompanyEmail();
 		assertTrue(ce.checkValidEmail(tAddress));
 	}
@@ -368,7 +365,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	
 	@Test
-	public void testCheckValidEmail_A133() {
+	public void testCheckValidEmail3() {
 		CompanyEmail ce = new CompanyEmail();
 		assertFalse(ce.checkValidEmail(newAddrInvalid));
 	}
@@ -378,7 +375,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	
 	@Test
-	public void testCheckValidEmail_4() {
+	public void testCheckValidEmail4() {
 		CompanyEmail ce = new CompanyEmail();
 		assertFalse(ce.checkValidEmail(emptyStr));
 	}
@@ -388,7 +385,7 @@ public class TestCompanyEmail {
 	//	Date created: 01/05/18
 	
 	@Test
-	public void testCheckValidEmail_5() {
+	public void testCheckValidEmail5() {
 		CompanyEmail ce = new CompanyEmail();
 		assertFalse(ce.checkValidEmail(newAddrLong));
 	}
@@ -413,7 +410,7 @@ public class TestCompanyEmail {
 	//	Date created: 02/05/18
 	
 	@Test
-	public void testToString_2() {
+	public void testToString2() {
 		CompanyEmail ce = new CompanyEmail();
 		ce.setSubject(subLine);
 		assertEquals(subLine, ce.toString());
@@ -425,7 +422,7 @@ public class TestCompanyEmail {
 	//	Date created: 02/05/18
 	
 	@Test
-	public void testToString_3() {
+	public void testToString3() {
 		CompanyEmail ce = new CompanyEmail();
 		ce.setSubject("  ");
 		assertEquals("[no subject]", ce.toString());

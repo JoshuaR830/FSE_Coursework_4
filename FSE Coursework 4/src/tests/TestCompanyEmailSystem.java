@@ -40,7 +40,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/04/18
 	
 	@Test
-	public void testMainMethod_C11(){
+	public void testMainMethod1(){
 		CompanyEmailSystem.main(null);
 		assertTrue(outContent.toString().contains("P = List [P]rojects, [num] = Open Project [num], A = [A]dd Project, X = E[x]it"));
 	}
@@ -50,7 +50,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	
 	@Test
-	public void testMainMethod_C12(){
+	public void testMainMethod2(){
 		readInput("1 \n X");
 		CompanyEmailSystem.main(null);
 		assertEquals(0, CompanyEmailSystem.currentProjShowing);
@@ -61,7 +61,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 01/05/18
 
 	@Test
-	public void testMainMethod_C13(){
+	public void testMainMethod3(){
 		readInput("X");		
 		CompanyEmailSystem.main(null);
 		assertTrue(outContent.toString().contains("Goodbye!"));
@@ -72,7 +72,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 01/05/18
 	
 	@Test(timeout=2000)
-	public void testMainMethod_C14() {
+	public void testMainMethod4() {
 		readInput("X");		
 		CompanyEmailSystem.main(null);
 		return;
@@ -83,7 +83,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 01/05/18
 	
 	@Test
-	public void testMainMethod_C15() {
+	public void testMainMethod5() {
 		readInput("1");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();
@@ -95,7 +95,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	
 	@Test
-	public void testMainMethod_C16() {
+	public void testMainMethod6() {
 		readInput("-2\nX");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();
@@ -106,7 +106,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Joshua Richardson
 //	Date created: 03/05/18
 	@Test
-	public void testMainMethod_C17() {
+	public void testMainMethod7() {
 		readInput("1\ns\nX\ns\n1\n1\nX");
 		
 		CompanyEmailSystem.main(null);
@@ -118,11 +118,6 @@ public class TestCompanyEmailSystem {
 		
 	}
 	
-	
-	
-	
-	
-
 //	Test list projects function
 
 //	Test ID: C.2.1
@@ -130,7 +125,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/04/18
 	
 	@Test
-	public void testListProjects_C21() {
+	public void testListProjects1() {
 		readInput("P");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();
@@ -147,7 +142,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Tim Bartrum
 //	Date created: 02/05/18
 	@Test
-	public void testAddProject_C31() {
+	public void testAddProject1() {
 		readInput("A");
 		CompanyEmailSystem.main(null);
 		assertTrue(outContent.toString().contains("What is the title of the project?"));
@@ -157,7 +152,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Tim Bartrum
 //	Date created: 02/05/18
 	@Test
-	public void testAddProject_C32() {
+	public void testAddProject2() {
 		readInput("A\nTest Project 4");
 		CompanyEmailSystem.main(null);
 		assertEquals("Test Project 4", CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
@@ -167,7 +162,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Tim Bartrum
 //	Date created: 03/05/18
 	@Test
-	public void testAddProject_C33() {
+	public void testAddProject3() {
 		readInput("A\nTest Project 4");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();
@@ -180,7 +175,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 03/05/18
 	
 	@Test
-	public void testAddProject_C34(){
+	public void testAddProject4(){
 		readInput("A \n \n P");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();
@@ -195,7 +190,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Julian Kubelec, Joshua Richardson & Inigo Taylor
 //	Date created: 02/05/18
 	@Test
-	public void testListEmails_C041() {
+	public void testListEmails1() {
 		int lineNum = 6;
 		readInput("1 \n L \n X");
 		
@@ -213,7 +208,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Julian Kubelec
 //	Date created: 03/05/18
 	@Test
-	public void testListEmails_C042() {
+	public void testListEmails2() {
 		int lineNum = 9;
 		for(int k = 0; k < 5; k++) {
 			readInput("1 \n L \n N \n L \n X");
@@ -233,7 +228,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 02/05/18
 	
 	@Test
-	public void testListPhases_C51() {
+	public void testListPhases1() {
 		readInput("1 \n N \n F");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();
@@ -254,7 +249,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Tim Bartrum
 //	Date created: 03/03/18
 	@Test
-	public void testListContacts_C61() {
+	public void testListContacts1() {
 		readInput("P\n1\nC");
 		CompanyEmailSystem.main(null);
 		String[] output = readOutput();
@@ -273,7 +268,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Henry Hunt
 //	Date created: 03/05/18
 	@Test
-	public void testListContacts_C62() {
+	public void testListContacts2() {
 		readInput("A \n New Project Title \n 4 \n C X");
 		
 		CompanyEmailSystem.main(null);
@@ -287,7 +282,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Henry Hunt and Julian Kubelec
 //	Date created: 02/05/18
 	@Test
-	public void testAddEmail_C71() {
+	public void testAddEmail1() {
 		readInput("2 \n A \n"+ sender+"\n"+ receiver +"\n "+subject+"\n"+ body+"\n X");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();		
@@ -302,7 +297,7 @@ public class TestCompanyEmailSystem {
 //	Date created: 03/05/18
 	
 	@Test
-	public void testAddEmail_C72() {
+	public void testAddEmail2() {
 		readInput("2 \n A \n "+ sender + "\n"+ receiver +"\n" + subject + " \n"+ body +"\n L \n X");
 		CompanyEmailSystem.main(null);
 		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
@@ -314,7 +309,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Joshua Richardson
 //	Date created: 03/05/18
 	@Test
-	public void testAddEmail_C73() {
+	public void testAddEmail3() {
 		int num = 3;
 				
 		for(int x = 1; x <= num; x++) {
@@ -335,7 +330,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Joshua Richardson
 //	Date created: 02/05/18
 	@Test
-	public void testChangeProjectPhase_C81() {
+	public void testChangeProjectPhase1() {
 		int num = 3;
 		String string = "";
 		for(int x = 1; x <= num; x++) {
@@ -369,7 +364,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Joshua Richardson
 //	Date created: 02/05/18
 	@Test
-	public void testChangeProjectPhase_C82() {
+	public void testChangeProjectPhase2() {
 		int num = 3;
 		String string = "";
 		for(int x = 1; x <= num; x++) {
@@ -401,7 +396,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Joshua Richardson
 //	Date created: 02/05/18
 	@Test
-	public void testChangeProjectPhase_C83() {
+	public void testChangeProjectPhase3() {
 		int num = 3;
 		String string = "";
 		for(int x = 1; x <= num; x++) {
@@ -432,7 +427,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Joshua Richardson
 //	Date created: 02/05/18
 	@Test
-	public void testchangProjectPhase_C84() {
+	public void testchangProjectPhase4() {
 		String input = "1\nX\n2\nX\n3\nX";
 		
 		readInput("" + input);
@@ -446,7 +441,7 @@ public class TestCompanyEmailSystem {
 	}
 	
 
-	
+	//Test Helper functions----------------------------------------------------------------------//
 	/**
 	 * Sets output stream back to the console for debugging purposes
 	 * @author Tim Bartrum
