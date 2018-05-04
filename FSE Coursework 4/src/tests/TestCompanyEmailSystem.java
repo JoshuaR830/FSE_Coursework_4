@@ -187,19 +187,22 @@ public class TestCompanyEmailSystem {
 //	Test list emails function
 	
 //	Test ID: C.4.1
-// 	Test created by: Julian Kubelec, Joshua Richardson & Inigo Taylor
+// 	Test created by: Julian Kubelec, Joshua Richardson, Inigo Taylor & Tim Bartrum
 //	Date created: 02/05/18
 	@Test
 	public void testListEmails1() {
-		int lineNum = 6;
 		readInput("1 \n L \n X");
 		
 		CompanyEmailSystem.main(null);
 		String[] outputArray = readOutput();
 		
-		for(int i = 9; i >= 0;  i-=3) {
-			assertTrue(outputArray[lineNum].contains((lineNum-5)+") me"+i+"@me.com - this is a test subject for email"+i));
-			lineNum++;
+		int emailNum = 1;
+		int emailMe = 9;
+		for(int i = 8; i < 12;  i++) {
+			String email = emailNum+") me"+emailMe+"@me.com - this is a test subject for email"+emailMe;
+			assertEquals(email, outputArray[i]);
+			emailNum++;
+			emailMe -= 3;
 		}
 	}
 	
