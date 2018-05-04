@@ -18,7 +18,6 @@ import org.junit.Test;
 
 import emailScripts.CompanyEmailSystem;
 
-
 public class TestCompanyEmailSystem {
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -32,8 +31,6 @@ public class TestCompanyEmailSystem {
 	@Before
 	public void setUpStreams() {
 		setOutputStreamTest();
-		CompanyEmailSystem.currentProjShowing = 0;
-
 	}
 	
 //	Test main method
