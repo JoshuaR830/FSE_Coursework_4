@@ -1,9 +1,7 @@
 package emailScripts;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.*;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CompanyEmailSystem {
 
