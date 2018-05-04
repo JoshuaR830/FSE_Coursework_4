@@ -14,7 +14,9 @@ import java.io.PrintStream;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import emailScripts.CompanyEmailSystem;
 
@@ -30,7 +32,9 @@ public class TestCompanyEmailSystem {
 	
 	@Before
 	public void setUpStreams() {
-		setOutputStreamTest();  
+		setOutputStreamTest();
+		CompanyEmailSystem.currentProjShowing = 0;
+
 	}
 	
 //	Test main method
@@ -426,7 +430,7 @@ public class TestCompanyEmailSystem {
 // 	Test created by: Joshua Richardson
 //	Date created: 02/05/18
 	@Test
-	public void testchangProjectPhase4() {
+	public void testchangeProjectPhase4() {
 		String input = "1\nX\n2\nX\n3\nX";
 		
 		readInput("" + input);
