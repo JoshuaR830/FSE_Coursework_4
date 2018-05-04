@@ -30,7 +30,7 @@ public class TestCompanyProject {
 //	Date created: 27/04/18
 	
 	@Test
-	public void testDefaultConstructor_B011(){
+	public void testDefaultConstructor1(){
 		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
 		CompanyProject testProject = new CompanyProject();
 		assertEquals(++testProjectCounter,  CompanyEmailSystem.GlobalProjectCounter);
@@ -40,7 +40,7 @@ public class TestCompanyProject {
 // 	Test created by: Inigo Taylor
 //	Date created: 27/04/18	
 	@Test
-	public void testDefaultConstructor_B012() {
+	public void testDefaultConstructor2() {
 		testProjectCounter = CompanyEmailSystem.GlobalProjectCounter;
 		CompanyProject testProject = new CompanyProject();
 		assertEquals(++testProjectCounter, testProject.getPID());
@@ -50,7 +50,7 @@ public class TestCompanyProject {
 // 	Test created by: Inigo Taylor
 //	Date created: 27/04/18
 	@Test
-	public void testDefaultConstructor_B013() {
+	public void testDefaultConstructor3() {
 		CompanyProject testProject = new CompanyProject();
 		assertEquals("New Project", testProject.getPTitle());
 	}
@@ -60,7 +60,7 @@ public class TestCompanyProject {
 //	Date created: 29/04/18
 	
 	@Test
-	public void testDefaultConstructor_B014() {
+	public void testDefaultConstructor4() {
 		CompanyProject testProject = new CompanyProject();
 		assertNotNull(testProject.getProjectContacts());
 		assertTrue(testProject.getProjectContacts().isEmpty());
@@ -71,7 +71,7 @@ public class TestCompanyProject {
 //	Date created: 29/04/18
 	
 	@Test
-	public void testDefaultConstructor_B015() {
+	public void testDefaultConstructor5() {
 		CompanyProject testProject = new CompanyProject();
 		assertEquals(0, testProject.getPhaseByID());
 	}
@@ -80,7 +80,7 @@ public class TestCompanyProject {
 // 	Test created by: Joshua Richardson
 //	Date created: 01/05/18
 	@Test
-	public void testDefaultConstructor_B016() {
+	public void testDefaultConstructor6() {
 		cp = new CompanyProject();
 		ArrayList empty = new ArrayList();
 		try {
@@ -97,7 +97,7 @@ public class TestCompanyProject {
 // 	Test created by: Tim Bartrum
 //	Date created: 27/04/18
 	@Test
-	public void testMainConstructor_B021() {
+	public void testMainConstructor1() {
 		CompanyProject testProject = new CompanyProject("0123456789");
 		assertEquals("0123456789", testProject.getPTitle());
 	}
@@ -109,7 +109,7 @@ public class TestCompanyProject {
 //	Date created: 27/04/18
 	
 	@Test
-	public void testGetProjectId_b031() {
+	public void testGetProjectId1() {
 		cp = new CompanyProject();
 		assertEquals(CompanyEmailSystem.GlobalProjectCounter, cp.getPID());
 	}
@@ -124,7 +124,7 @@ public class TestCompanyProject {
 //	Date created: 30/04/18
 	
 	@Test
-	public void testProjectTitle_b041() {
+	public void testProjectTitle1() {
 		CompanyProject cp = new CompanyProject();
 		cp.setPTitle("0123456789");
 		assertEquals("0123456789", cp.getPTitle());
@@ -135,7 +135,7 @@ public class TestCompanyProject {
 //	Date created: 30/04/18
 	
 	@Test
-	public void testProjectTitle_b042() {
+	public void testProjectTitle2() {
 		CompanyProject cp = new CompanyProject();
 		cp.setPTitle("0123456789");
 		cp.setPTitle("012345678");
@@ -151,7 +151,7 @@ public class TestCompanyProject {
 //	Date created: 29/04/18
 	
 	@Test
-	public void testSetPTitle_B051() {
+	public void testSetPTitle1() {
 		CompanyProject testProject = new CompanyProject();
 		testProject.setPTitle("Test Project");
 		assertEquals("Test Project", testProject.getPTitle());
@@ -162,7 +162,7 @@ public class TestCompanyProject {
 //	Date created: 29/04/18
 	
 	@Test
-	public void testSetPTitle_B052() {
+	public void testSetPTitle2() {
 		CompanyProject testProject = new CompanyProject();
 		testProject.setPTitle("Test Title");
 		assertEquals("Test Title", testProject.getPTitle());
@@ -173,7 +173,7 @@ public class TestCompanyProject {
 //	Date created: 29/04/18
 	
 	@Test
-	public void testSetPTitle_B053() {
+	public void testSetPTitle3() {
 		CompanyProject testProject = new CompanyProject();
 		testProject.setPTitle("Test");
 		assertNotEquals("Test", testProject.getPTitle());
@@ -186,7 +186,7 @@ public class TestCompanyProject {
 // 	Test created by: Tim Bartrum
 //	Date created: 01/05/18
 	@Test
-	public void testIsContact_B061() {
+	public void testIsContact1() {
 		CompanyProject testProject = new CompanyProject();
 		testProject.addContact("test@gmail.com");
 		assertTrue(testProject.isContact("test@gmail.com"));
@@ -196,7 +196,7 @@ public class TestCompanyProject {
 // 	Test created by: Tim Bartrum
 //	Date created: 01/05/18
 	@Test
-	public void testIsContact_B062() {
+	public void testIsContact2() {
 		CompanyProject testProject = new CompanyProject();
 		testProject.addContact("test2@gmail.com");
 		assertFalse(testProject.isContact("test@gmail.com"));
@@ -210,7 +210,7 @@ public class TestCompanyProject {
 //	Date created: 29/04/18
 	
 	@Test
-	public void testAddContact_B071() {
+	public void testAddContact1() {
 		String testInput = "psyit@nottingham.ac.uk";
 		CompanyProject testProject = new CompanyProject();		
 		testProject.addContact(testInput);
@@ -224,7 +224,7 @@ public class TestCompanyProject {
 //	Date created: 01/05/18
 	
 	@Test
-	public void testAddEmail_B072() {
+	public void testAddContact2() {
 		CompanyProject testProject = new CompanyProject();
 		CompanyEmail testEmail = new CompanyEmail();
 		try {
@@ -243,7 +243,7 @@ public class TestCompanyProject {
 //	Date created: 27/04/18
 	
 	@Test
-	public void testAddEmail_B081(){
+	public void testAddEmail1(){
 		try {
 			CompanyProject testProject = new CompanyProject();
 			testProject.addEmail(new CompanyEmail());
@@ -257,7 +257,7 @@ public class TestCompanyProject {
 // 	Test created by: Tim Bartrum
 //	Date created: 01/05/18
 	@Test
-	public void testAddEmail_B82() {
+	public void testAddEmail2() {
 		try {
 			CompanyProject testProject = new CompanyProject();		
 			
@@ -285,7 +285,7 @@ public class TestCompanyProject {
 // 	Test created by: Joshua Richardson
 //	Date created: 01/05/18
 	@Test
-	public void testGetEmailCurrentPhase_B091() {
+	public void testGetEmailCurrentPhase1() {
 		cp = new CompanyProject();
 		ArrayList array = new ArrayList();
 		assertEquals(array,cp.getEmailsForPhase());
@@ -295,7 +295,7 @@ public class TestCompanyProject {
 // 	Test created by: Joshua Richardson
 //	Date created: 01/05/18
 	@Test
-	public void testGetEmailCurrentPhase_B092() {
+	public void testGetEmailCurrentPhase2() {
 		cp = new CompanyProject();
 		
 		CompanyEmail email = new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body");
@@ -316,7 +316,7 @@ public class TestCompanyProject {
 // 	Test created by: Joshua Richardson
 //	Date created: 01/05/18
 	@Test
-	public void testGetEmailCurrentPhase_B093() {
+	public void testGetEmailCurrentPhase3() {
 		cp = new CompanyProject();
 		
 		ArrayList array = new ArrayList();
@@ -346,7 +346,7 @@ public class TestCompanyProject {
 //	Date created: 01/05/18
 	
 	@Test
-	public void testGetEmailForSpecificPhase_B101(){
+	public void testGetEmailForSpecificPhase1(){
 		CompanyProject cp = new CompanyProject();
 		try {
 
@@ -366,7 +366,7 @@ public class TestCompanyProject {
 //	Date created: 30/04/18
 	
 	@Test
-	public void testGetEmailForSpecificPhase_B102() {
+	public void testGetEmailForSpecificPhase2() {
 		CompanyProject cp = new CompanyProject();
 		try {
 			cp.getEmailsForPhase(-1);
@@ -383,7 +383,7 @@ public class TestCompanyProject {
 //	Date created: 30/04/18
 	
 	@Test
-	public void testGetEmailForSpecificPhase_B103() {
+	public void testGetEmailForSpecificPhase3() {
 		CompanyProject cp = new CompanyProject();
 		try {
 			cp.getEmailsForPhase(cp.getPID()+1);
@@ -402,7 +402,7 @@ public class TestCompanyProject {
 //	Date created: 30/04/18
 		
 	@Test
-	public void testNextPhase_B111(){
+	public void testNextPhase1(){
 		CompanyProject testProject = new CompanyProject();
 		for(int i=0; i<5; i++) {
 			testProject.nextPhase();
@@ -416,7 +416,7 @@ public class TestCompanyProject {
 //	Date created: 30/04/18
 	
 	@Test
-	public void testNextPhase_B112(){
+	public void testNextPhase2(){
 		CompanyProject testProject = new CompanyProject();
 		for(int i=0; i<5; i++) {
 			assertEquals(true, testProject.nextPhase());
@@ -430,7 +430,7 @@ public class TestCompanyProject {
 //	Date created: 01/05/18
 	
 	@Test
-	public void testGetPhaseByName_B121() {
+	public void testGetPhaseByName1() {
 		CompanyProject cp = new CompanyProject();
 		for (int i = 0; i < 6; i++) {
 			cp.setProjectPhase(i);
@@ -445,7 +445,7 @@ public class TestCompanyProject {
 //	Date created: 29/04/18
 	
 	@Test
-	public void testGetPhaseByID_B131(){
+	public void testGetPhaseByID1(){
 		CompanyProject testProject = new CompanyProject();
 		assertEquals(0, testProject.getPhaseByID());
 	}
@@ -458,7 +458,7 @@ public class TestCompanyProject {
 //	Date created: 28/04/18
 	
 	@Test
-	public void testGetProjectContacts_B141(){
+	public void testGetProjectContacts1(){
 		CompanyProject cp = new CompanyProject();
 		ArrayList<String> expected = new ArrayList<String>();
 		assertEquals(cp.getProjectContacts(), expected);
@@ -469,7 +469,7 @@ public class TestCompanyProject {
 //	Date created: 28/04/18
 	
 	@Test
-	public void testGetProjectContacts_B142(){
+	public void testGetProjectContacts2(){
 		CompanyProject cp = new CompanyProject();
 		ArrayList<String> expected = new ArrayList<String>();
 		String input = "psyjk@nottingham.ac.uk";
@@ -483,7 +483,7 @@ public class TestCompanyProject {
 //	Date created: 28/04/18
 	
 	@Test
-	public void testGetProjectContacts_B143(){
+	public void testGetProjectContacts3(){
 		CompanyProject cp = new CompanyProject();
 		ArrayList<String> expected = new ArrayList<String>();
 		String email1 = "psyjk4@nottingham.ac.uk";
@@ -505,7 +505,7 @@ public class TestCompanyProject {
 //	Date created: 28/04/18
 	
 	@Test
-	public void testGetProjectContacts_B144(){
+	public void testGetProjectContacts4(){
 		CompanyProject cp = new CompanyProject();
 		ArrayList<String> expected = new ArrayList<String>();
 		for(int num = 0; num < 100000; num++) {
@@ -515,10 +515,6 @@ public class TestCompanyProject {
 		assertEquals(cp.getProjectContacts(), expected);
 	}
 	
-	
-	
-	
-
 //	Test to string override
 
 //	Test ID: B.15.1
@@ -526,12 +522,9 @@ public class TestCompanyProject {
 //	Date created: 27/04/18
 	
 	@Test
-	public void testStringOverrideB151(){
+	public void testStringOverride1(){
 		CompanyProject cp = new CompanyProject();
 		cp.setPTitle("Hello Project");
 		assertEquals( "Hello Project" + " [" + CompanyEmailSystem.ProjectPhases[cp.getPhaseByID()] + "]", cp.toString());
-	}
-		
+	}		
 }
-
-
