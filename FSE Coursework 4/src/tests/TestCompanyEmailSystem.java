@@ -305,7 +305,7 @@ public class TestCompanyEmailSystem {
 	public void testAddEmail_C72() {
 		readInput("2 \n A \n "+ sender + "\n"+ receiver +"\n" + subject + " \n"+ body +"\n L \n X");
 		CompanyEmailSystem.main(null);
-		String[] outputArray = outContent.toString().split("\r\n|\r|\n");
+		String[] outputArray = readOutput();
 		assertTrue(outputArray[16].contains(sender));
 		assertTrue(outputArray[16].contains(subject));		
 	}
