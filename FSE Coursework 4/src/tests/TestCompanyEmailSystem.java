@@ -33,22 +33,20 @@ public class TestCompanyEmailSystem {
 		setOutputStreamTest();
 	}
 	
-//	Test main method
-
-//	Test ID: C.1.1
-// 	Test created by: Inigo Taylor
-//	Date created: 02/04/18
+	//	Test: main()
 	
+	//	Test ID: C.1.1
+	// 	Test created by: Inigo Taylor
+	//	Date created: 02/04/18
 	@Test
 	public void testMainMethod1(){
 		CompanyEmailSystem.main(null);
 		assertTrue(outContent.toString().contains("P = List [P]rojects, [num] = Open Project [num], A = [A]dd Project, X = E[x]it"));
 	}
 
-//	Test ID: C.1.2
-// 	Test created by: Inigo Taylor
-//	Date created: 02/05/18
-	
+	//	Test ID: C.1.2
+	// 	Test created by: Inigo Taylor
+	//	Date created: 02/05/18
 	@Test
 	public void testMainMethod2(){
 		readInput("1 \n X");
@@ -56,10 +54,9 @@ public class TestCompanyEmailSystem {
 		assertEquals(0, CompanyEmailSystem.currentProjShowing);
 	}
 	
-//	Test ID: C.1.3
-// 	Test created by: Inigo Taylor
-//	Date created: 01/05/18
-
+	//	Test ID: C.1.3
+	// 	Test created by: Inigo Taylor
+	//	Date created: 01/05/18
 	@Test
 	public void testMainMethod3(){
 		readInput("X");		
@@ -67,10 +64,9 @@ public class TestCompanyEmailSystem {
 		assertTrue(outContent.toString().contains("Goodbye!"));
 	}
 	
-//	Test ID: C.1.4
-// 	Test created by: Inigo Taylor, Joshua Richardson
-//	Date created: 01/05/18
-	
+	//	Test ID: C.1.4
+	// 	Test created by: Inigo Taylor, Joshua Richardson
+	//	Date created: 01/05/18
 	@Test(timeout=2000)
 	public void testMainMethod4() {
 		readInput("X");		
@@ -78,10 +74,9 @@ public class TestCompanyEmailSystem {
 		return;
 	}
 	
-//	Test ID: C.1.5
-// 	Test created by: Inigo Taylor
-//	Date created: 01/05/18
-	
+	//	Test ID: C.1.5
+	// 	Test created by: Inigo Taylor
+	//	Date created: 01/05/18
 	@Test
 	public void testMainMethod5() {
 		readInput("1");
@@ -90,10 +85,9 @@ public class TestCompanyEmailSystem {
 		assertTrue(outputArray[3].toString().contains("L = [L]ist Emails, A = [A]dd Email, F = List Phase [F]olders, N = Move to [N]ext Phase, [num] = List Emails in Phase [num], C = List [C]ontacts, X =  E[x]it Project"));
 	}
 	
-//	Test ID: C.1.6
-// 	Test created by: Inigo Taylor
-//	Date created: 02/05/18
-	
+	//	Test ID: C.1.6
+	// 	Test created by: Inigo Taylor
+	//	Date created: 02/05/18
 	@Test
 	public void testMainMethod6() {
 		readInput("-2\nX");
@@ -102,9 +96,9 @@ public class TestCompanyEmailSystem {
 		assertTrue(outputArray[2].contains("Command not recognised"));
 	}	
 	
-//	Test ID: C.1.7
-// 	Test created by: Joshua Richardson
-//	Date created: 03/05/18
+	//	Test ID: C.1.7
+	// 	Test created by: Joshua Richardson
+	//	Date created: 03/05/18
 	@Test
 	public void testMainMethod7() {
 		readInput("1\ns\nX\ns\n1\n1\nX");
@@ -118,12 +112,12 @@ public class TestCompanyEmailSystem {
 		
 	}
 	
-//	Test list projects function
-
-//	Test ID: C.2.1
-// 	Test created by: Inigo Taylor, Joshua Richardson
-//	Date created: 02/04/18
 	
+	//	Test: ListProjects()
+	
+	//	Test ID: C.2.1
+	// 	Test created by: Inigo Taylor, Joshua Richardson
+	//	Date created: 02/04/18
 	@Test
 	public void testListProjects1() {
 		readInput("P");
@@ -135,12 +129,12 @@ public class TestCompanyEmailSystem {
 		}
 	}
 
-// 	Test add project function
-
-//	Test ID: C.3.1
 	
-// 	Test created by: Tim Bartrum
-//	Date created: 02/05/18
+	// 	Test: AddProject()
+	
+	//	Test ID: C.3.1
+	// 	Test created by: Tim Bartrum
+	//	Date created: 02/05/18
 	@Test
 	public void testAddProject1() {
 		readInput("A");
@@ -148,9 +142,9 @@ public class TestCompanyEmailSystem {
 		assertTrue(outContent.toString().contains("What is the title of the project?"));
 	}
 	
-//	Test ID: C.3.2
-// 	Test created by: Tim Bartrum
-//	Date created: 02/05/18
+	//	Test ID: C.3.2
+	// 	Test created by: Tim Bartrum
+	//	Date created: 02/05/18
 	@Test
 	public void testAddProject2() {
 		readInput("A\nTest Project 4");
@@ -158,9 +152,9 @@ public class TestCompanyEmailSystem {
 		assertEquals("Test Project 4", CompanyEmailSystem.AllProjects.get(CompanyEmailSystem.AllProjects.size() - 1).getPTitle());
 	}
 	
-//	Test ID: C.3.3
-// 	Test created by: Tim Bartrum
-//	Date created: 03/05/18
+	//	Test ID: C.3.3
+	// 	Test created by: Tim Bartrum
+	//	Date created: 03/05/18
 	@Test
 	public void testAddProject3() {
 		readInput("A\nTest Project 4");
@@ -169,11 +163,9 @@ public class TestCompanyEmailSystem {
 		assertEquals("[Project added]", outputArray[3]);
 	}
 	
-	
-//	Test ID: C.3.4
-// 	Test created by: Inigo Taylor
-//	Date created: 03/05/18
-	
+	//	Test ID: C.3.4
+	// 	Test created by: Inigo Taylor
+	//	Date created: 03/05/18
 	@Test
 	public void testAddProject4(){
 		readInput("A \n \n P");
@@ -184,11 +176,11 @@ public class TestCompanyEmailSystem {
 	}
 	
 	
-//	Test list emails function
-	
-//	Test ID: C.4.1
-// 	Test created by: Julian Kubelec, Joshua Richardson, Inigo Taylor & Tim Bartrum
-//	Date created: 02/05/18
+	//	Test: ListEmails()
+		
+	//	Test ID: C.4.1
+	// 	Test created by: Julian Kubelec, Joshua Richardson, Inigo Taylor & Tim Bartrum
+	//	Date created: 02/05/18
 	@Test
 	public void testListEmails1() {
 		readInput("1 \n L \n X");
@@ -206,9 +198,9 @@ public class TestCompanyEmailSystem {
 		}
 	}
 	
-//	Test ID: C.4.2
-// 	Test created by: Julian Kubelec
-//	Date created: 03/05/18
+	//	Test ID: C.4.2
+	// 	Test created by: Julian Kubelec
+	//	Date created: 03/05/18
 	@Test
 	public void testListEmails2() {
 		int lineNum = 9;
@@ -223,12 +215,12 @@ public class TestCompanyEmailSystem {
 		}
 	}	
 	
-//	Test list phases function
-
-//	Test ID: C.5.1
-// 	Test created by: Inigo Taylor
-//	Date created: 02/05/18
 	
+	//	Test: ListPhases()
+	
+	//	Test ID: C.5.1
+	// 	Test created by: Inigo Taylor
+	//	Date created: 02/05/18
 	@Test
 	public void testListPhases1() {
 		readInput("1 \n N \n F");
@@ -245,11 +237,11 @@ public class TestCompanyEmailSystem {
 	}
 	
 	
-//	Test list contacts function
-	
-//	Test ID: C.6.1
-// 	Test created by: Tim Bartrum
-//	Date created: 03/03/18
+	//	Test: ListContacts()
+		
+	//	Test ID: C.6.1
+	// 	Test created by: Tim Bartrum
+	//	Date created: 03/03/18
 	@Test
 	public void testListContacts1() {
 		readInput("P\n1\nC");
@@ -265,10 +257,9 @@ public class TestCompanyEmailSystem {
 		}
 	}
 	
-	
-//	Test ID: C.6.2
-// 	Test created by: Henry Hunt
-//	Date created: 03/05/18
+	//	Test ID: C.6.2
+	// 	Test created by: Henry Hunt
+	//	Date created: 03/05/18
 	@Test
 	public void testListContacts2() {
 		readInput("A \n New Project Title \n 4 \n C X");
@@ -278,11 +269,12 @@ public class TestCompanyEmailSystem {
 		assertTrue(outputArray[8].contains("What do you want to do?"));
 	}
 	
-//	Test add email function
 	
-//	Test ID: C.7.1
-// 	Test created by: Henry Hunt and Julian Kubelec
-//	Date created: 02/05/18
+	//	Test: AddEmail()
+		
+	//	Test ID: C.7.1
+	// 	Test created by: Henry Hunt and Julian Kubelec
+	//	Date created: 02/05/18
 	@Test
 	public void testAddEmail1() {
 		readInput("2 \n A \n"+ sender+"\n"+ receiver +"\n "+subject+"\n"+ body+"\n X");
@@ -294,10 +286,9 @@ public class TestCompanyEmailSystem {
 		assertTrue(outputArray[7].contains("Message"));
 	}
 	
-//	Test ID: C.7.2
-// 	Test created by: Inigo Taylor
-//	Date created: 03/05/18
-	
+	//	Test ID: C.7.2
+	// 	Test created by: Inigo Taylor
+	//	Date created: 03/05/18
 	@Test
 	public void testAddEmail2() {
 		readInput("2 \n A \n "+ sender + "\n"+ receiver +"\n" + subject + " \n"+ body +"\n L \n X");
@@ -307,9 +298,9 @@ public class TestCompanyEmailSystem {
 		assertTrue(outputArray[16].contains(subject));		
 	}
 	
-//	Test ID: C.7.3
-// 	Test created by: Joshua Richardson
-//	Date created: 03/05/18
+	//	Test ID: C.7.3
+	// 	Test created by: Joshua Richardson
+	//	Date created: 03/05/18
 	@Test
 	public void testAddEmail3() {
 		int num = 3;
@@ -326,11 +317,11 @@ public class TestCompanyEmailSystem {
 	}
 	
 	
-//	Test change project phase function
-	
-//	Test ID: C.8.1
-// 	Test created by: Joshua Richardson
-//	Date created: 02/05/18
+	//	Test: ChangeProjectPhase()
+		
+	//	Test ID: C.8.1
+	// 	Test created by: Joshua Richardson
+	//	Date created: 02/05/18
 	@Test
 	public void testChangeProjectPhase1() {
 		int num = 3;
@@ -362,9 +353,9 @@ public class TestCompanyEmailSystem {
 		}	
 	}
 
-//	Test ID: C.8.2
-// 	Test created by: Joshua Richardson
-//	Date created: 02/05/18
+	//	Test ID: C.8.2
+	// 	Test created by: Joshua Richardson
+	//	Date created: 02/05/18
 	@Test
 	public void testChangeProjectPhase2() {
 		int num = 3;
@@ -392,11 +383,10 @@ public class TestCompanyEmailSystem {
 			}
 		}	
 	}
-		
 	
-//	Test ID: C.8.3
-// 	Test created by: Joshua Richardson
-//	Date created: 02/05/18
+	//	Test ID: C.8.3
+	// 	Test created by: Joshua Richardson
+	//	Date created: 02/05/18
 	@Test
 	public void testChangeProjectPhase3() {
 		int num = 3;
@@ -424,10 +414,9 @@ public class TestCompanyEmailSystem {
 		}	
 	}
 	
-	
-//	Test ID: C.8.4
-// 	Test created by: Joshua Richardson
-//	Date created: 02/05/18
+	//	Test ID: C.8.4
+	// 	Test created by: Joshua Richardson
+	//	Date created: 02/05/18
 	@Test
 	public void testchangeProjectPhase4() {
 		String input = "1\nX\n2\nX\n3\nX";
