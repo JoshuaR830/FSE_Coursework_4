@@ -23,11 +23,24 @@ public class TestCompanyProject {
 	
 	CompanyProject cp;
 	
-	String testEmail = "test1@gmail.com";
+	String testEmailA = "test";
+	String testEmailB = "@gmail.com";
+	
+	String testEmail1 = "test1@gmail.com";
 	String testEmail2 = "test2@gmail.com";
+	String testEmail3 = "test3@gmail.com";
+	String subject = "subject";
+	String body = "body"; 
+	
 	String testPTitle = "Test Project";
 	String testPTitle2= "New Project";
 	String testPTitleInvalid= "Test";
+	
+	String failMsg1 = "Email was added, this is wrong as the email was invalid";
+	String failMsg2 = "Exception wasn't produced"; 
+	String failMsg3 = "Exception shouldn't happen here";
+	String failMsg4 = "Invalid email";
+	String failMsg5 = "Out of range";
 //	Test default constructor
 
 //	Test ID: B.1.1
@@ -91,7 +104,7 @@ public class TestCompanyProject {
 		try {
 			assertEquals(cp.getEmailsForPhase(0), empty);
 		} catch (Exception e) {
-			System.out.println("Out of range");
+			System.out.println(failMsg5);
 		}
 	}
 	
@@ -103,8 +116,8 @@ public class TestCompanyProject {
 //	Date created: 27/04/18
 	@Test
 	public void testMainConstructor1() {
-		CompanyProject testProject = new CompanyProject("0123456789");
-		assertEquals("0123456789", testProject.getPTitle());
+		CompanyProject testProject = new CompanyProject(testPTitle);
+		assertEquals(testPTitle, testProject.getPTitle());
 	}
 
 //	Test get project id
@@ -131,8 +144,8 @@ public class TestCompanyProject {
 	@Test
 	public void testProjectTitle1() {
 		CompanyProject cp = new CompanyProject();
-		cp.setPTitle("0123456789");
-		assertEquals("0123456789", cp.getPTitle());
+		cp.setPTitle(testPTitle);
+		assertEquals(testPTitle, cp.getPTitle());
 	}
 	
 //	Test ID: B.4.2
@@ -142,9 +155,8 @@ public class TestCompanyProject {
 	@Test
 	public void testProjectTitle2() {
 		CompanyProject cp = new CompanyProject();
-		cp.setPTitle("0123456789");
-		cp.setPTitle("012345678");
-		assertNotEquals("012345678", cp.getPTitle());
+		cp.setPTitle(testPTitleInvalid);
+		assertNotEquals(testPTitleInvalid, cp.getPTitle());
 	}
 	
 	
@@ -193,8 +205,8 @@ public class TestCompanyProject {
 	@Test
 	public void testIsContact1() {
 		CompanyProject testProject = new CompanyProject();
-		testProject.addContact(testEmail);
-		assertTrue(testProject.isContact(testEmail));
+		testProject.addContact(testEmail1);
+		assertTrue(testProject.isContact(testEmail1));
 	}
 	
 //	Test ID: B.6.2
@@ -204,7 +216,7 @@ public class TestCompanyProject {
 	public void testIsContact2() {
 		CompanyProject testProject = new CompanyProject();
 		testProject.addContact(testEmail2);
-		assertFalse(testProject.isContact(testEmail));
+		assertFalse(testProject.isContact(testEmail1));
 	}
 	
 
@@ -216,12 +228,11 @@ public class TestCompanyProject {
 	
 	@Test
 	public void testAddContact1() {
-		String testInput = "psyit@nottingham.ac.uk";
 		CompanyProject testProject = new CompanyProject();		
-		testProject.addContact(testInput);
+		testProject.addContact(testEmail1);
 		int lastItem = testProject.getProjectContacts().size();
 		
-		assertEquals("psyit@nottingham.ac.uk",testProject.getProjectContacts().get(--lastItem));
+		assertEquals(testEmail1,testProject.getProjectContacts().get(--lastItem));
 	}
 	
 //	Test ID: B.7.2
@@ -231,10 +242,10 @@ public class TestCompanyProject {
 	@Test
 	public void testAddContact2() {
 		CompanyProject testProject = new CompanyProject();
-		CompanyEmail testEmail = new CompanyEmail();
+		CompanyEmail tEmail = new CompanyEmail();
 		try {
-			testProject.addEmail(testEmail);
-			fail("Email was added, this is wrong as the email was invalid");
+			testProject.addEmail(tEmail);
+			fail(failMsg1);
 		} catch (Exception e) {
 			assertEquals(new ArrayList<String>(), testProject.getProjectContacts());
 		}
@@ -252,7 +263,7 @@ public class TestCompanyProject {
 		try {
 			CompanyProject testProject = new CompanyProject();
 			testProject.addEmail(new CompanyEmail());
-			fail("Exception wasn't produced");
+			fail(failMsg2);
 		} catch (Exception e) {
 			assertEquals(e.getClass(), Exception.class);
 		}
@@ -266,19 +277,18 @@ public class TestCompanyProject {
 		try {
 			CompanyProject testProject = new CompanyProject();		
 			
-			testProject.addEmail(new CompanyEmail("test@gmail.com", "test2@gmail.com", "Hi", "body"));
+			testProject.addEmail(new CompanyEmail(testEmail1, testEmail2, subject, body));
 			
 			ArrayList[] testList = new ArrayList[6];			
 	        testList[0] = new ArrayList<CompanyEmail>();
 	        
-			CompanyEmail testEmail = new CompanyEmail("test@gmail.com", "test2@gmail.com", "Hi", "body");
-            	        
-            testList[0].add(testEmail);
-            
+			CompanyEmail tEmail = new CompanyEmail(testEmail1, testEmail2, subject, body);
+			
+            testList[0].add(tEmail);      
 			assertEquals(Arrays.toString(testProject.getProjectEmails()), Arrays.toString(testList));
 		} catch (Exception e) {
 			System.out.println(e.getClass());
-			fail("Exception shouldn't happen here");
+			fail(failMsg3);
 		}
 	}
 	
@@ -303,12 +313,12 @@ public class TestCompanyProject {
 	public void testGetEmailCurrentPhase2() {
 		cp = new CompanyProject();
 		
-		CompanyEmail email = new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body");
+		CompanyEmail email = new CompanyEmail(testEmail1,testEmail2,subject,body);
 		
 		try {
 			cp.addEmail(email);
 		}catch(Exception e) {
-			System.out.println("Invalid email");
+			System.out.println(failMsg4);
 		}
 				
 		ArrayList array = new ArrayList();
@@ -325,14 +335,13 @@ public class TestCompanyProject {
 		cp = new CompanyProject();
 		
 		ArrayList array = new ArrayList();
-		
 		for(int num = 0; num < 1000; num++) {
-			CompanyEmail email = new CompanyEmail("psyjr"+num+"@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi"+num,"Body");
+			CompanyEmail email = new CompanyEmail(testEmailA+num+testEmailB,testEmail1,subject+num, body);
 			
 			try {
 				cp.addEmail(email);
 			}catch(Exception e) {
-				fail("Invalid email");
+				fail(failMsg4);
 			}
 			
 			array.add(email);
@@ -355,13 +364,13 @@ public class TestCompanyProject {
 		CompanyProject cp = new CompanyProject();
 		try {
 
-			CompanyEmail ce = new CompanyEmail("psyjr4@nottingham.ac.uk","psytb4@nottingham.ac.uk","Hi","Body");
+			CompanyEmail ce = new CompanyEmail(testEmail1,testEmail2, subject, body);
 			cp.addEmail(ce);
 			ArrayList[] projectEmails = cp.getProjectEmails();	
 			assertEquals(cp.getEmailsForPhase(1), projectEmails[1]);
 
 		}catch(Exception e) {
-			fail("No exception should be raised for this test");
+			fail(failMsg3);
 		}
 	}
 	
@@ -375,7 +384,7 @@ public class TestCompanyProject {
 		CompanyProject cp = new CompanyProject();
 		try {
 			cp.getEmailsForPhase(-1);
-			fail("Exception wasn't produced");
+			fail(failMsg2);
 		}catch(Exception e) {
 			assertEquals(e.getClass(), Exception.class); // From Inigo
 		}
@@ -392,7 +401,7 @@ public class TestCompanyProject {
 		CompanyProject cp = new CompanyProject();
 		try {
 			cp.getEmailsForPhase(cp.getPID()+1);
-			fail("Exception wasn't produced");
+			fail(failMsg2);
 		}catch(Exception e) {
 			assertEquals(e.getClass(), Exception.class); // From Inigo
 		}
@@ -477,9 +486,8 @@ public class TestCompanyProject {
 	public void testGetProjectContacts2(){
 		CompanyProject cp = new CompanyProject();
 		ArrayList<String> expected = new ArrayList<String>();
-		String input = "psyjk@nottingham.ac.uk";
-		expected.add(input);
-		cp.addContact(input);
+		expected.add(testEmail1);
+		cp.addContact(testEmail1);
 		assertEquals(cp.getProjectContacts(), expected);
 	}
 	
@@ -491,16 +499,12 @@ public class TestCompanyProject {
 	public void testGetProjectContacts3(){
 		CompanyProject cp = new CompanyProject();
 		ArrayList<String> expected = new ArrayList<String>();
-		String email1 = "psyjk4@nottingham.ac.uk";
-		String email2 = "psytb5@nottingham.ac.uk";
-		String email3 = "psyit@nottingham.ac.uk";
-		
-		expected.add(email1);
-		cp.addContact(email1);
-		expected.add(email2);
-		cp.addContact(email2);
-		expected.add(email3);
-		cp.addContact(email3);
+		expected.add(testEmail1);
+		cp.addContact(testEmail1);
+		expected.add(testEmail2);
+		cp.addContact(testEmail2);
+		expected.add(testEmail3);
+		cp.addContact(testEmail3);
 		
 		assertEquals(cp.getProjectContacts(), expected);
 	}
@@ -514,8 +518,8 @@ public class TestCompanyProject {
 		CompanyProject cp = new CompanyProject();
 		ArrayList<String> expected = new ArrayList<String>();
 		for(int num = 0; num < 100000; num++) {
-			expected.add("psyjk"+num+"@nottingham.ac.uk");
-			cp.addContact("psyjk"+num+"@nottingham.ac.uk");
+			expected.add(testEmailA+num+testEmailB);
+			cp.addContact(testEmailA+num+testEmailB);
 		}
 		assertEquals(cp.getProjectContacts(), expected);
 	}
@@ -529,7 +533,7 @@ public class TestCompanyProject {
 	@Test
 	public void testStringOverride1(){
 		CompanyProject cp = new CompanyProject();
-		cp.setPTitle("Hello Project");
-		assertEquals( "Hello Project" + " [" + CompanyEmailSystem.ProjectPhases[cp.getPhaseByID()] + "]", cp.toString());
+		cp.setPTitle(testPTitle);
+		assertEquals( testPTitle + " [" + CompanyEmailSystem.ProjectPhases[cp.getPhaseByID()] + "]", cp.toString());
 	}		
 }
