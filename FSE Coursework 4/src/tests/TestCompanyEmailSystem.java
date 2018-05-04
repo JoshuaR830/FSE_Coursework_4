@@ -22,7 +22,7 @@ public class TestCompanyEmailSystem {
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
-	//Email test data
+	// Email test data
 	String sender = "sender@nottingham.ac.uk";
 	String receiver = "receiver@nottingham.ac.uk";
 	String subject = "subject"; 
