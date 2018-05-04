@@ -18,7 +18,6 @@ public class TestCompanyEmail {
 	String tAddress ="receiver@nottingham.ac.uk";
 	String subLine = "subject";
 	String eMessage = "body";
-	String newAddrValid = "sender@nottingham.ac.uk";
 	String newAddrInvalid = "abcdefg";
 	String newAddrLong = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccccccccccccccccccccccc@gmail.com";
 	String emptyStr = "";
@@ -50,7 +49,7 @@ public class TestCompanyEmail {
 	//	Date created: 1/05/18 
 	@Test
 	public void testMainConstructor1() {
-		data =new CompanyEmail(fAddress, tAddress, subLine, eMessage);
+		data = new CompanyEmail(fAddress, tAddress, subLine, eMessage);
 		assertEquals(data.fromAddress(), fAddress);
 		assertEquals(data.toAddress(), tAddress);
 		assertEquals(data.subjectLine(), subLine);
@@ -148,8 +147,8 @@ public class TestCompanyEmail {
 	@Test
 	public void testSetFrom1() {
 		data = new CompanyEmail();
-		data.setFrom(newAddrValid);
-		assertEquals(data.fromAddress(), newAddrValid);
+		data.setFrom(fAddress);
+		assertEquals(data.fromAddress(), fAddress);
 	}
 	
 	//	Test ID: A.7.2
@@ -190,8 +189,8 @@ public class TestCompanyEmail {
 	@Test
 	public void testSetTo1() {
 		data = new CompanyEmail();
-		data.setTo(newAddrValid);
-		assertEquals(newAddrValid, data.toAddress());
+		data.setTo(fAddress);
+		assertEquals(fAddress, data.toAddress());
 	}	
 	//	Test ID: A.8.2
 	// 	Test created by: Julian Kubelec
