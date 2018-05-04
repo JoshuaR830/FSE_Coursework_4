@@ -20,6 +20,7 @@ import org.junit.runners.MethodSorters;
 
 import emailScripts.CompanyEmailSystem;
 
+
 public class TestCompanyEmailSystem {
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
