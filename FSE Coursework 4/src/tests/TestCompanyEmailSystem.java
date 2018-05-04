@@ -32,8 +32,6 @@ public class TestCompanyEmailSystem {
 	@Before
 	public void setUpStreams() {
 		setOutputStreamTest();
-		CompanyEmailSystem.currentProjShowing = 0;
-
 	}
 	
 //	Test main method
