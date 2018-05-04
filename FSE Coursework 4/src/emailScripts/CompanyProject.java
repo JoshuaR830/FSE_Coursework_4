@@ -1,10 +1,5 @@
-// https://docs.google.com/document/d/1migYYyWoCX3aydqz9rkFh2q5YYehMueO_p8LHfVqLb4/edit
-
 package emailScripts;
 
-import java.io.FileDescriptor;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
 import java.util.ArrayList;
 
 public class CompanyProject {

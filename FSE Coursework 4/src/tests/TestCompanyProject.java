@@ -1,5 +1,3 @@
-// https://docs.google.com/document/d/18v9pEzfbKsLBOuPCX-yKiDZYMQphwJoi_AcsFr_dBUI/edit
-
 package tests;
 
 import static org.junit.Assert.assertEquals;
